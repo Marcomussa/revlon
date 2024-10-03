@@ -3,3 +3,5 @@ https://www.figma.com/proto/v9pW1PC8yG544lMCMGxp3N/ON_landing_project?page-id=22
 
 ## Docs
 https://www.dropbox.com/scl/fo/ltllc3cd74a6v6bmkwq84/AFvRZtJpS_sP93fXYs_kW4Y?rlkey=ycir69089tq7s5a3yg0hl0acu&dl=0
+
+## Arquitectura: Feature-based Structure
