@@ -6,7 +6,7 @@ const PublicRoute = ({ children }) => {
   const { isAuthenticated } = useAuth();
 
   if (isAuthenticated) {
-    return <Navigate to="/dashboard" />;
+    return <Navigate to="/user/dashboard" />;
   }
 
   return children;

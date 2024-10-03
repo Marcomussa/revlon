@@ -14,7 +14,7 @@ const Button = ({ text, type = 'button', route = '', onClick }) => {
   };
 
   return (
-    <button type={type} className="custom-button" onClick={handleClick}>
+    <button type={type} className="custom-button w-100 mb-1" onClick={handleClick}>
       {text}
     </button>
   );

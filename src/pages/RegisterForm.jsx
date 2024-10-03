@@ -42,12 +42,11 @@ const RegisterForm = () => {
     try {
       // Peticion de Register hacia API
       setShowAlert(true);
+      console.log(formData);
     } catch (error) {
       console.log(error);
       setMessage("Error en el registro. Inténtalo de nuevo.");
     }
-    // Lógica de validación o envío aquí
-    console.log(formData);
   };
 
   return (

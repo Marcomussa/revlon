@@ -102,7 +102,7 @@ const LogInForm = () => {
 
               <h4>¿Es la primera vez que registrar un ticket?</h4>
               <div className="d-grid">
-                <Button text="REGISTRARSE" route="/register"></Button>
+                <Button text="REGISTRARSE" route="/user/register"></Button>
               </div>
             </div>
           </div>
