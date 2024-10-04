@@ -6,10 +6,10 @@ const Button = ({ text, type = 'button', route = '', onClick }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    if (type === 'submit') {
-      if (onClick) onClick(); 
-    } else if (route) {
+    if (route) {
       navigate(route);
+    } else if (onClick) {
+      onClick(); // Aseguramos que onClick se ejecute si está definido
     }
   };
 

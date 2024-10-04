@@ -1,8 +1,16 @@
 import ImageUpload from "../assets/components/ImageUpload";
 import InputWithModal from "../assets/components/InputWithModal";
 import Button from "../assets/components/Button";
+import Select from "../assets/components/Select";
 
 const PhysicalTicket = () => {
+  const storeOptions = [
+    { value: 'walmart', label: 'Walmart' },
+    { value: 'target', label: 'Target' },
+    { value: 'costco', label: 'Costco' },
+    { value: 'amazon', label: 'Amazon' },
+  ];
+
   return (
     <div className="container">
       <div className="row text-center">
@@ -24,11 +32,9 @@ const PhysicalTicket = () => {
         <div className="col-md-12">
           <p>¿A qué tienda acudiste?</p>
         </div>
-        <div className="col-md-12">
-          <select name="" id="" className="form form-control">
-            <option value="walmart">Walmart</option>
-          </select>
-        </div>
+        <Select 
+          options={storeOptions}
+          name="physicalTicketStore"/>
       </div>
       <div className="row">
         <div className="col-md-12">
@@ -38,6 +44,8 @@ const PhysicalTicket = () => {
           <InputWithModal
             modalImageSrc="https://placehold.co/250x250"
             modalText="lorem ipsum"
+            placeholder="123"
+            name="physicalTicketNumber"
           />
         </div>
       </div>
@@ -49,6 +57,8 @@ const PhysicalTicket = () => {
           <InputWithModal
             modalImageSrc="https://placehold.co/250x250"
             modalText="lorem ipsum dolor"
+            placeholder="123"
+            name="physicalTicketCode"
           />
         </div>
       </div>
@@ -64,7 +74,7 @@ const PhysicalTicket = () => {
       </div>
       <div className="row">
         <div className="col-md-12">
-            <Button text="CONTINUAR" />
+            <Button text="CONTINUAR" route="/user/ticket/trip"/>
         </div>
       </div>
     </div>

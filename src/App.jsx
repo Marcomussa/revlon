@@ -10,6 +10,10 @@ import Dashboard from "./pages/Dashboard";
 import SelectTicketType from "./pages/SelectTicketType";
 import PhysicalTicket from "./pages/PhysicalTicket";
 import OnlineTicket from "./pages/OnlineTicket";
+import TripInfo from "./pages/TripInfo";
+import TripCalculateTotal from "./pages/TripCalculateTotal";
+import SpecialKitInfo from "./pages/SpecialKitInfo";
+import SpecialKitCalculateTotal from "./pages/SpecialKitCalculateTotal";
 
 const App = () => {
   return (
@@ -62,6 +66,38 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <OnlineTicket />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/user/ticket/trip"
+            element={
+              <ProtectedRoute>
+                <TripInfo />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/user/ticket/trip/calculate-total"
+            element={
+              <ProtectedRoute>
+                <TripCalculateTotal />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/user/ticket/kit/info"
+            element={
+              <ProtectedRoute>
+                <SpecialKitInfo />
+              </ProtectedRoute>
+            }
+          />
+           <Route
+            path="/user/ticket/kit/calculate-total"
+            element={
+              <ProtectedRoute>
+                <SpecialKitCalculateTotal />
               </ProtectedRoute>
             }
           />

@@ -34,7 +34,7 @@ const LogInForm = () => {
     //     navigate("/profile"); 
     //   }
         login();
-        navigate("/dashboard"); 
+        navigate("/user/dashboard"); 
     } catch (error) {
       console.log(error);
       setErrorMessage("Correo o contraseña incorrectos"); 

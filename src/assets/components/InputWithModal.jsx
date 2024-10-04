@@ -3,7 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import { FaInfoCircle } from "react-icons/fa";
 
 // eslint-disable-next-line react/prop-types
-const InputWithModal = ({ modalImageSrc, modalText }) => {
+const InputWithModal = ({ modalImageSrc, modalText, placeholder }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => setShowModal(false);
@@ -32,6 +32,7 @@ const InputWithModal = ({ modalImageSrc, modalText }) => {
             letterSpacing: "2px",
             padding: "10px",
           }}
+          placeholder={placeholder}
         />
 
         {/* Icono de información */}
