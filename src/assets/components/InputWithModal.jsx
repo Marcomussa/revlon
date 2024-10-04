@@ -3,7 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import { FaInfoCircle } from "react-icons/fa";
 
 // eslint-disable-next-line react/prop-types
-const InputWithModal = ({ modalImageSrc, modalText, placeholder }) => {
+const InputWithModal = ({ modalImageSrc, modalText, placeholder, name }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => setShowModal(false);
@@ -24,6 +24,7 @@ const InputWithModal = ({ modalImageSrc, modalText, placeholder }) => {
         {/* Input con el número o texto */}
         <input
           type="text"
+          name={name}
           style={{
             flex: 1,
             border: "none",

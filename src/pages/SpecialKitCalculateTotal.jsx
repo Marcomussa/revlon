@@ -56,7 +56,7 @@ const SpecialKitCalculateTotal = () => {
         modalTitle="Título del Modal"
         modalText="Tu participación en el concurso semanal se ha subido a tu perfil. Mantente al tanto(a) a nuestras redes,
         Podrias ser el siguiente ganador!"
-        route=""
+        route="/user/dashboard"
       />
     </div>
   );

@@ -13,12 +13,12 @@ const TripCalculateTotal = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-12 text-center">
-          <h3>PARTICIPA POR UN VIAJE TODO PAGADO A CANCÚN</h3>
+          <h3><b>VIAJE A CANCÚN</b></h3>
         </div>
       </div>
       <div className="row">
         <div className="col-md-12 text-center">
-          <h3>PARTICIPA POR UN VIAJE TODO PAGADO A CANCÚN</h3>
+          <h5><b>CUÁNTOS PRODUCTOS REVLON VES EN ESTA IMAGEN?</b></h5>
         </div>
       </div>
       <div className="row">
