@@ -6,7 +6,7 @@ import Premio2 from "../../img/img_premio_02.png"
 const Award = () => {
     return (
         <>
-            <div className="container-fluid-lg bg-red-sunset">
+            <div className="container bg-red-sunset">
                 <div className="row">
                     <div className="col-md-12">
                         <p className='text-center text-white'>La semanal, donde podrás uno de los</p>

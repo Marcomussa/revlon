@@ -5,7 +5,7 @@ import Carousel from "../components/Carousel"
 const Participate = () => {
     return (
         <>
-            <div className="container-fluid-lg bg-white-waves">
+            <div className="container bg-white-waves">
                 <div className="row">
                     <div className="col-md-12">
                     </div>
@@ -15,7 +15,7 @@ const Participate = () => {
                     <Carousel></Carousel>
                     {/* Carrouse Final */}
                 </div>
-                <div className="row">
+                <div className="row d-flex justify-content-center">
                     <div className="col-md-12">
                         <img src={Registro} alt="Registro" width={250} className='d-block mx-auto' />
                         <h3 className="text-center fs-6 fw-bold mt-5">¡1 compra, 1 oportunidad!:

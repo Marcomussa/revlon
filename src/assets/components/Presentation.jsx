@@ -4,11 +4,7 @@ import Adv from "../../img/stamp-promo.png"
 const Presentation = () => {
     return (
         <>
-        <div className="container-fluid-lg bg-red-pic">
-            <div className="row">
-                <div className='col-md-12'>
-                </div>
-            </div>
+        <div className="container bg-red-pic">
             <div className="row">
                 <div className='col-12 text-center'>
                     <div className='stamp-img position-absolute top-50 start-50 translate-middle'>

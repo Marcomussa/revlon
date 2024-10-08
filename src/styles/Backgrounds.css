@@ -22,7 +22,7 @@
   background-position: center;
 }
 
-@media (max-width: 926px) {
+@media (max-width: 930px) {
   .bg-red-pic {
     background-image: url("../img/red-pic-mobile.png");
   }

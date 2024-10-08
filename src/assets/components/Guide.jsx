@@ -6,7 +6,7 @@ import Dinamicgift from "../../img/dinamic_03.png"
 const Guide = () => {
     return (
         <>
-            <div className="container-fluid-lg bg-white-waves">
+            <div className="container bg-white-waves">
                 <div className="row">
                     <div className="col-md-12">
                         <h2 className='text-center fw-bold text-danger mt-5'>

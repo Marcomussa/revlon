@@ -5,8 +5,8 @@ import '../../styles/Backgrounds.css'
 const Time = () => {
     return (
         <>
-            <div className="container-fluid bg-black-glitter">
-                <div className="row d-flex align-items-center justify-content-center">
+            <div className="container bg-black-glitter">
+                <div className="row">
                     <div className="col-md-4">
                         <img src={Validity} width="40%" alt="Vigencia" />
                     </div>

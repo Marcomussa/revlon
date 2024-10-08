@@ -12,23 +12,12 @@ const HomePage = () => {
   return (
     <>
       <Navbar></Navbar>
-      <Presentation>
-      </Presentation>
+      <Presentation></Presentation>
       <Winner></Winner>
-      <Participate>
-      </Participate>
+      <Participate></Participate>
       <Award></Award>
-      
       <Guide></Guide>
       <Time></Time>
-      {/* <div className="container">
-        <div className="row">
-          <div className="col-md 12">
-            <h2>¡No esperes más! Compra tus productos Revlon hoy, participa y ¡gana!</h2>
-          </div>
-          <Button text="Registra tu ticket"></Button>
-        </div>
-      </div> */}
       <Footer></Footer>
     </>
 
