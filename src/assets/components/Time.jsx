@@ -5,13 +5,13 @@ import '../../styles/Backgrounds.css'
 const Time = () => {
     return (
         <>
-            <div className="container bg-black-glitter">
+            <div className="container bg-black-glitter time">
                 <div className="row">
-                    <div className="col-md-4">
-                        <img src={Validity} width="40%" alt="Vigencia" />
+                    <div className="col-5">
+                        <img src={Validity}  width="100%" alt="Vigencia" />
                     </div>
-                    <div className="col-md-8" >
-                        <h3 className='text-white text-center'>Vigencia de promoción: 01 de noviembre al 15 de diciembre de 2024</h3>
+                    <div className="col-7">
+                        <p className='text-white fw-bolder  mt-4'>Vigencia de promoción: 01 de noviembre al 15 de diciembre de 2024</p>
                     </div>
                 </div>
             </div>

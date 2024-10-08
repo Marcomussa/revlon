@@ -15,7 +15,8 @@
   background-size: cover;
   background-position: center;
 }
-.bg-red-glitter{
+
+.bg-red-glitter {
   background-image: url("../assets/img/backgrounds/red-glitter-mobile.png");
   background-size: cover;
   background-position: center;
@@ -23,6 +24,12 @@
 
 .bg-red-sunset {
   background-image: url("../assets/img/backgrounds/red-sunset.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-red-galaxy {
+  background-image: url("../assets/img/backgrounds/red-galaxy.jpeg");
   background-size: cover;
   background-position: center;
 }
@@ -39,7 +46,8 @@
   .bg-white-waves {
     background-image: url("../assets/img/backgrounds/white-waves-mobile.png");
   }
-  .bg-red-glitter{
+
+  .bg-red-glitter {
     background-image: url("../assets/img/backgrounds/red-glitter-mobile.png");
   }
 
