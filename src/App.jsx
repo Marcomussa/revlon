@@ -14,6 +14,7 @@ import TripInfo from "./pages/TripInfo";
 import TripCalculateTotal from "./pages/TripCalculateTotal";
 import SpecialKitInfo from "./pages/SpecialKitInfo";
 import SpecialKitCalculateTotal from "./pages/SpecialKitCalculateTotal";
+import './styles/Fonts.css';
 
 const App = () => {
   return (
