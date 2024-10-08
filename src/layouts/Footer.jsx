@@ -1,7 +1,7 @@
 import '../styles/Nav.css'
-import Logo from '../img/logo.png'
-import Iconfb from '../img/ico_fb.png'
-import Iconig from '../img/ico_ig.png'
+import Logo from '../assets/img/logo.png'
+import Iconfb from '../assets/img/ico_fb.png'
+import Iconig from '../assets/img/ico_ig.png'
 import { Link } from 'react-router-dom';
 
 const Footer = () => {

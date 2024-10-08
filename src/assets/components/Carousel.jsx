@@ -1,7 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
-import Alaciadora from "../../img/Alaciadora.png"
-import Cepill from "../../img/Cepillo-redondo.png"
-import Cepillo from "../../img/Cepillo-termico.png"
+import Alaciadora from "../img/slider/Alaciadora.png"
+import Cepill from "../img/slider/Cepillo-redondo.png"
+import Cepillo from "../img/slider/Cepillo-termico.png"
 
 function UncontrolledExample() {
   return (

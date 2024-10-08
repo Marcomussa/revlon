@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import '../styles/Nav.css';
-import logo from '../img/logo.png'
+import Logo from '../assets/img/logo.png'
 
 
 function BasicExample() {
@@ -11,7 +11,7 @@ function BasicExample() {
       <Navbar expand="lg" bg="transparent" fixed="top" className="">
         <Container>
           <Link>
-            <img src={logo} alt="" width={120} />
+            <img src={Logo} alt="" width={120} />
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

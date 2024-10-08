@@ -1,3 +1,8 @@
+.brands-size{
+    width: 50%;
+}
+
+
 @media (max-width: 926px){
     .stamp-img {
             margin-top: 30%;

@@ -1,6 +1,6 @@
 import React from 'react'
-import Premio1 from "../../img/img_premio_01.png"
-import Premio2 from "../../img/img_premio_02.png"
+import Premio1 from "../img/premio_01.png"
+import Premio2 from "../img/premio_02.png"
 
 
 const Award = () => {

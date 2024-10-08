@@ -1,5 +1,5 @@
 import React from 'react'
-import Validity from "../../img/clock.png"
+import Validity from "../img/clock.png"
 import '../../styles/Backgrounds.css'
 
 const Time = () => {

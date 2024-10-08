@@ -1,7 +1,7 @@
 import React from 'react'
-import Dinamicask from "../../img/dinamic_01.png"
-import Dinamicase from "../../img/dinamic_02.png"
-import Dinamicgift from "../../img/dinamic_03.png"
+import Dinamicask from "../img/dinamic_01.png"
+import Dinamicase from "../img/dinamic_02.png"
+import Dinamicgift from "../img/dinamic_03.png"
 
 const Guide = () => {
     return (
