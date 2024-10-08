@@ -4,7 +4,7 @@ import Reference from "../../img/reference.png"
 const Winner = () => {
   return (
     <>
-    <div className="container-fluid-lg bg-black-glitter">
+    <div className="container-fluid-lg bg-black-glitter p-4">
         <div className='row'>
           <div className='col-md-12 text-center mt-5'>
             <img className='rounded-circle' src={Reference} width="150px" alt="Ganadora"/>

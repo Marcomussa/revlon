@@ -1,46 +1,63 @@
 import Carousel from 'react-bootstrap/Carousel';
-/* import Alaciador from "../../img/Alaciadora 2 en 1 con Triple Infusión de Aceites Naturales.png" */
-/* import Cepillo from "../../img/Cepillo Térmico Alaciador de 11.4cm con infusión de aceite de coco_.png" */
+import Alaciadora from "../../img/Alaciadora.png"
+import Cepill from "../../img/Cepillo-redondo.png"
+import Cepillo from "../../img/Cepillo-termico.png"
 
 function UncontrolledExample() {
   return (
+    <>
+    {/* 
+    <div>
+      <h2 className='text-center'>Como participar?</h2>
+      <p>¡Es facilísimo! Compara productos REVLON participantes por $599 MXN o más:Adquiere cualquiera de los productos participantes, puedes consultarlos aquí, ya sea en tiendas físicas o en línea en los comercios participantes.</p>
+    </div> */}
+
     <Carousel>
       <Carousel.Item>
-        <img
-          className="d-block w-50"
-          src={Alaciador}
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
+        <div className='d-flex justify-content-center'>
+          <img
+            className="d-block"
+            width={350}
+            src={Alaciadora}
+            alt="First slide"
+          />
+          {/* <Carousel.Caption>
+            <p className='text-black'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </Carousel.Caption> */}
+        </div>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block w-10"
-          src={Cepillo}
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
+        <div className='d-flex justify-content-center'>
+          <img
+            className="d-block"
+            width={350}
+            src={Cepill}
+            alt="First slide"
+          />
+          {/* <Carousel.Caption>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </Carousel.Caption>  */}
+        </div>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=f5f5f5"
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
+        <div className='d-flex justify-content-center'>
+          <img
+            className="d-block"
+            width={350}
+            src={Cepillo}
+            alt="First slide"
+          />
+          {/* <Carousel.Caption>
+            <p>
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            </p>
+          </Carousel.Caption> */}
+        </div>
+
       </Carousel.Item>
     </Carousel>
+    </>
+
   );
 }
 

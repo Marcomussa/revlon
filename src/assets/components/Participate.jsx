@@ -12,8 +12,7 @@ const Participate = () => {
                 </div>
                 <div className="row">
                     {/* Carrousel Inicio*/}
-                    {/* <Carousel>
-                    </Carousel> */}
+                    <Carousel></Carousel>
                     {/* Carrouse Final */}
                 </div>
                 <div className="row">

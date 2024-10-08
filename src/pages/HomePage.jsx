@@ -5,7 +5,6 @@ import Participate from "../assets/components/Participate"
 import Award from "../assets/components/Award";
 import Time from "../assets/components/Time"
 import Guide from "../assets/components/Guide"
-
 import '../styles/HomePage.css'
 import Presentation from "../assets/components/Presentation";
 
@@ -16,7 +15,8 @@ const HomePage = () => {
       <Presentation>
       </Presentation>
       <Winner></Winner>
-      <Participate></Participate>
+      <Participate>
+      </Participate>
       <Award></Award>
       
       <Guide></Guide>
