@@ -4,7 +4,7 @@
   height: 100vh;
 }
 
-.bg-black-glitter {
+.bg-black-glitter, .bg-black-glitter-time  {
   background-image: url("../assets/img/backgrounds/black-glitter.jpeg");
   background-size: cover;
   background-position: center;
@@ -41,6 +41,11 @@
 
   .bg-black-glitter {
     background-image: url("../assets/img/backgrounds/black-glitter-mobile.png");
+  }
+  .bg-black-glitter-time{
+    background-image: url("../assets/img/backgrounds/black-glitter.jpeg");
+    background-size: cover;
+    background-position: center;
   }
 
   .bg-white-waves {

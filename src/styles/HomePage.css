@@ -1,7 +1,19 @@
 .brands-size{
     width: 50%;
 }
+.title{
+    font-size: 1.9rem
+}
+.subtitle{
+    font-size: 0.9rem;
+}
+.text{
+    font-size: 0.8rem;
 
+}
+.title-red{
+    color: #A90000;
+}
 
 @media (max-width: 926px){
     .stamp-img {

@@ -5,13 +5,6 @@ import Cepillo from "../img/slider/Cepillo-termico.png"
 
 function UncontrolledExample() {
   return (
-    <>
-    {/* 
-    <div>
-      <h2 className='text-center'>Como participar?</h2>
-      <p>¡Es facilísimo! Compara productos REVLON participantes por $599 MXN o más:Adquiere cualquiera de los productos participantes, puedes consultarlos aquí, ya sea en tiendas físicas o en línea en los comercios participantes.</p>
-    </div> */}
-
     <Carousel>
       <Carousel.Item>
         <div className='d-flex justify-content-center'>
@@ -34,9 +27,9 @@ function UncontrolledExample() {
             src={Cepill}
             alt="First slide"
           />
-          {/* <Carousel.Caption>
+          <Carousel.Caption className='text-black mt-5'>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>  */}
+          </Carousel.Caption> 
         </div>
       </Carousel.Item>
       <Carousel.Item>
@@ -47,16 +40,15 @@ function UncontrolledExample() {
             src={Cepillo}
             alt="First slide"
           />
-          {/* <Carousel.Caption>
+          <Carousel.Caption>
             <p>
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
-          </Carousel.Caption> */}
+          </Carousel.Caption>
         </div>
 
       </Carousel.Item>
     </Carousel>
-    </>
 
   );
 }

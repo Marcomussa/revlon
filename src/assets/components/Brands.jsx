@@ -19,12 +19,12 @@ const Brands = () => {
             <div className="container bg-red-glitter p-5 ">
                 <div className="row">
                     <div className="col-md-12">
-                        <h1 className='text-white fw-bolder fs-1 mt-4 text-center primary-font'>TIENDAS PARTICIPANTES</h1>
-                        <p className='text-white fw-bold primary-font text-center'>COMPRA EN TIENDA FISICA</p>
+                        <h1 className='text-white fw-bolder mt-4 text-center primary-font title'>TIENDAS PARTICIPANTES</h1>
+                        <p className='text-white fw-bold primary-font text-center subtitle'>COMPRA EN TIENDA FISICA</p>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-12 d-flex gap-3 mt-5">
+                    <div className="col-12 d-flex gap-3 mt-4">
                         <img src={Walmart} alt="Walmart"
                             className='brands-size' />
                         <img src={Coppel} alt="Coppel"
@@ -71,7 +71,7 @@ const Brands = () => {
                 </div>
                 <div className="row mt-5">
                     <div className="col-md-12">
-                        <p className='text-white fw-bold primary-font text-center'>COMPRA ONLINE</p>
+                        <p className='text-white fw-bold primary-font text-center subtitle'>COMPRA ONLINE</p>
                     </div>
                 </div>
                 <div className="row">
@@ -85,7 +85,7 @@ const Brands = () => {
                     </div>
 
                 </div>
-                <div className="row">
+                <div className="row mb-5">
                     <div className="col-md-12 mt-4">
                         <img src={Heb} alt="" 
                         className='brands-size'/>
