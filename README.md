@@ -19,6 +19,9 @@ src/pages/TripInfo
 src/pages/TripCalculateTotal
 src/pages/SpecialKitInfo
 src/pages/SpecialKitCalculateTotal
+src/pages/LogIn
+src/pages/RegisterForm
+src/pages/Dashboard NO
 
 # Utils:
 ## Figma

@@ -1,0 +1,41 @@
+.bg-red-pic {
+  background-image: url("../img/red-pic.png");
+  background-size: cover;
+  height: 100vh;
+}
+
+.bg-black-glitter {
+  background-image: url("../img/black-glitter.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-white-waves {
+  background-image: url("../img/white-waves.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-red-sunset {
+  background-image: url("../img/red-sunset.png");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 926px) {
+  .bg-red-pic {
+    background-image: url("../img/red-pic-mobile.png");
+  }
+
+  .bg-black-glitter {
+    background-image: url("../img/black-glitter-mobile.png");
+  }
+
+  .bg-white-waves {
+    background-image: url("../img/white-waves-mobile.png");
+  }
+
+  .bg-red-sunset {
+    background-image: url("../img/red-sunset-mobile.png");
+  }
+}
