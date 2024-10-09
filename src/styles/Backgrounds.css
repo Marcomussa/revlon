@@ -34,6 +34,14 @@
   background-position: center;
 }
 
+.bg-disco{
+  background-image: url("../assets/img/backgrounds/bg-disco.png");
+  background-size: cover;
+  background-position: center;
+}
+.bg-red{
+  background-color: #A90000;
+}
 @media (max-width: 930px) {
   .bg-red-pic {
     background-image: url("../assets/img/backgrounds/red-pic-mobile.png");
@@ -58,5 +66,8 @@
 
   .bg-red-sunset {
     background-image: url("../assets/img/backgrounds/red-sunset-mobile.png");
+  }
+  .bg-disco{
+    background-image: url("../assets/img/backgrounds/bg-disco-mobile.png");
   }
 }

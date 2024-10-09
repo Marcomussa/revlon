@@ -42,13 +42,13 @@ const LogInForm = () => {
   };
 
   return (
-    <div className="container my-5">
+    <div className="container bg-red">
       <div className="row justify-content-center">
         <div className="col-lg-6 col-md-8 col-sm-12">
-          <div className="card p-4 shadow">
-            <div className="card-body">
+          <div className="card shadow ">
+            <div className="card-body p-4 bg-red">
               <h2
-                className="text-center mb-4"
+                className="text-center mb-4 title text-white fw-bolder primary-font"
                 style={{
                   padding: "10px",
                   borderRadius: "8px",
@@ -59,7 +59,7 @@ const LogInForm = () => {
               <form onSubmit={handleSubmit}>
                 {/* Correo Electrónico */}
                 <div className="mb-3">
-                  <label htmlFor="email" className="form-label">
+                  <label htmlFor="email" className="form-label text-white text">
                     Correo Electrónico*
                   </label>
                   <input
@@ -76,7 +76,7 @@ const LogInForm = () => {
 
                 {/* Contraseña */}
                 <div className="mb-3">
-                  <label htmlFor="password" className="form-label">
+                  <label htmlFor="password" className="form-label text-white text">
                     Contraseña*
                   </label>
                   <input
@@ -100,7 +100,7 @@ const LogInForm = () => {
                 </div>
               </form>
 
-              <h4>¿Es la primera vez que registrar un ticket?</h4>
+              <h4 className=" text-white">¿Es la primera vez que registrar un ticket?</h4>
               <div className="d-grid">
                 <Button text="REGISTRARSE" route="/user/register"></Button>
               </div>

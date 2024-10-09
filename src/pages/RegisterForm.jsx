@@ -50,13 +50,13 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="container my-5">
+    <div className="container bg-red">
       <div className="row justify-content-center">
         <div className="col-lg-6 col-md-8 col-sm-12">
-          <div className="card p-4 shadow">
-            <div className="card-body">
+          <div className="card shadow">
+            <div className="card-body p-4 bg-red">
               <h2
-                className="text-center mb-4"
+                className="text-center mb-4 title text-white fw-bolder primary-font"
                 style={{
                   padding: "10px",
                   borderRadius: "8px",
@@ -67,7 +67,7 @@ const RegisterForm = () => {
               <form onSubmit={handleSubmit}>
                 {/* Nombre */}
                 <div className="mb-3">
-                  <label htmlFor="firstName" className="form-label">
+                  <label htmlFor="firstName" className="form-label text text-white">
                     Nombre(s)*
                   </label>
                   <input
@@ -84,7 +84,7 @@ const RegisterForm = () => {
 
                 {/* Apellidos */}
                 <div className="mb-3">
-                  <label htmlFor="lastName" className="form-label">
+                  <label htmlFor="lastName" className="form-label text text-white">
                     Apellidos*
                   </label>
                   <input
@@ -101,7 +101,7 @@ const RegisterForm = () => {
 
                 {/* Correo Electrónico */}
                 <div className="mb-3">
-                  <label htmlFor="email" className="form-label">
+                  <label htmlFor="email" className="form-label text text-white">
                     Correo Electrónico*
                   </label>
                   <input
@@ -118,7 +118,7 @@ const RegisterForm = () => {
 
                 {/* Contraseña */}
                 <div className="mb-3">
-                  <label htmlFor="password" className="form-label">
+                  <label htmlFor="password" className="form-label text text-white">
                     Contraseña*
                   </label>
                   <input
@@ -135,7 +135,7 @@ const RegisterForm = () => {
 
                 {/* Confirmar Contraseña */}
                 <div className="mb-3">
-                  <label htmlFor="confirmPassword" className="form-label">
+                  <label htmlFor="confirmPassword" className="form-label text text-white">
                     Confirmar Contraseña*
                   </label>
                   <input
@@ -164,7 +164,7 @@ const RegisterForm = () => {
 
                 {/* Edad */}
                 <div className="mb-3">
-                  <label htmlFor="age" className="form-label">
+                  <label htmlFor="age" className="form-label text text-white">
                     Fecha de Nacimiento*
                   </label>
                   <div className="d-flex justify-content-between">
@@ -206,7 +206,7 @@ const RegisterForm = () => {
 
                 {/* Código postal */}
                 <div className="mb-3">
-                  <label htmlFor="postalCode" className="form-label">
+                  <label htmlFor="postalCode" className="form-label text text-white">
                     Código postal*
                   </label>
                   <input
@@ -223,7 +223,7 @@ const RegisterForm = () => {
 
                 {/* ¿Cómo te enteraste? */}
                 <div className="mb-3">
-                  <label htmlFor="source" className="form-label">
+                  <label htmlFor="source" className="form-label text text-white">
                     ¿Cómo te enteraste de ésta dinámica?*
                   </label>
                   <select

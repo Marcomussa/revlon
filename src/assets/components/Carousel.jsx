@@ -46,10 +46,8 @@ function UncontrolledExample() {
             </p>
           </Carousel.Caption>
         </div>
-
       </Carousel.Item>
     </Carousel>
-
   );
 }
 

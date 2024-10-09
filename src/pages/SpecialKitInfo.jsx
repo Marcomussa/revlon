@@ -1,17 +1,18 @@
 import Button from "../assets/components/Button";
+import Premio2 from "../assets/img/premio_02.png"
 
 const SpecialKitInfo = () => {
   return (
-    <div className="container">
+    <div className="container bg-disco">
       <div className="row">
         <div className="col-md-12 text-center">
-          <img src="https://placehold.co/250x250" alt="" />
+          <img src={Premio2} alt="" width={250} />
         </div>
       </div>
 
       <div className="row">
         <div className="col-md-12 text-center">
-          <h3>PARTICIPA POR UN KIT ESPECIAL PARTY ON</h3>
+          <h3 className="fw-bold title-red">PARTICIPA POR UN KIT ESPECIAL PARTY ON</h3>
         </div>
       </div>
       <div className="row">
