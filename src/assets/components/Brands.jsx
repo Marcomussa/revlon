@@ -55,18 +55,18 @@ const Brands = () => {
                 </div>
                 <div className="row">
                     <div className="col-md-12 d-flex gap-3 mt-4">
-                        <img src="" alt=""
-                            className='brands-size' />
-                        <img src="" alt=""
+                        <img src={Sansborns} alt="Sanborns"
+                            className='brands-size py-3' />
+                        <img src={DelSol} alt="DelSol"
                             className='brands-size' />
                         <img src={Dax} alt="Dax"
-                            className='brands-size' />
+                            className='brands-size py-4' />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-12 d-flex justify-content-center mt-4">
                         <img src={Heb} alt="Heb"
-                            className='brands-size' />
+                            height={30} />
                     </div>
                 </div>
                 <div className="row mt-5">
@@ -86,10 +86,11 @@ const Brands = () => {
 
                 </div>
                 <div className="row mb-5">
-                    <div className="col-md-12 mt-4">
+                    <div className="col-md-12 mt-4 d-flex justify-content-center mt-4">
                         <img src={Heb} alt="" 
-                        className='brands-size'/>
-                        <img src="" alt="" />
+                        height={30}/>
+                        <img src={DelSol} alt=""  
+                        height={70}/>
                     </div>
                 </div>
 

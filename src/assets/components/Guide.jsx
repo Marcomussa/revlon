@@ -29,7 +29,7 @@ const Guide = () => {
                         <p className='text-center text px-4'>Para los premios semanales, la imagen cambia cada semana, ¡así que tendrás nuevas oportunidades de acertar y ganar cada vez!</p>
                     </div>
                 </div>
-                <div className="col-12">
+                <div className="col-12 pb-5">
                     <Button text="REGISTRA TU TICKET"></Button>
                 </div>
             </div>
