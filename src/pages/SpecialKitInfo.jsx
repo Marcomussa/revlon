@@ -9,14 +9,14 @@ const SpecialKitInfo = () => {
     <Navbar></Navbar>
       <div className="container bg-disco">
         <div className="row">
-          <div className="col-md-12 text-center">
-            <img src={Premio2} alt="" width={250} />
+          <div className="col-md-12 text-center mt-5 pt-5">
+            <img src={Premio2} alt="Premio2" width={350} />
           </div>
         </div>
 
         <div className="row">
           <div className="col-md-12 text-center">
-            <h3 className="fw-bold title-red">PARTICIPA POR UN KIT ESPECIAL PARTY ON</h3>
+            <h1 className="fw-bold title-red">PARTICIPA POR UN KIT ESPECIAL PARTY ON</h1>
           </div>
         </div>
         <div className="row">

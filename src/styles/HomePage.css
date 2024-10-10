@@ -1,5 +1,5 @@
 .brands-size{
-    width: 50%;
+    width: 20%;
 }
 .title{
     font-size: 1.9rem
@@ -19,4 +19,7 @@
     .stamp-img {
             margin-top: 30%;
         }
+    .brands-size{
+        width: 50%
+    }
 }

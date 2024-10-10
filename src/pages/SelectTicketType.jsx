@@ -8,7 +8,7 @@ const SelectTicketType = () => {
     <>
     <Navbar></Navbar>
       <div className="container bg-red py-5">
-        <div className="row">
+        <div className="row mt-5 pt-5">
           <div className="col-md-12 text-center">
             <img src={Compra} alt="" width={350} />
           </div>

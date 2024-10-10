@@ -33,7 +33,11 @@
   background-size: cover;
   background-position: center;
 }
-
+.bg-beach{
+  background-image: url("../assets/img/backgrounds/bg-beach.png");
+  background-size: cover;
+  background-position: center;
+}
 .bg-disco{
   background-image: url("../assets/img/backgrounds/bg-disco.png");
   background-size: cover;
@@ -41,6 +45,9 @@
 }
 .bg-red{
   background-color: #A90000;
+}
+.bg-campari{
+  background-color: #f46f6f;
   height: 100vh;
 }
 @media only screen and (max-width: 930px) {
@@ -67,6 +74,10 @@
 
   .bg-red-sunset {
     background-image: url("../assets/img/backgrounds/red-sunset-mobile.png");
+  }
+  .bg-beach{
+    background-image: url("../assets/img/backgrounds/bg-beach-mobile.png");
+    height: 100vh;
   }
   .bg-disco{
     background-image: url("../assets/img/backgrounds/bg-disco-mobile.png");
