@@ -45,7 +45,7 @@ const LogInForm = () => {
     <div className="container bg-red">
       <div className="row justify-content-center">
         <div className="col-lg-6 col-md-8 col-sm-12">
-          <div className="card shadow ">
+          <div className="">
             <div className="card-body p-4 bg-red">
               <h2
                 className="text-center mb-4 title text-white fw-bolder primary-font"

@@ -41,8 +41,9 @@
 }
 .bg-red{
   background-color: #A90000;
+  height: 100vh;
 }
-@media (max-width: 930px) {
+@media only screen and (max-width: 930px) {
   .bg-red-pic {
     background-image: url("../assets/img/backgrounds/red-pic-mobile.png");
   }
@@ -69,5 +70,7 @@
   }
   .bg-disco{
     background-image: url("../assets/img/backgrounds/bg-disco-mobile.png");
+    height: 100vh;
+    background-position-y: bottom !important;
   }
 }
