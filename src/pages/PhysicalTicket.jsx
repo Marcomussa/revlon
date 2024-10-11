@@ -18,14 +18,14 @@ const PhysicalTicket = () => {
     <>
     <Navbar></Navbar>
       <div className="container bg-red pt-5">
-        <div className="row text-center">
-          <div className="col-md-12 mt-5">
-            <h3 className="text-white fw-bold primary-font title">COMPRA FÍSICA</h3>
+        <div className="row">
+          <div className="col-md-12  text-center mt-5">
+            <h3 className="text-white primary-font fw-bold title">COMPRA FÍSICA</h3>
           </div>
         </div>
-        <div className="row text-center">
-          <div className="col-md-12">
-            <img src={Ticket} alt="" width={200}/>
+        <div className="row">
+          <div className="col-md-12 text-center">
+            <img src={Ticket} alt="Ticket" width={150}/>
           </div>
         </div>
         <div className="row text-center">
@@ -43,42 +43,42 @@ const PhysicalTicket = () => {
         </div>
         <div className="row">
           <div className="col-md-12">
-            <p className="text-white text">Ingresá tu número de ticket</p>
+            <p className="text-white text my-3">Ingresá tu número de ticket</p>
           </div>
           <div className="col-md-12">
             <InputWithModal
               modalImageSrc="https://placehold.co/250x250"
-              modalText="lorem ipsum"
-              placeholder="123"
+              modalText="Ingresa el número junto al código de barras de la parte inferior de tu ticket"
+              placeholder="#"
               name="physicalTicketNumber"
             />
           </div>
         </div>
-        <div className="row">
+        <div className="row py-4">
           <div className="col-md-12">
-            <p className="text-white text">Ingresá el número del código de barras</p>
+            <p className="text-white text mt-5">Ingresá el número del código de barras</p>
           </div>
           <div className="col-md-12">
             <InputWithModal
               modalImageSrc="https://placehold.co/250x250"
-              modalText="lorem ipsum dolor"
-              placeholder="123"
+              modalText="Ingresa sin espacios el número que se encuentra debajo del código de barras ubicado en la caja de tu producto."
+              placeholder="#"
               name="physicalTicketCode"
             />
           </div>
         </div>
-        <div className="row">
+        <div className="row mt-5">
           <div className="col-md-12 text-center">
-            <p className="text-white text">Para participar es indispensable que cargues tu ticket de compra. Debe ser visible el producto de Revlon que ordenaste y el número de tu pedido.</p>
+            <p className="text-white">Para participar es indispensable que cargues tu ticket de compra. Debe ser visible el producto de Revlon que ordenaste y el número de tu pedido.</p>
             <br />
-            <p className="text-white text">Asegúrate que tu foto no tenga un peso mayor a 2MB</p>
+            <p className="text-white">Asegúrate que tu foto no tenga un peso mayor a 2MB</p>
           </div>
         </div>
         <div className="row">
           <ImageUpload />
         </div>
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-md-12 mb-5">
             <Button text="CONTINUAR" route="/user/ticket/trip" />
           </div>
         </div>

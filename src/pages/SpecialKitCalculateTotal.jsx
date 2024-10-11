@@ -4,6 +4,7 @@ import Footer from "../layouts/Footer"
 import Button from "../assets/components/Button";
 import Input from "../assets/components/Input";
 import ModalInfo from '../assets/components/ModalInfo'
+import Validated from "../assets/components/Validated"
 
 
 const SpecialKitCalculateTotal = () => {
@@ -64,6 +65,7 @@ const SpecialKitCalculateTotal = () => {
           route="/user/dashboard"
         />
       </div>
+      <Validated></Validated>
       <Footer></Footer>
     </>
     

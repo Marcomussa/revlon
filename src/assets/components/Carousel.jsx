@@ -1,7 +1,13 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Alaciadora from "../img/slider/Alaciadora.png"
-import Cepill from "../img/slider/Cepillo-redondo.png"
-import Cepillo from "../img/slider/Cepillo-termico.png"
+import CepilloR from "../img/slider/Cepillo-redondo.png"
+import CepilloT from "../img/slider/Cepillo-termico.png"
+import ComboE from "../img/slider/Combo Estilizador Control de Frizz Secadora y Alaciadora.png"
+import SecadorR from "../img/slider/Secador y Voluminizador R.png"
+import SecadorT from "../img/slider/Secador y Voluminizador T.png"
+import Secador from "../img/slider/Secador y Voluminizador.png"
+import SecadoraMx from "../img/slider/Secadora mx.png"
+import Secadora from "../img/slider/Secadora.png"
 
 function UncontrolledExample() {
   return (
@@ -24,7 +30,7 @@ function UncontrolledExample() {
           <img
             className="d-block"
             width={350}
-            src={Cepill}
+            src={CepilloR}
             alt="First slide"
           />
           <Carousel.Caption className='text-black mt-5'>
@@ -37,7 +43,7 @@ function UncontrolledExample() {
           <img
             className="d-block"
             width={350}
-            src={Cepillo}
+            src={CepilloT}
             alt="First slide"
           />
           <Carousel.Caption>

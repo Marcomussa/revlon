@@ -9,7 +9,10 @@
 }
 .text{
     font-size: 0.8rem;
-
+    color: #4D4D4D
+}
+.secondari{
+    color: #A2A2A2;
 }
 .title-red{
     color: #A90000;

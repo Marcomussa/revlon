@@ -50,6 +50,9 @@
   background-color: #f46f6f;
   height: 100vh;
 }
+.bg-validated{
+  background-color: #2E756C;
+}
 @media only screen and (max-width: 930px) {
   .bg-red-pic {
     background-image: url("../assets/img/backgrounds/red-pic-mobile.png");
