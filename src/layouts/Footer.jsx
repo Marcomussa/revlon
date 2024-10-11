@@ -25,7 +25,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="col-md-12 px-4 mb-5">
-            <p className='text text-center text-white'> Este sorteo es exclusivo para mayores de 18 años.
+            <p className='text text-center text-white subtitle px-4 mb-5 '> Este sorteo es exclusivo para mayores de 18 años.
               Los datos personales proporcionados seran tratados de cauerdo con nuestra Politica de Privacidad.
             </p>
           </div>

@@ -16,15 +16,15 @@ const SpecialKitCalculateTotal = () => {
   return (
     <>
     <Navbar></Navbar>
-      <div className="container pb-5 mb-5">
+      <div className="container pb-5 my-5">
         <div className="row">
           <div className="col-md-12 text-center pt-5">
-            <h1 className="title-red fw-bold pt-5 my-3 primary-font">KIT ESPECIAL PARTY ON</h1>
+            <h1 className="title-red pt-5 my-3 primary-font title px-5">KIT ESPECIAL PARTY ON</h1>
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <h4 className="fw-bold primary-font px-5">¿CUÁNTOS PRODUCTOS REVLON VES EN ESTA IMAGEN?</h4>
+            <h3 className="fw-bold primary-font px-5">¿CUÁNTOS PRODUCTOS REVLON VES EN ESTA IMAGEN?</h3>
           </div>
         </div>
         <div className="row">
@@ -34,7 +34,7 @@ const SpecialKitCalculateTotal = () => {
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <p className="primary-font mt-3">Puedes girar tu teléfono y hacer zoom a la imagen para hacer tu cálculo más preciso.</p>
+            <p className="primary-font my-3">Puedes girar tu teléfono y hacer zoom a la imagen para hacer tu cálculo más preciso.</p>
           </div>
         </div>
         <div className="row">
@@ -65,7 +65,6 @@ const SpecialKitCalculateTotal = () => {
           route="/user/dashboard"
         />
       </div>
-      <Validated></Validated>
       <Footer></Footer>
     </>
     

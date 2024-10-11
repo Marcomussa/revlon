@@ -26,7 +26,7 @@
     font-family: 'Gotham';
     src: url('../fonts/gotham/gotham-black.woff2') format('woff2'),
         url('../fonts/gotham/gotham-black.woff') format('woff');
-    font-weight: 300;
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -43,7 +43,7 @@
     src: url('../fonts/gotham/gotham-bookitalic.woff2') format('woff2'),
         url('../fonts/gotham/gotham-bookitalic.woff') format('woff');
     font-weight: 300;
-    font-style: normal;
+    font-style: italic;
 }
 
 .primary-font {

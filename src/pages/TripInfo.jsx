@@ -17,17 +17,17 @@ const TripInfo = () => {
 
         <div className="row">
           <div className="col-md-12 text-center">
-            <h3 className="text-white fw-bold primary-font title px-4">PARTICIPA POR UN VIAJE TODO PAGADO A CANCÚN</h3>
+            <h2 className="text-white primary-font title px-4">PARTICIPA POR UN VIAJE TODO PAGADO A CANCÚN</h2>
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <p className="text-white">Te mostraremos una imagen que estará repleta de productos <b>REVLON</b>, mírala con cuidado y calcula cuántos productos hay en ella.</p>
+            <p className="text-white primary-font">Te mostraremos una imagen que estará repleta de productos <b>REVLON</b>, mírala con cuidado y calcula cuántos productos hay en ella.</p>
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <p className="text-white"><b>Tómate tu tiempo antes de escribír una respuesta final.</b></p>
+            <p className="text-white primary-font subtitle"><b>Tómate tu tiempo antes de escribír una respuesta final.</b></p>
           </div>
         </div>
         <div className="row">

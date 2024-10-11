@@ -16,16 +16,16 @@ const SpecialKitInfo = () => {
 
         <div className="row">
           <div className="col-md-12 text-center">
-            <h1 className="fw-bold title-red">PARTICIPA POR UN KIT ESPECIAL PARTY ON</h1>
+            <h2 className="title-red title primary-font px-5">PARTICIPA POR UN KIT ESPECIAL PARTY ON</h2>
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center">
+          <div className="col-md-12 text-center primary-font">
             <p>Te mostraremos una imagen que estará repleta de productos <b>REVLON</b>, mírala con cuidado y calcula cuántos productos hay en ella.</p>
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center">
+          <div className="col-md-12 text-center primary-font subtitle">
             <p><b>Tómate tu tiempo antes de escribír una respuesta final.</b></p>
           </div>
         </div>

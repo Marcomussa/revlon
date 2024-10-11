@@ -18,11 +18,11 @@ const Brands = () => {
       <div className="container bg-red-glitter p-5 ">
         <div className="row">
           <div className="col-md-12">
-            <h1 className="text-white fw-bolder mt-4 text-center primary-font title">
+            <h1 className="text-white mt-4 text-center primary-font title">
               TIENDAS PARTICIPANTES
             </h1>
-            <p className="text-white fw-bold primary-font text-center subtitle">
-              COMPRA EN TIENDA FISICA
+            <p className="text-white primary-font text-center subtitle">
+              COMPRA EN TIENDA FÍSICA
             </p>
           </div>
         </div>
@@ -69,7 +69,7 @@ const Brands = () => {
         </div>
         <div className="row mt-5">
           <div className="col-md-12">
-            <p className="text-white fw-bold primary-font text-center subtitle">
+            <p className="text-white primary-font text-center subtitle">
               COMPRA ONLINE
             </p>
           </div>

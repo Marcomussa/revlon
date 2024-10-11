@@ -1,12 +1,14 @@
 .brands-size{
     width: 20%;
 }
-.title{
-    font-size: 1.9rem
-}
-.subtitle{
-    font-size: 0.9rem;
-}
+/* .title{
+    font-weight: 800;
+    font-size: 21pt;
+} */
+/* .subtitle{
+    font-weight: 800;
+    font-size: 11pt;
+} */
 .text{
     font-size: 0.8rem;
     color: #4D4D4D
@@ -28,5 +30,21 @@
         }
     .brands-size{
         width: 50%
+    }
+    .title{
+        font-weight: 800;
+        font-size: 21pt;
+    }
+    .subtitle{
+        font-weight: 800;
+        font-size: 11pt;
+    }
+    .text{
+        font-size: 10pt;
+        color: #4D4D4D
+    }
+    .text-italic{
+        font-size: 11pt;
+        font-style: italic;
     }
 }

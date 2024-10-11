@@ -14,7 +14,7 @@ const SelectTicketType = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center title text-white fw-bolder">
+          <div className="col-md-12 text-center title text-white ">
             ¿EN DÓNDE REALIZASTE TU COMPRA?
           </div>
         </div>
@@ -24,7 +24,7 @@ const SelectTicketType = () => {
           </div>
         </div>
         <div className="row mt-3">
-          <div className="col-md-12">
+          <div className="col-md-12 mb-5">
             <Button text="COMPRA ONLINE" route="/user/ticket/online"></Button>
           </div>
         </div>

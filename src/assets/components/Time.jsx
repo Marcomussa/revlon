@@ -11,7 +11,7 @@ const Time = () => {
                         <img src={Validity}  width="100%" alt="Vigencia" />
                     </div>
                     <div className="col-8">
-                        <p className='text-white fw-bolder mt-4 subtitle'>Vigencia de promoción: 01 de noviembre al 15 de diciembre de 2024</p>
+                        <p className='text-white mt-4 subtitle'>Vigencia de promoción: 01 de noviembre al 15 de diciembre de 2024</p>
                     </div>
                 </div>
             </div>

@@ -17,12 +17,12 @@ const TripCalculateTotal = () => {
       <div className="container bg-campari">
         <div className="row">
           <div className="col-md-12 text-center pt-5">
-            <h3 className="text-white mt-5 fw-bold title primary-font"><b>VIAJE A CANCÚN</b></h3>
+            <h2 className="text-white mt-5 title primary-font">VIAJE A CANCÚN</h2>
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <h5 className="text-white fw-bold px-3 py-3 primary-font"><b>¿CUÁNTOS PRODUCTOS REVLON VES EN ESTA IMAGEN?</b></h5>
+            <h3 className="text-white fw-bold px-3 py-3 primary-font">¿CUÁNTOS PRODUCTOS REVLON VES EN ESTA IMAGEN?</h3>
           </div>
         </div>
         <div className="row">
@@ -32,7 +32,7 @@ const TripCalculateTotal = () => {
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <p className="text-white primary-font mt-4">Puedes girar tu teléfono y hacer zoom a la imagen para hacer tu cálculo más preciso.</p>
+            <p className="text-white primary-font my-4 ">Puedes girar tu teléfono y hacer zoom a la imagen para hacer tu cálculo más preciso.</p>
           </div>
         </div>
         <div className="row">
