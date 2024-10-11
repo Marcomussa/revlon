@@ -33,7 +33,7 @@ const PhysicalTicket = () => {
         </div>
         <div className="row text-center">
           <div className="col-md-12">
-            <h3 className="text-white fw-bold primary-font mt-3 px-4">INGRESA LOS DATOS DE TU TICKET Y PRODUCTO:</h3>
+            <h3 className="text-white primary-font mt-3 px-4 subtitle-h3">INGRESA LOS DATOS DE TU TICKET Y PRODUCTO:</h3>
           </div>
         </div>
         <div className="row">

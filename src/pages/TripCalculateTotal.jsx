@@ -22,7 +22,7 @@ const TripCalculateTotal = () => {
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <h3 className="text-white fw-bold px-3 py-3 primary-font">¿CUÁNTOS PRODUCTOS REVLON VES EN ESTA IMAGEN?</h3>
+            <h3 className="text-white fw-bold px-3 py-3 primary-font subtitle-h3">¿CUÁNTOS PRODUCTOS REVLON VES EN ESTA IMAGEN?</h3>
           </div>
         </div>
         <div className="row">

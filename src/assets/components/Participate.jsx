@@ -31,7 +31,7 @@ const Participate = () => {
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <h3 className='text-center mt-5 primary-font title-red px-4'>
+                        <h3 className='text-center mt-5 primary-font title-red subtitle-h3 px-4'>
                             DOS DINÁMICAS, DOS FORMAS DE GANAR:
                         </h3>
                         <p className='text-center mb-5 text primary-font'>Cada ticket registrado te da la oportunidad de probar tus habilidades de calculo en dos dinámicas:</p>

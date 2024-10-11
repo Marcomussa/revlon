@@ -32,7 +32,7 @@ const OnlineTicket = () => {
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <h3 className="text-white primary-font fw-bold mb-4">
+            <h3 className="text-white primary-font subtitle-h3 mb-4">
               <b>INGRESA LOS DATOS DE TU PEDIDO:</b>
             </h3>
           </div>

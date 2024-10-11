@@ -13,7 +13,7 @@ const Winner = () => {
               <p className='fs-5 mt-4 px-3 py-2'>MARIA FERNANDA FERNANDEZ DE CORDOVA</p>
             </div>
 
-            <h3 className='text-white title primary-font mb-0'>GANADORA DE:</h3>
+            <h3 className='text-white subtitle-h3 primary-font mb-0'>GANADORA DE:</h3>
             <p className='primary-font subtitle text-white mb-5'>1 KIT Especial Party Revlon</p>
           </div>
         </div>

@@ -1,49 +1,68 @@
-.brands-size{
+.brands-size {
     width: 20%;
 }
-/* .title{
+
+.title {
     font-weight: 800;
-    font-size: 21pt;
-} */
-/* .subtitle{
+    font-size: 25pt;
+}
+
+.subtitle {
     font-weight: 800;
-    font-size: 11pt;
-} */
-.text{
-    font-size: 0.8rem;
+    font-size: 13pt;
+}
+.subtitle-h3{
+    font-weight: 800;
+    font-size: 17pt
+}
+
+.text {
+    font-size: 13pt;
     color: #4D4D4D
 }
-.secondari{
+
+.secondari {
     color: #A2A2A2;
 }
-.title-red{
+
+.title-red {
     color: #A90000;
 }
+
 .container {
-    max-width: 1920px !important; 
+    max-width: 1920px !important;
     margin: 0px !important;
 }
 
-@media (max-width: 926px){
+@media (max-width: 926px) {
     .stamp-img {
-            margin-top: 30%;
-        }
-    .brands-size{
+        margin-top: 30%;
+    }
+
+    .brands-size {
         width: 50%
     }
-    .title{
+
+    .title {
         font-weight: 800;
         font-size: 21pt;
     }
-    .subtitle{
+
+    .subtitle {
         font-weight: 800;
         font-size: 11pt;
     }
-    .text{
-        font-size: 10pt;
+    .subtitle-h3{
+        font-weight: 800;
+        font-size: 16pt
+    }
+
+    .text {
+        font-size: 10.1pt;
         color: #4D4D4D
     }
-    .text-italic{
+
+    .text-italic {
         font-size: 11pt;
         font-style: italic;
     }

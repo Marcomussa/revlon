@@ -24,7 +24,7 @@ const SpecialKitCalculateTotal = () => {
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <h3 className="fw-bold primary-font px-5">¿CUÁNTOS PRODUCTOS REVLON VES EN ESTA IMAGEN?</h3>
+            <h3 className="fw-bold primary-font px-5 subtitle-h3">¿CUÁNTOS PRODUCTOS REVLON VES EN ESTA IMAGEN?</h3>
           </div>
         </div>
         <div className="row">
