@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Button from "../assets/components/Button";
 import TicketDetailsCard from "../assets/components/TicketDetailsCard";
+import Footer from "../layouts/Footer"
+import Navbar from "../layouts/Navbar"
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
@@ -13,7 +15,9 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="container">
+    <>
+    <Navbar/>
+    <div className="container pt-5">
       <div className="row">
         <div className="col-md-12 text-center">
           <img src="https://placehold.co/250x250" alt="" />
@@ -56,6 +60,8 @@ const Dashboard = () => {
         weeklyAnswer={1}
       />
     </div>
+    <Footer/>
+    </>
   );
 };
 

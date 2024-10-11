@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa"; // Icono de eliminar
 import { Modal, Button } from "react-bootstrap";
+import "../../styles/Button.css"; // Importamos el archivo de estilos CSS
+import Validated from "./Validated";
 
 const ImageUpload = () => {
   const [image, setImage] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [imageName, setImageName] = useState(""); // Para manejar el nombre de la imagen
   const [message, setMessage] = useState(""); // Estado para manejar el mensaje de éxito o error
   const [error, setError] = useState(""); // Estado para manejar los errores
@@ -40,10 +43,7 @@ const ImageUpload = () => {
   };
 
   return (
-    <div className="container my-5 text-center">
-      <label htmlFor="imageUpload" className="btn btn-dark">
-        SUBIR FOTO
-      </label>
+    <div className="container mb-5 text-center">
       <input
         id="imageUpload"
         type="file"
@@ -51,13 +51,15 @@ const ImageUpload = () => {
         style={{ display: "none" }}
         onChange={handleImageChange}
       />
-      
+
       <div
         className="image-preview"
         style={{
           width: "100%",
           height: "200px",
-          backgroundColor: "rgba(0,0,0,1)",
+          backgroundColor: "none",
+          borderRadius: "10px",
+          border: "1px dotted #fff",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -93,7 +95,7 @@ const ImageUpload = () => {
                 alignItems: "center",
               }}
             >
-              <span style={{ marginRight: "10px" }}>{imageName}</span>
+              {/* <span style={{ marginRight: "10px" }}>{imageName}</span> */}
               <FaTrashAlt
                 style={{ cursor: "pointer", fontSize: "24px" }}
                 onClick={handleShow}
@@ -113,6 +115,10 @@ const ImageUpload = () => {
           />
         )}
       </div>
+
+      <label htmlFor="imageUpload" className="custom-button w-100 mt-3">
+        SUBIR FOTO
+      </label>
 
       {message && <div className="alert alert-success mt-3">{message}</div>}
       {error && <div className="alert alert-danger mt-3">{error}</div>}

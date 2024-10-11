@@ -14,6 +14,7 @@ import TripInfo from "./pages/TripInfo";
 import TripCalculateTotal from "./pages/TripCalculateTotal";
 import SpecialKitInfo from "./pages/SpecialKitInfo";
 import SpecialKitCalculateTotal from "./pages/SpecialKitCalculateTotal";
+import LegalBases from "./pages/LegalBases";
 import './styles/Fonts.css';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/legal-bases" element={<LegalBases />} />
           <Route
             path="/user/register"
             element={

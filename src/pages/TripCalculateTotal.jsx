@@ -43,7 +43,7 @@ const TripCalculateTotal = () => {
         <div className="row">
           <div className="col-md-12 text-center d-flex">
             <Input
-              placeholder="100"
+              placeholder="Ingresa tu respuesta"
               name="tripCalculateTotal"
             />
           </div>

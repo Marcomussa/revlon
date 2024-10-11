@@ -5,6 +5,7 @@ import Footer from "../layouts/Footer"
 import Ticket from "../assets/img/ticket-fisico.png"
 import Button from "../assets/components/Button";
 import Select from "../assets/components/Select";
+import Validated from "../assets/components/Validated";
 
 const PhysicalTicket = () => {
   const storeOptions = [
@@ -78,7 +79,7 @@ const PhysicalTicket = () => {
           <ImageUpload />
         </div>
         <div className="row">
-          <div className="col-md-12 mb-5">
+          <div className="col-md-12 mb-3">
             <Button text="CONTINUAR" route="/user/ticket/trip" />
           </div>
         </div>

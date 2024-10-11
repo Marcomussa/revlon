@@ -5,7 +5,7 @@ const LegalBases = () => {
   return (
     <>
     <Navbar></Navbar>
-    <div className="container">
+    <div className="container mt-5">
       <div className="row bg-white">
         <div className="col-md-12">
           <h2 className="title-red">Legal Bases</h2>

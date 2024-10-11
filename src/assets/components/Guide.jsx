@@ -30,7 +30,7 @@ const Guide = () => {
                     </div>
                 </div>
                 <div className="col-12 pb-5">
-                    <Button text="REGISTRA TU TICKET"></Button>
+                    <Button text="REGISTRA TU TICKET" route='/user/login'></Button>
                 </div>
             </div>
         </>

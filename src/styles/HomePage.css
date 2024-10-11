@@ -17,6 +17,10 @@
 .title-red{
     color: #A90000;
 }
+.container {
+    max-width: 1920px !important; 
+    margin: 0px !important;
+}
 
 @media (max-width: 926px){
     .stamp-img {

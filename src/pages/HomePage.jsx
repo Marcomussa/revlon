@@ -10,7 +10,6 @@ import End from "../assets/components/End"
 import Footer from "../layouts/Footer"
 import '../styles/HomePage.css'
 
-
 const HomePage = () => {
   return (
     <>
@@ -25,8 +24,6 @@ const HomePage = () => {
       <End></End>
       <Footer></Footer>
     </>
-
-
   );
 };
 
