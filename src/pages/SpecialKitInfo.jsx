@@ -16,7 +16,7 @@ const SpecialKitInfo = () => {
 
         <div className="row">
           <div className="col-md-12 text-center">
-            <h2 className="title-red title primary-font px-5">PARTICIPA POR UN KIT ESPECIAL PARTY ON</h2>
+            <h2 className="title-red title primary-font px-5 py-3">PARTICIPA POR UN KIT ESPECIAL PARTY ON</h2>
           </div>
         </div>
         <div className="row">

@@ -86,7 +86,7 @@ const OnlineTicket = () => {
         <div className="row">
           <div className="col-md-12 text-center mt-5">
             <h2 className="text-white primary-font title">
-              <b>COMPRA ONLINE</b>
+              COMPRA ONLINE
             </h2>
           </div>
         </div>
@@ -105,7 +105,7 @@ const OnlineTicket = () => {
 
         <div className="row">
           <div className="col-md-12">
-            <p className="text-white text-italic mt-3 mb-2 primary-font">
+            <p className="text-white text-italic primary-font">
               ¿En cuál tienda participante ordenaste?
             </p>
             <Select options={storeOptions} name="physicalTicketStore" />

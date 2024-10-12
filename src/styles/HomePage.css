@@ -4,7 +4,7 @@
 
 .title {
     font-weight: 800;
-    font-size: 25pt;
+    font-size: 26pt;
 }
 
 .subtitle {
@@ -13,14 +13,19 @@
 }
 .subtitle-h3{
     font-weight: 800;
-    font-size: 17pt
+    font-size: 19pt
 }
 
 .text {
-    font-size: 13pt;
+    font-size: 14pt;
+}
+.text-italic {
+    font-size: 15pt;
+    font-style: italic;
+}
+.text-gray{
     color: #4D4D4D
 }
-
 .secondari {
     color: #A2A2A2;
 }
@@ -58,8 +63,7 @@
     }
 
     .text {
-        font-size: 10.1pt;
-        color: #4D4D4D
+        font-size: 10.2pt;
     }
 
     .text-italic {

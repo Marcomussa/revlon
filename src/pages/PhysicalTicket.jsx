@@ -73,32 +73,32 @@ const PhysicalTicket = () => {
       <div className="container bg-red pt-5">
         <div className="row">
           <div className="col-md-12  text-center mt-5">
-            <h3 className="text-white primary-font fw-bold title">
+            <h3 className="text-white primary-font title">
               COMPRA FÍSICA
             </h3>
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center">
+          <div className="col-md-12 text-center my-2 mt-3">
             <img src={Ticket} alt="Ticket" width={150} />
           </div>
         </div>
-        <div className="row text-center">
-          <div className="col-md-12">
-            <h3 className="text-white fw-bold primary-font mt-3 px-4">
+        <div className="row">
+          <div className="col-md-12 text-center">
+            <h3 className="text-white primary-font subtitle-h3 mb-4">
               INGRESA LOS DATOS DE TU TICKET Y PRODUCTO:
             </h3>
           </div>
         </div>
         <div className="row">
           <div className="col-md-12">
-            <p className="text-white text">¿A qué tienda acudiste?</p>
+            <p className="text-white text-italic primary-font">¿A qué tienda acudiste?</p>
           </div>
           <Select options={storeOptions} name="physicalTicketStore" />
         </div>
         <div className="row">
           <div className="col-md-12">
-            <p className="text-white text mt-4 mb-2">
+            <p className="text-white text-italic primary-font mt-4 mb-2">
               Ingresá tu número de ticket
             </p>
           </div>
@@ -120,7 +120,7 @@ const PhysicalTicket = () => {
         </div>
         <div className="row">
           <div className="col-md-12">
-            <p className="text-white text mt-4 mb-2">
+            <p className="text-white text-italic primary-font mt-4 mb-2">
               Ingresá el número del código de barras
             </p>
           </div>
@@ -142,13 +142,13 @@ const PhysicalTicket = () => {
         </div>
         <div className="row mt-5">
           <div className="col-md-12 text-center">
-            <p className="text-white">
+            <p className="text-white text-italic primary-font">
               Para participar es indispensable que cargues tu ticket de compra.
               Debe ser visible el producto de Revlon que ordenaste y el número
               de tu pedido.
             </p>
             <br />
-            <p className="text-white">
+            <p className="text-white text-italic primary-font">
               Asegúrate que tu foto no tenga un peso mayor a 2MB
             </p>
           </div>
@@ -157,7 +157,7 @@ const PhysicalTicket = () => {
           <ImageUpload onImageChange={handleImageValidation} />
         </div>
         <div className="row">
-          <div className="col-md-12 mb-3">
+          <div className="col-md-12 mb-5">
             <Button
               text="CONTINUAR"
               route="/user/ticket/trip"

@@ -19,12 +19,12 @@ const SpecialKitCalculateTotal = () => {
       <div className="container pb-5 my-5">
         <div className="row">
           <div className="col-md-12 text-center pt-5">
-            <h1 className="title-red pt-5 my-3 primary-font title px-5">KIT ESPECIAL PARTY ON</h1>
+            <h2 className="title-red pt-5 my-3 primary-font title px-5">KIT ESPECIAL PARTY ON</h2>
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <h3 className="fw-bold primary-font px-5 subtitle-h3">¿CUÁNTOS PRODUCTOS REVLON VES EN ESTA IMAGEN?</h3>
+            <h3 className="primary-font px-5 subtitle-h3 text-black py-2">¿CUÁNTOS PRODUCTOS REVLON VES EN ESTA IMAGEN?</h3>
           </div>
         </div>
         <div className="row">
@@ -34,12 +34,12 @@ const SpecialKitCalculateTotal = () => {
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <p className="primary-font my-3">Puedes girar tu teléfono y hacer zoom a la imagen para hacer tu cálculo más preciso.</p>
+            <p className="primary-font my-3 text-black">Puedes girar tu teléfono y hacer zoom a la imagen para hacer tu cálculo más preciso.</p>
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <p className="primary-font" style={{ fontStyle: 'italic' }}>Escribe la respuesta de tu cálculo.</p>
+            <p className="primary-font text-italic" style={{ fontStyle: 'italic' }}>Escribe la respuesta de tu cálculo.</p>
           </div>
         </div>
         <div className="row">

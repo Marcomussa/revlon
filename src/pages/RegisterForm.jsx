@@ -57,29 +57,29 @@ const RegisterForm = () => {
       <div className="container bg-red pt-5">
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-8 col-sm-12">
-            <div className="">
-              <div className="card-body p-4 bg-red">
-                <h2
-                  className="text-center mb-4 title text-white fw-bolder primary-font"
+            <div className="mt-5">
+              <div className="card-body bg-red">
+                <h3
+                  className="text-center subtitle-h3 text-white primary-font"
                   style={{
                     padding: "10px",
                     borderRadius: "8px",
                   }}
                 >
                   INGRESA TUS DATOS PARA CREAR TU PERFIL
-                </h2>
+                </h3>
                 <form onSubmit={handleSubmit}>
                   {/* Nombre */}
-                  <div className="mb-3">
+                  <div className="my-3">
                     <label
                       htmlFor="firstName"
-                      className="form-label text text-white"
+                      className="form-label text-white primary-font text-italic"
                     >
                       Nombre(s)*
                     </label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control text-italic"
                       id="firstName"
                       name="firstName"
                       placeholder="Ingresa tu nombre"
@@ -90,16 +90,16 @@ const RegisterForm = () => {
                   </div>
 
                   {/* Apellidos */}
-                  <div className="mb-3">
+                  <div className="my-3">
                     <label
                       htmlFor="lastName"
-                      className="form-label text text-white"
+                      className="form-label text-white primary-font text-italic"
                     >
                       Apellidos*
                     </label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control text-italic"
                       id="lastName"
                       name="lastName"
                       placeholder="Ingresa tus apellidos"
@@ -110,16 +110,16 @@ const RegisterForm = () => {
                   </div>
 
                   {/* Correo Electrónico */}
-                  <div className="mb-3">
+                  <div className="my-3 ">
                     <label
                       htmlFor="email"
-                      className="form-label text text-white"
+                      className="form-label text-white primary-font text-italic"
                     >
-                      Correo Electrónico*
+                      Correo electrónico*
                     </label>
                     <input
                       type="email"
-                      className="form-control"
+                      className="form-control text-italic"
                       id="email"
                       name="email"
                       placeholder="Ingresa tu correo electrónico"
@@ -130,16 +130,16 @@ const RegisterForm = () => {
                   </div>
 
                   {/* Contraseña */}
-                  <div className="mb-3">
+                  <div className="my-3">
                     <label
                       htmlFor="password"
-                      className="form-label text text-white"
+                      className="form-label text-white primary-font text-italic"
                     >
                       Contraseña*
                     </label>
                     <input
                       type="password"
-                      className="form-control"
+                      className="form-control text-italic"
                       id="password"
                       name="password"
                       placeholder="Ingresa tu contraseña"
@@ -150,16 +150,16 @@ const RegisterForm = () => {
                   </div>
 
                   {/* Confirmar Contraseña */}
-                  <div className="mb-3">
+                  <div className="my-3">
                     <label
                       htmlFor="confirmPassword"
-                      className="form-label text text-white"
+                      className="form-label text text-white primary-font text-italic"
                     >
-                      Confirmar Contraseña*
+                      Confirmar contraseña*
                     </label>
                     <input
                       type="password"
-                      className="form-control"
+                      className="form-control text-italic"
                       id="confirmPassword"
                       name="confirmPassword"
                       placeholder="Confirma tu contraseña"
@@ -183,13 +183,13 @@ const RegisterForm = () => {
 
                   {/* Edad */}
                   <div className="mb-3">
-                    <label htmlFor="age" className="form-label text text-white">
-                      Fecha de Nacimiento*
+                    <label htmlFor="age" className="form-label text-white text-italic primary-font">
+                      Edad*
                     </label>
                     <div className="d-flex justify-content-between">
                       <input
                         type="text"
-                        className="form-control me-2"
+                        className="form-control me-2 text-italic"
                         placeholder="DD"
                         maxLength={2}
                         name="day"
@@ -200,7 +200,7 @@ const RegisterForm = () => {
                       />
                       <input
                         type="text"
-                        className="form-control me-2"
+                        className="form-control me-2 text-italic"
                         placeholder="MM"
                         maxLength={2}
                         name="month"
@@ -211,7 +211,7 @@ const RegisterForm = () => {
                       />
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control text-italic"
                         placeholder="AAAA"
                         maxLength={4}
                         name="year"
@@ -224,16 +224,16 @@ const RegisterForm = () => {
                   </div>
 
                   {/* Código postal */}
-                  <div className="mb-3">
+                  <div className="my-3">
                     <label
                       htmlFor="postalCode"
-                      className="form-label text text-white"
+                      className="form-label text-white primary-font text-italic"
                     >
                       Código postal*
                     </label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control text-italic"
                       id="postalCode"
                       name="postalCode"
                       placeholder="Ingresa tu código postal"
@@ -244,10 +244,10 @@ const RegisterForm = () => {
                   </div>
 
                   {/* ¿Cómo te enteraste? */}
-                  <div className="mb-3">
+                  <div className="my-3">
                     <label
                       htmlFor="source"
-                      className="form-label text text-white"
+                      className="form-label text-white primary-font text-italic"
                     >
                       ¿Cómo te enteraste de ésta dinámica?*
                     </label>
@@ -295,7 +295,7 @@ const RegisterForm = () => {
                     </div>
                   )}
 
-                  <div className="d-grid">
+                  <div className="d-grid mb-5 pb-5">
                     <Button text="REGISTRARSE" type="submit"></Button>
                   </div>
                 </form>

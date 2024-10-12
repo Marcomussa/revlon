@@ -19,7 +19,7 @@ const Footer = () => {
             <img src={Logo} alt="Logo" width={100} />
           </div>
           <div className="col-md-12 px-4">
-            <p className='text text-center text-white-50'>REVLON© 2024. Todos los Derechos Reservados.
+            <p className='text secondari text-center'>REVLON© 2024. Todos los Derechos Reservados.
               Al registrar tu compra en esta pagina, aceptas que has leido y entendido los terminos y condiciones.
               La participacion esta sujeta a la verificacion de la validez del ticket y el cumplimiento de los requisitos establecidos. Verifica las Bases Legales para saber conocer los lineamientos legales que rigen nuestra dinamica.
             </p>

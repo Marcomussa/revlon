@@ -6,6 +6,7 @@ import "animate.css";
 import Button from "../assets/components/Button";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
+import IconProfile from "../assets/img/icons/ico_profile.png"
 
 const LogInForm = () => {
   const [formData, setFormData] = useState({
@@ -50,28 +51,23 @@ const LogInForm = () => {
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-8 col-sm-12">
             <div className="">
-              <div className="card-body p-4 bg-red">
-                <h2
-                  className="text-center mb-4 title text-white fw-bolder primary-font"
+              <div className="card-body bg-red pt-5 mt-5 text-center">
+                <img src={IconProfile} alt="Icon Profile" width={70}/>
+                <h3
+                  className="text-center title text-white primary-font"
                   style={{
                     padding: "10px",
                     borderRadius: "8px",
                   }}
                 >
                   ¡HOLA!
-                </h2>
+                </h3>
                 <form onSubmit={handleSubmit}>
                   {/* Correo Electrónico */}
-                  <div className="mb-3">
-                    <label
-                      htmlFor="email"
-                      className="form-label text-white text"
-                    >
-                      Correo Electrónico*
-                    </label>
+                  <div className="my-3">
                     <input
                       type="email"
-                      className="form-control"
+                      className="form-control text-italic" 
                       id="email"
                       name="email"
                       placeholder="Ingresa tu correo electrónico"
@@ -82,16 +78,10 @@ const LogInForm = () => {
                   </div>
 
                   {/* Contraseña */}
-                  <div className="mb-3">
-                    <label
-                      htmlFor="password"
-                      className="form-label text-white text"
-                    >
-                      Contraseña*
-                    </label>
+                  <div className="my-3">
                     <input
                       type="password"
-                      className="form-control"
+                      className="form-control text-italic"
                       id="password"
                       name="password"
                       placeholder="Ingresa tu contraseña"
@@ -110,10 +100,10 @@ const LogInForm = () => {
                   </div>
                 </form>
 
-                <h4 className="mt-4 text-center text-white">
-                  ¿Es la primera vez que registrar un ticket?
-                </h4>
-                <div className="d-grid">
+                <p className="my-3 text-white text-italic">
+                  ¿Es la primera vez que registras un ticket?
+                </p>
+                <div className="d-grid pb-5">
                   <Button text="REGISTRARSE" route="/user/register"></Button>
                 </div>
               </div>
