@@ -2,7 +2,6 @@ import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa"; // Icono de eliminar
 import { Modal, Button } from "react-bootstrap";
 import "../../styles/Button.css"; // Importamos el archivo de estilos CSS
-import Validated from "./Validated";
 
 const ImageUpload = () => {
   const [image, setImage] = useState(null);
