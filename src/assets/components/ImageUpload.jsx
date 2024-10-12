@@ -2,8 +2,10 @@ import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa"; // Icono de eliminar
 import { Modal, Button } from "react-bootstrap";
 import "../../styles/Button.css"; // Importamos el archivo de estilos CSS
+import Validated from "./Validated";
 
-const ImageUpload = () => {
+// eslint-disable-next-line react/prop-types
+const ImageUpload = ({ onImageChange }) => {
   const [image, setImage] = useState(null);
   // eslint-disable-next-line no-unused-vars
   const [imageName, setImageName] = useState(""); // Para manejar el nombre de la imagen
@@ -24,12 +26,14 @@ const ImageUpload = () => {
         setImageName(file.name);
         setMessage("Imagen subida exitosamente");
         setError("");
+        onImageChange(true); 
       };
       reader.readAsDataURL(file);
     } else {
       setImage(null);
       setError("Solo se permiten imágenes en formato JPG o PNG.");
       setMessage("");
+      onImageChange(false);  
     }
   };
 
@@ -38,6 +42,7 @@ const ImageUpload = () => {
     setImageName("");
     setMessage("");
     setError("");
+    onImageChange(false); 
     handleClose();
   };
 
@@ -119,8 +124,7 @@ const ImageUpload = () => {
         SUBIR FOTO
       </label>
 
-      {message && <div className="alert alert-success mt-3">{message}</div>}
-      {error && <div className="alert alert-danger mt-3">{error}</div>}
+      {message ? <Validated message={message} state={true}/> : ""}
 
       <Modal show={showModal} onHide={handleClose} centered>
         <Modal.Header closeButton>

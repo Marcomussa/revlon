@@ -3,7 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import { FaInfoCircle } from "react-icons/fa";
 
 // eslint-disable-next-line react/prop-types
-const InputWithModal = ({ modalImageSrc, modalText, placeholder, name }) => {
+const InputWithModal = ({ modalImageSrc, modalText, placeholder, name, onChange }) => { 
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => setShowModal(false);
@@ -34,6 +34,7 @@ const InputWithModal = ({ modalImageSrc, modalText, placeholder, name }) => {
             padding: "10px",
           }}
           placeholder={placeholder}
+          onChange={onChange} 
         />
 
         {/* Icono de información */}
@@ -51,16 +52,19 @@ const InputWithModal = ({ modalImageSrc, modalText, placeholder, name }) => {
       {/* Modal de información */}
       <Modal show={showModal} onHide={handleClose} centered>
         <Modal.Header closeButton></Modal.Header>
-        <Modal.Body className="text-center" style={{
-            display: 'flex',
-            flexDirection: 'column',
-            flexWrap: 'wrap',
-            alignItems: 'center'
-        }}>
+        <Modal.Body
+          className="text-center"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flexWrap: "wrap",
+            alignItems: "center",
+          }}
+        >
           <img
             src={modalImageSrc}
             alt="Información adicional"
-            style={{ maxWidth: "100%", height: "auto", marginBottom: '20px' }}
+            style={{ maxWidth: "100%", height: "auto", marginBottom: "20px" }}
           />
           <FaInfoCircle style={{ fontSize: "24px", marginBottom: "15px" }} />
           <p>{modalText}</p>

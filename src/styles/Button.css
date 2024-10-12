@@ -10,6 +10,16 @@
     transition: background-color 1s ease;
 }
 
+.disabled-button {
+    background-color: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
 .custom-button:hover {
     background-color: #808080;
 }
