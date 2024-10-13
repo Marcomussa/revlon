@@ -78,7 +78,7 @@ const PhysicalTicket = () => {
       <Navbar />
       <div className="container bg-red pt-5">
         <div className="row">
-          <div className="col-md-12  text-center mt-5">
+          <div className="col-md-12 text-center mt-5">
             <h3 className="text-white primary-font title">
               COMPRA FÍSICA
             </h3>
@@ -146,7 +146,7 @@ const PhysicalTicket = () => {
             )}
           </div>
         </div>
-        <div className="row mt-5">
+        <div className="row mt-4">
           <div className="col-md-12 text-center">
             <p className="text-white text-italic primary-font">
               Para participar es indispensable que cargues tu ticket de compra.

@@ -1,4 +1,3 @@
-import React from 'react'
 import Registro from "../img/ticket.png"
 import Carousel from "../components/Carousel"
 
@@ -9,7 +8,7 @@ const Participate = () => {
                 <div className="row mt-5">
                     <div className="col-md-12">
                         <h1 className='text-center primary-font title title-red'>¿Cómo participar?</h1>
-                        <p className='text-center px-4 text primary-font'><b c>¡Es facilísimo! Compara productos REVLON participantes por $599 MXN o más:</b> Adquiere cualquiera de los productos participantes, puedes consultarlos aquí, ya sea en tiendas físicas o en línea en los comercios participantes.</p>
+                        <p className='text-center px-4 text primary-font'><b>¡Es facilísimo! Compara productos REVLON participantes por $599 MXN o más:</b> Adquiere cualquiera de los productos participantes, puedes consultarlos aquí, ya sea en tiendas físicas o en línea en los comercios participantes.</p>
                     </div>
                 </div>
                 <div className="row">
