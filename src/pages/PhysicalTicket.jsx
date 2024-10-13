@@ -8,6 +8,7 @@ import Footer from "../layouts/Footer";
 import Ticket from "../assets/img/ticket-fisico.png";
 import Button from "../assets/components/Button";
 import Select from "../assets/components/Select";
+import "animate.css";
 
 const PhysicalTicket = () => {
   const storeOptions = [
@@ -20,7 +21,7 @@ const PhysicalTicket = () => {
     { value: "LIVERPOOL", label: "Liverpool" },
     { value: "SANBORNS", label: "Sanborns" },
     { value: "SEARS", label: "Sears" },
-    { value: "SORIANA", label: "Soriana" }
+    { value: "SORIANA", label: "Soriana" },
   ];
 
   const [ticketNum, setTicketNum] = useState("");
@@ -79,9 +80,7 @@ const PhysicalTicket = () => {
       <div className="container bg-red pt-5">
         <div className="row">
           <div className="col-md-12 text-center mt-5">
-            <h3 className="text-white primary-font title">
-              COMPRA FÍSICA
-            </h3>
+            <h3 className="text-white primary-font title">COMPRA FÍSICA</h3>
           </div>
         </div>
         <div className="row">
@@ -98,7 +97,9 @@ const PhysicalTicket = () => {
         </div>
         <div className="row">
           <div className="col-md-12">
-            <p className="text-white text-italic primary-font mb-2">¿A qué tienda acudiste?</p>
+            <p className="text-white text-italic primary-font mb-2">
+              ¿A qué tienda acudiste?
+            </p>
           </div>
           <Select options={storeOptions} name="physicalTicketStore" />
         </div>
@@ -118,7 +119,9 @@ const PhysicalTicket = () => {
               onChange={handleTicketNumChange}
             />
             {isTicketValid ? (
-              <Validated message="Ticket válido" state={true} />
+              <div className="mt-2 ">
+                <Validated message="Ticket válido" state={true} />
+              </div>
             ) : (
               ""
             )}
@@ -140,7 +143,9 @@ const PhysicalTicket = () => {
               onChange={handleBarCodeChange}
             />
             {isBarCodeValid ? (
-              <Validated message="Código válido" state={true} />
+              <div className="mt-2 ">
+                <Validated message="Código válido" state={true} />
+              </div>
             ) : (
               ""
             )}

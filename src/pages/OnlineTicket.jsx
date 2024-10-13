@@ -45,7 +45,7 @@ const OnlineTicket = () => {
     const value = e.target.value;
     setDate(value);
     validateDate(value);
-    validateForm(orderNum, productCode, value, isImageValid); // Mover la validación aquí
+    validateForm(orderNum, productCode, value, isImageValid);
   };
 
   const validateOrderNum = (orderNum) => {
@@ -72,7 +72,11 @@ const OnlineTicket = () => {
     const selectedDate = new Date(date);
     const currentDate = new Date();
     const isValidDate = selectedDate <= currentDate;
-    const isValid = orderNum.length === 21 && productCode.length === 10 && isValidDate && image;
+    const isValid =
+      orderNum.length === 21 &&
+      productCode.length === 10 &&
+      isValidDate &&
+      image;
     setIsFormValid(isValid);
   };
 
@@ -82,9 +86,7 @@ const OnlineTicket = () => {
       <div className="container bg-red pt-5">
         <div className="row">
           <div className="col-md-12 text-center mt-5">
-            <h2 className="text-white primary-font title">
-              COMPRA ONLINE
-            </h2>
+            <h2 className="text-white primary-font title">COMPRA ONLINE</h2>
           </div>
         </div>
         <div className="row">
@@ -124,7 +126,9 @@ const OnlineTicket = () => {
               onChange={handleOrderNumChange}
             />
             {isOrderNumValid ? (
-              <Validated message="Ticket válido" state={true} />
+              <div className="mt-2">
+                <Validated message="Ticket válido" state={true} />
+              </div>
             ) : (
               ""
             )}
@@ -146,7 +150,9 @@ const OnlineTicket = () => {
               onChange={handleProductCodeChange}
             />
             {isProductCodeValid ? (
-              <Validated message="Código válido" state={true} />
+              <div className="mt-2">
+                <Validated message="Código válido" state={true} />
+              </div>
             ) : (
               ""
             )}
@@ -155,24 +161,24 @@ const OnlineTicket = () => {
 
         <div className="row">
           <div className="col-md-12">
-          <label
-            htmlFor="date"
-            className="form-label text-white mt-4 mb-2 text-italic primary-font"
-          >
-            Ingresa tu fecha de compra
-          </label>
-          <input
-            type="date"
-            className="form-control"
-            name="onlineDate"
-            onChange={handleDateChange}
-            value={date}
-            max={new Date().toISOString().split("T")[0]} // Limitar a fecha actual
-            style={{
-              padding: '10px'
-            }}
-            required
-          />
+            <label
+              htmlFor="date"
+              className="form-label text-white mt-4 mb-2 text-italic primary-font"
+            >
+              Ingresa tu fecha de compra
+            </label>
+            <input
+              type="date"
+              className="form-control"
+              name="onlineDate"
+              onChange={handleDateChange}
+              value={date}
+              max={new Date().toISOString().split("T")[0]} // Limitar a fecha actual
+              style={{
+                padding: "10px",
+              }}
+              required
+            />
           </div>
           <div>
             <p className="text-white text-center my-4 text-italic primary-font">

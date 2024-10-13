@@ -26,14 +26,14 @@ const ImageUpload = ({ onImageChange }) => {
         setImageName(file.name);
         setMessage("Imagen subida exitosamente");
         setError("");
-        onImageChange(true); 
+        onImageChange(true);
       };
       reader.readAsDataURL(file);
     } else {
       setImage(null);
       setError("Solo se permiten imágenes en formato JPG o PNG.");
       setMessage("");
-      onImageChange(false);  
+      onImageChange(false);
     }
   };
 
@@ -42,7 +42,7 @@ const ImageUpload = ({ onImageChange }) => {
     setImageName("");
     setMessage("");
     setError("");
-    onImageChange(false); 
+    onImageChange(false);
     handleClose();
   };
 
@@ -124,7 +124,13 @@ const ImageUpload = ({ onImageChange }) => {
         SUBIR FOTO
       </label>
 
-      {message ? <Validated message={message} state={true}/> : ""}
+      {message ? (
+        <div className=" mt-2">
+          <Validated message={message} state={true} />
+        </div>
+      ) : (
+        ""
+      )}
 
       <Modal show={showModal} onHide={handleClose} centered>
         <Modal.Header closeButton>

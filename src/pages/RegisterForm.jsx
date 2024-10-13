@@ -24,32 +24,42 @@ const RegisterForm = () => {
     source: "",
   });
 
-  const [passwordMatch, setPasswordMatch] = useState(null);
+  const [passwordMatch, setPasswordMatch] = useState(null); // Estado inicial como null
   const [message, setMessage] = useState("");
   const [showAlert, setShowAlert] = useState(false); // Para mostrar la alerta
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevState) => {
+      const updatedFormData = { ...prevState, [name]: value };
 
-    if (name === "password" || name === "confirmPassword") {
-      setPasswordMatch(
-        formData.password === e.target.value ||
-          formData.confirmPassword === e.target.value
-      );
-    }
+      if (updatedFormData.password && updatedFormData.confirmPassword) {
+        setPasswordMatch(
+          updatedFormData.password === updatedFormData.confirmPassword
+        );
+      } else {
+        setPasswordMatch(null);
+      }
+
+      return updatedFormData;
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!passwordMatch) {
+      setMessage("Las contraseñas no coinciden");
+      return; // Evitar envío si las contraseñas no coinciden
+    }
+
     try {
       const result = await signup(formData);
 
       if (result) {
-        console.log('Registro exitoso. Por favor, verifica tu cuenta.');
+        console.log("Registro exitoso. Por favor, verifica tu cuenta.");
       } else {
-        console.log('Error en el registro. Inténtalo de nuevo.');
+        console.log("Error en el registro. Inténtalo de nuevo.");
       }
 
       setShowAlert(true);
@@ -178,16 +188,20 @@ const RegisterForm = () => {
                   </div>
 
                   {/* Verificación de contraseñas */}
-                  {passwordMatch ? (
-                    <Validated
-                      message="Las contraseñas coinciden"
-                      state={true}
-                    />
+                  {passwordMatch === null ? null : passwordMatch ? (
+                    <div className="mb-3">
+                      <Validated
+                        message="Las contraseñas coinciden"
+                        state={true}
+                      />
+                    </div>
                   ) : (
-                    <Validated
-                      message="Las contraseñas NO coinciden"
-                      state={false}
-                    />
+                    <div className="mb-3">
+                      <Validated
+                        message="Las contraseñas NO coinciden"
+                        state={false}
+                      />
+                    </div>
                   )}
 
                   {/* Edad */}
@@ -207,41 +221,6 @@ const RegisterForm = () => {
                       value={formData.birth}
                       required
                     />
-                    {/* <div className="d-flex justify-content-between">
-                      <input
-                        type="text"
-                        className="form-control me-2 text-italic"
-                        placeholder="DD"
-                        maxLength={2}
-                        name="day"
-                        value={formData.day}
-                        onChange={handleChange}
-                        style={{ width: "32%" }}
-                        required
-                      />
-                      <input
-                        type="text"
-                        className="form-control me-2 text-italic"
-                        placeholder="MM"
-                        maxLength={2}
-                        name="month"
-                        value={formData.month}
-                        onChange={handleChange}
-                        style={{ width: "32%" }}
-                        required
-                      />
-                      <input
-                        type="text"
-                        className="form-control text-italic"
-                        placeholder="AAAA"
-                        maxLength={4}
-                        name="year"
-                        value={formData.year}
-                        onChange={handleChange}
-                        style={{ width: "32%" }}
-                        required
-                      />
-                    </div> */}
                   </div>
 
                   {/* Código postal */}

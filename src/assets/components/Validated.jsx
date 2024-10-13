@@ -7,8 +7,8 @@ import '../../styles/Validated.css'
 const Validated = ({ message, state }) => {
   return (
     <>
-      <div className={`container ${state ? 'bg-validated' : 'bg-error'} rounded-3 mt-2`}>
-        <div className="row pt-2">
+      <div className={`container ${state ? 'bg-validated' : 'bg-error'} rounded-3 animate__animated animate__fadeIn`}>
+        <div className="row pt-2 ">
           <div className="col-12 d-flex gap-1">
             <i>
               {state ? (

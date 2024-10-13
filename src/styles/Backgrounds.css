@@ -1,7 +1,7 @@
 .bg-red-pic {
   background-image: url("../assets/img/backgrounds/red-pic.png");
   background-size: cover;
-  height: 120vh;
+  height: 100vh;
 }
 
 .bg-black-glitter, .bg-black-glitter-time  {
