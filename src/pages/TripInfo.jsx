@@ -11,7 +11,7 @@ const TripInfo = () => {
       <div className="container bg-beach">
         <div className="row pt-2">
           <div className="col-md-12 text-center mt-5 pt-5">
-            <img src={Premio1} alt="" width={350} />
+            <img src={Premio1} alt="" width={250} />
           </div>
         </div>
 
