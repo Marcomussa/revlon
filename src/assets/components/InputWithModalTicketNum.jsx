@@ -31,7 +31,7 @@ const InputWithModal = ({ modalImageSrc, modalText, placeholder, name, onChange 
             fontSize: "18px",
             backgroundColor: "#f1f1f1",
             letterSpacing: "2px",
-            padding: "10px",
+            padding: "5px",
           }}
           placeholder={placeholder}
           onChange={onChange} 

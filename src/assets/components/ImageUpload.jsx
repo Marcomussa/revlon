@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa"; // Icono de eliminar
 import { Modal, Button } from "react-bootstrap";
@@ -7,7 +8,6 @@ import Validated from "./Validated";
 // eslint-disable-next-line react/prop-types
 const ImageUpload = ({ onImageChange }) => {
   const [image, setImage] = useState(null);
-  // eslint-disable-next-line no-unused-vars
   const [imageName, setImageName] = useState(""); // Para manejar el nombre de la imagen
   const [message, setMessage] = useState(""); // Estado para manejar el mensaje de éxito o error
   const [error, setError] = useState(""); // Estado para manejar los errores
@@ -47,7 +47,7 @@ const ImageUpload = ({ onImageChange }) => {
   };
 
   return (
-    <div className="container mb-5 text-center">
+    <div className="container mb-4 text-center">
       <input
         id="imageUpload"
         type="file"
@@ -109,12 +109,12 @@ const ImageUpload = ({ onImageChange }) => {
         ) : (
           // Placeholder en caso de no haber imagen
           <img
-            src="https://via.placeholder.com/100"
+            src="https://via.placeholder.com/125"
             alt="Placeholder"
             style={{
-              width: "50px",
-              height: "50px",
-              opacity: "0.5",
+              width: "125px",
+              height: "125px",
+              opacity: "0.75",
             }}
           />
         )}

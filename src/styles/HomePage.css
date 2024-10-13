@@ -63,11 +63,11 @@
     }
 
     .text {
-        font-size: 10.2pt;
+        font-size: 13pt;
     }
 
     .text-italic {
-        font-size: 11pt;
+        font-size: 13pt;
         font-style: italic;
     }
 }

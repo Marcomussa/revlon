@@ -4,14 +4,24 @@ import Footer from "../layouts/Footer"
 import Button from "../assets/components/Button";
 import Input from "../assets/components/Input";
 import ModalInfo from '../assets/components/ModalInfo'
-import Validated from "../assets/components/Validated"
-
 
 const SpecialKitCalculateTotal = () => {
+  const [inputValue, setInputValue] = useState(""); 
+  const [isInputValid, setIsInputValid] = useState(false); 
   const [showModal, setShowModal] = useState(false);
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setInputValue(value);
+    if (value !== "") {
+      setIsInputValid(true);
+    } else {
+      setIsInputValid(false);
+    }
+  };
 
   return (
     <>
@@ -19,7 +29,7 @@ const SpecialKitCalculateTotal = () => {
       <div className="container pb-5 my-5">
         <div className="row">
           <div className="col-md-12 text-center pt-5">
-            <h2 className="title-red pt-5 my-3 primary-font title px-5">KIT ESPECIAL PARTY ON</h2>
+            <h2 className="title-red my-3 primary-font title px-5">KIT ESPECIAL PARTY ON</h2>
           </div>
         </div>
         <div className="row">
@@ -34,25 +44,28 @@ const SpecialKitCalculateTotal = () => {
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <p className="primary-font my-3 text-black">Puedes girar tu teléfono y hacer zoom a la imagen para hacer tu cálculo más preciso.</p>
+            <p className="primary-font my-3 text-black text">Puedes girar tu teléfono y hacer zoom a la imagen para hacer tu cálculo más preciso.</p>
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <p className="primary-font text-italic" style={{ fontStyle: 'italic' }}>Escribe la respuesta de tu cálculo.</p>
+            <p className="primary-font text-italic text" style={{ fontStyle: 'italic' }}>Escribe la respuesta de tu cálculo.</p>
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 text-center d-flex">
             <Input
-              placeholder="100"
+              type='number'
               name="specialKitCalculateTotal"
+              placeholder="100"
+              value={inputValue}
+              onChange={handleInputChange} 
             />
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 text-center mt-3">
-            <Button text="CONTINUAR" onClick={handleShow}></Button>
+            <Button text="CONTINUAR" onClick={handleShow} disabled={!isInputValid}></Button>
           </div>
         </div>
 

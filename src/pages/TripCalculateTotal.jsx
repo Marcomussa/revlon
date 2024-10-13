@@ -1,19 +1,31 @@
-import { useState } from "react"
-import Navbar from "../layouts/Navbar"
-import Footer from "../layouts/Footer"
+import { useState } from "react";
+import Navbar from "../layouts/Navbar";
+import Footer from "../layouts/Footer";
 import Button from "../assets/components/Button";
 import Input from "../assets/components/Input";
-import ModalInfo from '../assets/components/ModalInfo'
+import ModalInfo from '../assets/components/ModalInfo';
 
 const TripCalculateTotal = () => {
   const [showModal, setShowModal] = useState(false);
+  const [inputValue, setInputValue] = useState(""); 
+  const [isInputValid, setIsInputValid] = useState(false); 
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
 
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setInputValue(value);
+    if (value !== "") {
+      setIsInputValid(true);
+    } else {
+      setIsInputValid(false);
+    }
+  };
+
   return (
     <>
-    <Navbar></Navbar>
+      <Navbar></Navbar>
       <div className="container bg-campari">
         <div className="row">
           <div className="col-md-12 text-center pt-5">
@@ -41,16 +53,19 @@ const TripCalculateTotal = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center d-flex">
+          <div className="col-md-12 text-center d-flex justify-content-center">
             <Input
-              placeholder="Ingresa tu respuesta"
+              type="number"
               name="tripCalculateTotal"
+              placeholder="Ingresa tu respuesta"
+              value={inputValue}
+              onChange={handleInputChange} 
             />
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 text-center mt-3">
-            <Button text="CONTINUAR" onClick={handleShow}></Button>
+            <Button text="CONTINUAR" onClick={handleShow} disabled={!isInputValid}></Button> 
           </div>
         </div>
 
@@ -64,7 +79,6 @@ const TripCalculateTotal = () => {
       </div>
       <Footer></Footer>
     </>
-
   );
 };
 

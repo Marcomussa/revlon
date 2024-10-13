@@ -16,6 +16,7 @@ import SpecialKitInfo from "./pages/SpecialKitInfo";
 import SpecialKitCalculateTotal from "./pages/SpecialKitCalculateTotal";
 import LegalBases from "./pages/LegalBases";
 import './styles/Fonts.css';
+import './styles/Input.css'
 
 const App = () => {
   return (

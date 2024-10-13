@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import Select from "../assets/components/Select";
 import InputWithModalOrderNum from "../assets/components/InputWithModalOrderNum";
@@ -44,7 +45,7 @@ const OnlineTicket = () => {
     const value = e.target.value;
     setDate(value);
     validateDate(value);
-    validateForm(orderNum, productCode, value, isImageValid);
+    validateForm(orderNum, productCode, value, isImageValid); // Mover la validación aquí
   };
 
   const validateOrderNum = (orderNum) => {
@@ -58,7 +59,8 @@ const OnlineTicket = () => {
   const validateDate = (date) => {
     const selectedDate = new Date(date);
     const currentDate = new Date();
-    setIsDateValid(selectedDate <= currentDate);
+    const isValid = selectedDate <= currentDate;
+    setIsDateValid(isValid);
   };
 
   const handleImageValidation = (isImageValid) => {
@@ -67,16 +69,11 @@ const OnlineTicket = () => {
   };
 
   const validateForm = (orderNum, productCode, date, image) => {
-    if (
-      orderNum.length === 21 &&
-      productCode.length === 10 &&
-      isDateValid &&
-      image
-    ) {
-      setIsFormValid(true);
-    } else {
-      setIsFormValid(false);
-    }
+    const selectedDate = new Date(date);
+    const currentDate = new Date();
+    const isValidDate = selectedDate <= currentDate;
+    const isValid = orderNum.length === 21 && productCode.length === 10 && isValidDate && image;
+    setIsFormValid(isValid);
   };
 
   return (
@@ -105,7 +102,7 @@ const OnlineTicket = () => {
 
         <div className="row">
           <div className="col-md-12">
-            <p className="text-white text-italic primary-font">
+            <p className="text-white text-italic primary-font mb-2">
               ¿En cuál tienda participante ordenaste?
             </p>
             <Select options={storeOptions} name="physicalTicketStore" />
@@ -149,7 +146,7 @@ const OnlineTicket = () => {
               onChange={handleProductCodeChange}
             />
             {isProductCodeValid ? (
-              <Validated message="Ticket válido" state={true} />
+              <Validated message="Código válido" state={true} />
             ) : (
               ""
             )}
@@ -167,10 +164,13 @@ const OnlineTicket = () => {
           <input
             type="date"
             className="form-control"
-            name="date"
+            name="onlineDate"
             onChange={handleDateChange}
             value={date}
-            max={new Date().toISOString().split("T")[0]}
+            max={new Date().toISOString().split("T")[0]} // Limitar a fecha actual
+            style={{
+              padding: '10px'
+            }}
             required
           />
           </div>

@@ -1,11 +1,11 @@
-
 // eslint-disable-next-line react/prop-types
-const Input = ({ placeholder, name }) => {
+const Input = ({ type, name, placeholder, onChange }) => {
   return (
     <input
-      type="text"
+      type={type}
       name={name}
       placeholder={placeholder}
+      onChange={onChange}
       style={{
         flex: 1,
         border: "none",
@@ -13,6 +13,7 @@ const Input = ({ placeholder, name }) => {
         backgroundColor: "#f1f1f1",
         letterSpacing: "2px",
         padding: "10px",
+        borderRadius: '5px'
       }}
     />
   );

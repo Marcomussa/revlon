@@ -11,10 +11,16 @@ import Select from "../assets/components/Select";
 
 const PhysicalTicket = () => {
   const storeOptions = [
-    { value: "walmart", label: "Walmart" },
-    { value: "target", label: "Target" },
-    { value: "costco", label: "Costco" },
-    { value: "amazon", label: "Amazon" },
+    { value: "WALMART", label: "Walmart" },
+    { value: "DELSOL", label: "Delsol" },
+    { value: "COPPEL", label: "Coppel" },
+    { value: "HEB", label: "Heb" },
+    { value: "CHEDRAUI", label: "Chedraui" },
+    { value: "DAX", label: "Dax" },
+    { value: "LIVERPOOL", label: "Liverpool" },
+    { value: "SANBORNS", label: "Sanborns" },
+    { value: "SEARS", label: "Sears" },
+    { value: "SORIANA", label: "Soriana" }
   ];
 
   const [ticketNum, setTicketNum] = useState("");
@@ -85,14 +91,14 @@ const PhysicalTicket = () => {
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <h3 className="text-white primary-font subtitle-h3 mb-4">
+            <h3 className="text-white primary-font subtitle-h3 mb-4 mt-4">
               INGRESA LOS DATOS DE TU TICKET Y PRODUCTO:
             </h3>
           </div>
         </div>
         <div className="row">
           <div className="col-md-12">
-            <p className="text-white text-italic primary-font">¿A qué tienda acudiste?</p>
+            <p className="text-white text-italic primary-font mb-2">¿A qué tienda acudiste?</p>
           </div>
           <Select options={storeOptions} name="physicalTicketStore" />
         </div>
@@ -157,7 +163,7 @@ const PhysicalTicket = () => {
           <ImageUpload onImageChange={handleImageValidation} />
         </div>
         <div className="row">
-          <div className="col-md-12 mb-5">
+          <div className="col-md-12 mb-4">
             <Button
               text="CONTINUAR"
               route="/user/ticket/trip"

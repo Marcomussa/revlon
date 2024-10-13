@@ -21,12 +21,12 @@ const SpecialKitInfo = () => {
         </div>
         <div className="row">
           <div className="col-md-12 text-center primary-font">
-            <p>Te mostraremos una imagen que estará repleta de productos <b>REVLON</b>, mírala con cuidado y calcula cuántos productos hay en ella.</p>
+            <p className='text'>Te mostraremos una imagen que estará repleta de productos <b>REVLON</b>, mírala con cuidado y calcula cuántos productos hay en ella.</p>
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 text-center primary-font subtitle">
-            <p><b>Tómate tu tiempo antes de escribír una respuesta final.</b></p>
+            <p className='text'><b>Tómate tu tiempo antes de escribír una respuesta final.</b></p>
           </div>
         </div>
         <div className="row">
