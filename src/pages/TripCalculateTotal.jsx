@@ -53,13 +53,13 @@ const TripCalculateTotal = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center d-flex justify-content-center">
+          <div className="col-md-12 text-center d-flex justify-content-center shadow">
             <Input
               type="number"
               name="tripCalculateTotal"
               placeholder="Ingresa tu respuesta"
               value={inputValue}
-              onChange={handleInputChange} 
+              onChange={handleInputChange}
             />
           </div>
         </div>

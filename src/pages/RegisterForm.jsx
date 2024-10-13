@@ -97,7 +97,7 @@ const RegisterForm = () => {
                     </label>
                     <input
                       type="text"
-                      className="p-2 form-control text-italic"
+                      className="p-2 form-control text-italic shadow p-2 bg-body rounded"
                       id="firstName"
                       name="firstName"
                       placeholder="Ingresa tu nombre"
@@ -117,7 +117,7 @@ const RegisterForm = () => {
                     </label>
                     <input
                       type="text"
-                      className="p-2 form-control text-italic"
+                      className="p-2 form-control text-italic shadow p-2 bg-body rounded"
                       id="lastName"
                       name="lastName"
                       placeholder="Ingresa tus apellidos"
@@ -137,7 +137,7 @@ const RegisterForm = () => {
                     </label>
                     <input
                       type="email"
-                      className="p-2 form-control text-italic"
+                      className="p-2 form-control text-italic shadow p-2 bg-body rounded"
                       id="email"
                       name="email"
                       placeholder="Ingresa tu correo electrónico"
@@ -157,7 +157,7 @@ const RegisterForm = () => {
                     </label>
                     <input
                       type="password"
-                      className="p-2 form-control text-italic"
+                      className="p-2 form-control text-italic shadow p-2 bg-body rounded"
                       id="password"
                       name="password"
                       placeholder="Ingresa tu contraseña"
@@ -177,7 +177,7 @@ const RegisterForm = () => {
                     </label>
                     <input
                       type="password"
-                      className="p-2 form-control text-italic"
+                      className="p-2 form-control text-italic shadow p-2 bg-body rounded"
                       id="confirmPassword"
                       name="confirmPassword"
                       placeholder="Confirma tu contraseña"
@@ -216,7 +216,7 @@ const RegisterForm = () => {
                       type="date"
                       id="birth"
                       name="birth"
-                      className="p-2 form-control me-2 text-italic"
+                      className="p-2 form-control me-2 text-italic shadow p-2 bg-body rounded"
                       onChange={handleChange}
                       value={formData.birth}
                       required
@@ -233,7 +233,7 @@ const RegisterForm = () => {
                     </label>
                     <input
                       type="text"
-                      className="p-2 form-control text-italic"
+                      className="p-2 form-control text-italic shadow p-2 bg-body rounded"
                       id="postalCode"
                       name="postalCode"
                       placeholder="Ingresa tu código postal"
@@ -252,7 +252,7 @@ const RegisterForm = () => {
                       ¿Cómo te enteraste de ésta dinámica?*
                     </label>
                     <select
-                      className="form-select p-2"
+                      className="form-select p-2 shadow p-2 bg-body rounded"
                       id="source"
                       name="source"
                       value={formData.source}

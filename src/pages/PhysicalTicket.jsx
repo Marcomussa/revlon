@@ -6,6 +6,8 @@ import Validated from "../assets/components/Validated";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import Ticket from "../assets/img/ticket-fisico.png";
+import TicketEj from "../assets/img/ticket_ejemplo.png"
+import Code from "../assets/img/code_ejemplo.png"
 import Button from "../assets/components/Button";
 import Select from "../assets/components/Select";
 import "animate.css";
@@ -101,7 +103,7 @@ const PhysicalTicket = () => {
               ¿A qué tienda acudiste?
             </p>
           </div>
-          <Select options={storeOptions} name="physicalTicketStore" />
+          <Select options={storeOptions} name="physicalTicketStore"/>
         </div>
         <div className="row">
           <div className="col-md-12">
@@ -111,7 +113,7 @@ const PhysicalTicket = () => {
           </div>
           <div className="col-md-12">
             <InputWithModalTicketNum
-              modalImageSrc="https://placehold.co/250x250"
+              modalImageSrc={TicketEj}
               modalText="Ingresa el número junto al código de barras de la parte inferior de tu ticket"
               placeholder="#"
               name="physicalTicketNumber"
@@ -135,7 +137,7 @@ const PhysicalTicket = () => {
           </div>
           <div className="col-md-12">
             <InputWithModalBarCode
-              modalImageSrc="https://placehold.co/250x250"
+              modalImageSrc={Code}
               modalText="Ingresa sin espacios el número que se encuentra debajo del código de barras ubicado en la caja de tu producto."
               placeholder="#"
               name="physicalTicketCode"

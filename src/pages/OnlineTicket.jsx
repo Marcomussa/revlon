@@ -169,7 +169,7 @@ const OnlineTicket = () => {
             </label>
             <input
               type="date"
-              className="form-control"
+              className="form-control shadow p-2 bg-body rounded"
               name="onlineDate"
               onChange={handleDateChange}
               value={date}
