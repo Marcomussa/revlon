@@ -1,7 +1,7 @@
 .bg-red-pic {
   background-image: url("../assets/img/backgrounds/red-pic.png");
   background-size: cover;
-  height: 100vh;
+  height: 120vh;
 }
 
 .bg-black-glitter, .bg-black-glitter-time  {
@@ -48,7 +48,7 @@
 }
 .bg-campari{
   background-color: #f46f6f;
-  height: 100vh;
+  height: 120vh;
 }
 .bg-validated{
   background-color: #2E756C;
@@ -84,7 +84,7 @@
   }
   .bg-disco{
     background-image: url("../assets/img/backgrounds/bg-disco-mobile.png");
-    height: 100vh;
+    height: 120vh;
     background-position-y: bottom !important;
   }
 }
