@@ -67,7 +67,7 @@ const LogInForm = () => {
                   <div className="my-3">
                     <input
                       type="email"
-                      className="form-control text-italic" 
+                      className="form-control text-italic p-2" 
                       id="email"
                       name="email"
                       placeholder="Ingresa tu correo electrónico"
@@ -81,7 +81,7 @@ const LogInForm = () => {
                   <div className="my-3">
                     <input
                       type="password"
-                      className="form-control text-italic"
+                      className="form-control text-italic p-2"
                       id="password"
                       name="password"
                       placeholder="Ingresa tu contraseña"

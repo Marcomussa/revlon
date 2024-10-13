@@ -49,7 +49,7 @@ const NavbarComponent = () => {
             {!isAuthenticated ? (
               <>
                 <Nav.Link
-                  className="text-white nav-link-nativefw-500 text-end"
+                  className="text-white nav-link-native fw-500 text-end"
                   href="/user/login"
                 >
                   Registra tu ticket

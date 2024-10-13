@@ -9,7 +9,7 @@ const TripInfo = () => {
     <>
     <Navbar></Navbar>
       <div className="container bg-beach">
-        <div className="row pt-5">
+        <div className="row pt-2">
           <div className="col-md-12 text-center mt-5 pt-5">
             <img src={Premio1} alt="" width={350} />
           </div>
