@@ -1,13 +1,17 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import axios from 'axios';
+import useSignup from "../hooks/useSignup"; // Asegúrate de que la ruta es correcta
 import "animate.css";
 import Button from "../assets/components/Button";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
+import Validated from "../assets/components/Validated";
 
 const RegisterForm = () => {
   const navigate = useNavigate();
+
+  const { signup, loading, error } = useSignup();
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -15,9 +19,7 @@ const RegisterForm = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    day: "",
-    month: "",
-    year: "",
+    birth: "",
     postalCode: "",
     source: "",
   });
@@ -38,22 +40,28 @@ const RegisterForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      // Peticion de Register hacia API
+      const result = await signup(formData);
+
+      if (result) {
+        console.log('Registro exitoso. Por favor, verifica tu cuenta.');
+      } else {
+        console.log('Error en el registro. Inténtalo de nuevo.');
+      }
+
       setShowAlert(true);
-      console.log(formData);
     } catch (error) {
       console.log(error);
-      setMessage("Error en el registro. Inténtalo de nuevo.");
+      console.log("Error en el registro. Inténtalo de nuevo.");
     }
   };
 
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div className="container bg-red pt-5">
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-8 col-sm-12">
@@ -79,7 +87,7 @@ const RegisterForm = () => {
                     </label>
                     <input
                       type="text"
-                      className="form-control text-italic"
+                      className="p-2 form-control text-italic"
                       id="firstName"
                       name="firstName"
                       placeholder="Ingresa tu nombre"
@@ -99,7 +107,7 @@ const RegisterForm = () => {
                     </label>
                     <input
                       type="text"
-                      className="form-control text-italic"
+                      className="p-2 form-control text-italic"
                       id="lastName"
                       name="lastName"
                       placeholder="Ingresa tus apellidos"
@@ -119,7 +127,7 @@ const RegisterForm = () => {
                     </label>
                     <input
                       type="email"
-                      className="form-control text-italic"
+                      className="p-2 form-control text-italic"
                       id="email"
                       name="email"
                       placeholder="Ingresa tu correo electrónico"
@@ -139,7 +147,7 @@ const RegisterForm = () => {
                     </label>
                     <input
                       type="password"
-                      className="form-control text-italic"
+                      className="p-2 form-control text-italic"
                       id="password"
                       name="password"
                       placeholder="Ingresa tu contraseña"
@@ -159,7 +167,7 @@ const RegisterForm = () => {
                     </label>
                     <input
                       type="password"
-                      className="form-control text-italic"
+                      className="p-2 form-control text-italic"
                       id="confirmPassword"
                       name="confirmPassword"
                       placeholder="Confirma tu contraseña"
@@ -170,23 +178,36 @@ const RegisterForm = () => {
                   </div>
 
                   {/* Verificación de contraseñas */}
-                  {passwordMatch === true && (
-                    <div className="text-success mb-3">
-                      Las contraseñas coinciden.
-                    </div>
-                  )}
-                  {passwordMatch === false && (
-                    <div className="text-danger mb-3">
-                      Las contraseñas no coinciden.
-                    </div>
+                  {passwordMatch ? (
+                    <Validated
+                      message="Las contraseñas coinciden"
+                      state={true}
+                    />
+                  ) : (
+                    <Validated
+                      message="Las contraseñas NO coinciden"
+                      state={false}
+                    />
                   )}
 
                   {/* Edad */}
                   <div className="mb-3">
-                    <label htmlFor="age" className="form-label text-white text-italic primary-font">
+                    <label
+                      htmlFor="age"
+                      className="form-label text-white text-italic primary-font"
+                    >
                       Edad*
                     </label>
-                    <div className="d-flex justify-content-between">
+                    <input
+                      type="date"
+                      id="birth"
+                      name="birth"
+                      className="p-2 form-control me-2 text-italic"
+                      onChange={handleChange}
+                      value={formData.birth}
+                      required
+                    />
+                    {/* <div className="d-flex justify-content-between">
                       <input
                         type="text"
                         className="form-control me-2 text-italic"
@@ -220,7 +241,7 @@ const RegisterForm = () => {
                         style={{ width: "32%" }}
                         required
                       />
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* Código postal */}
@@ -233,7 +254,7 @@ const RegisterForm = () => {
                     </label>
                     <input
                       type="text"
-                      className="form-control text-italic"
+                      className="p-2 form-control text-italic"
                       id="postalCode"
                       name="postalCode"
                       placeholder="Ingresa tu código postal"
@@ -252,7 +273,7 @@ const RegisterForm = () => {
                       ¿Cómo te enteraste de ésta dinámica?*
                     </label>
                     <select
-                      className="form-select"
+                      className="form-select p-2"
                       id="source"
                       name="source"
                       value={formData.source}
@@ -304,7 +325,7 @@ const RegisterForm = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

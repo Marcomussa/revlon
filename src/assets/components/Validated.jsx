@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { FaTimesCircle } from "react-icons/fa";
 import IconCheck from "../img/icons/ico_checkmark.png";
+import '../../styles/Validated.css'
 
 /* Este componente manejará éxito y error */
 const Validated = ({ message, state }) => {
