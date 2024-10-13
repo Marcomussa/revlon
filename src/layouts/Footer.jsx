@@ -1,7 +1,6 @@
 import '../styles/Nav.css'
 import Logo from '../assets/img/logo.png'
-import Iconfb from '../assets/img/icons/ico_fb.png'
-import Iconig from '../assets/img/icons/ico_ig.png'
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -11,8 +10,8 @@ const Footer = () => {
         <div className='row'>
           <div className="mt-5 text-center col-md-12">
             <Link>
-              <img src={Iconfb} width={34} alt="Facebook" className='m-2'/>
-              <img src={Iconig} width={34} alt="Instagram" className='m-2' />
+              <img src={FaFacebookF} width={34} alt="Facebook" className='m-2'/>
+              <img src={FaInstagram} width={34} alt="Instagram" className='m-2' />
             </Link>
           </div>
           <div className="col-md-12 text-center mt-2 mb-3">
