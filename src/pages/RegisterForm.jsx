@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import useSignup from "../hooks/useSignup"; // Asegúrate de que la ruta es correcta
+import useSignup from "../hooks/useSignup"; 
 import "animate.css";
 import Button from "../assets/components/Button";
 import Navbar from "../layouts/Navbar";
@@ -12,21 +12,22 @@ const RegisterForm = () => {
   const navigate = useNavigate();
 
   const { signup, loading, error } = useSignup();
-
+  
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
+    birthdate: "",
+    zipCode: "",
+    via: "",
     password: "",
     confirmPassword: "",
-    birth: "",
-    postalCode: "",
-    source: "",
   });
-
-  const [passwordMatch, setPasswordMatch] = useState(null); // Estado inicial como null
+  
+  const [passwordMatch, setPasswordMatch] = useState(null);
   const [message, setMessage] = useState("");
-  const [showAlert, setShowAlert] = useState(false); // Para mostrar la alerta
+  const [showAlert, setShowAlert] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,6 +42,8 @@ const RegisterForm = () => {
         setPasswordMatch(null);
       }
 
+      setMessage("");
+
       return updatedFormData;
     });
   };
@@ -49,23 +52,25 @@ const RegisterForm = () => {
     e.preventDefault();
 
     if (!passwordMatch) {
-      setMessage("Las contraseñas no coinciden");
       return; // Evitar envío si las contraseñas no coinciden
     }
 
     try {
-      const result = await signup(formData);
+      const formDataToSend = { ...formData };
+      delete formDataToSend.confirmPassword;
+      const result = await signup(formDataToSend);
 
       if (result) {
         console.log("Registro exitoso. Por favor, verifica tu cuenta.");
+        setShowAlert(true);
+        setIsDisabled(true);
       } else {
-        console.log("Error en el registro. Inténtalo de nuevo.");
+        setMessage("Error en el registro. Inténtalo de nuevo.");
       }
 
-      setShowAlert(true);
     } catch (error) {
-      console.log(error);
-      console.log("Error en el registro. Inténtalo de nuevo.");
+      setMessage(error.message);
+      console.log("Error en el registro. Inténtalo de nuevo 2.");
     }
   };
 
@@ -214,11 +219,11 @@ const RegisterForm = () => {
                     </label>
                     <input
                       type="date"
-                      id="birth"
-                      name="birth"
+                      id="birthdate"
+                      name="birthdate"
                       className="p-2 form-control me-2 text-italic shadow p-2 bg-body rounded"
                       onChange={handleChange}
-                      value={formData.birth}
+                      value={formData.birthdate}
                       required
                     />
                   </div>
@@ -226,7 +231,7 @@ const RegisterForm = () => {
                   {/* Código postal */}
                   <div className="my-3">
                     <label
-                      htmlFor="postalCode"
+                      htmlFor="zipCode"
                       className="form-label text-white primary-font text-italic"
                     >
                       Código postal*
@@ -234,10 +239,10 @@ const RegisterForm = () => {
                     <input
                       type="text"
                       className="p-2 form-control text-italic shadow p-2 bg-body rounded"
-                      id="postalCode"
-                      name="postalCode"
+                      id="zipCode"
+                      name="zipCode"
                       placeholder="Ingresa tu código postal"
-                      value={formData.postalCode}
+                      value={formData.zipCode}
                       onChange={handleChange}
                       required
                     />
@@ -246,30 +251,33 @@ const RegisterForm = () => {
                   {/* ¿Cómo te enteraste? */}
                   <div className="my-3">
                     <label
-                      htmlFor="source"
+                      htmlFor="via"
                       className="form-label text-white primary-font text-italic"
                     >
                       ¿Cómo te enteraste de ésta dinámica?*
                     </label>
                     <select
                       className="form-select p-2 shadow p-2 bg-body rounded"
-                      id="source"
-                      name="source"
-                      value={formData.source}
+                      id="via"
+                      name="via"
+                      value={formData.via}
                       onChange={handleChange}
                       required
                     >
                       <option value="" disabled>
                         Selecciona una opción
                       </option>
-                      <option value="internet">Internet</option>
-                      <option value="amigos">Amigos</option>
-                      <option value="redes">Redes Sociales</option>
-                      <option value="otros">Otros</option>
+                      <option value="INSTAGRAM">Instagram</option>
                     </select>
                   </div>
 
-                  {message && <p className="text-danger">{message}</p>}
+                  {message ? (
+                    <div className="mb-3">
+                      <Validated message={message} state={false} />
+                    </div>
+                  ) : (
+                    ""
+                  )}
 
                   {showAlert && (
                     <div className="alert alert-success animate__animated animate__backInDown mt-4">
@@ -286,17 +294,17 @@ const RegisterForm = () => {
                           className="btn btn-dark"
                           onClick={() => {
                             setShowAlert(false); // Cierra la alerta
-                            navigate("/login"); // Redirige a /login
+                            navigate("/user/login"); // Redirige a /login
                           }}
                         >
-                          OK
+                          Iniciar Sesion
                         </button>
                       </div>
                     </div>
                   )}
 
                   <div className="d-grid mb-5 pb-5">
-                    <Button text="REGISTRARSE" type="submit"></Button>
+                    <Button text="REGISTRARSE" type="submit" disabled={isDisabled}></Button>
                   </div>
                 </form>
               </div>

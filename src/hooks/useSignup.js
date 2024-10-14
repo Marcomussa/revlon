@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = "http://localhost:8080";
 
 const useSignup = () => {
   const [loading, setLoading] = useState(false);
@@ -11,10 +11,10 @@ const useSignup = () => {
     setError(null);
 
     try {
-      const response = await fetch(`${BASE_URL}/signup`, {
-        method: 'POST',
+      const response = await fetch(`${BASE_URL}/auth/signup`, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -22,7 +22,7 @@ const useSignup = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || 'Error en el registro');
+        throw new Error(data.message || "Error en el registro");
       }
 
       setLoading(false);
@@ -30,6 +30,7 @@ const useSignup = () => {
     } catch (error) {
       setError(error.message);
       setLoading(false);
+      throw error;
     }
   };
 
