@@ -15,6 +15,7 @@ import TripCalculateTotal from "./pages/TripCalculateTotal";
 import SpecialKitInfo from "./pages/SpecialKitInfo";
 import SpecialKitCalculateTotal from "./pages/SpecialKitCalculateTotal";
 import LegalBases from "./pages/LegalBases";
+import VerifyAccount from "./pages/VerifyAccount";
 import './styles/Fonts.css';
 import './styles/Input.css'
 
@@ -25,6 +26,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/legal-bases" element={<LegalBases />} />
+          <Route path="/verify-account" element={<VerifyAccount />} />
+          <Route path="*" element={<NotFoundPage />} />
           <Route
             path="/user/register"
             element={
@@ -105,7 +108,6 @@ const App = () => {
               </ProtectedRoute>
             }
           />
-          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
     </AuthProvider>
