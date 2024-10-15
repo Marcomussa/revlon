@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useState, useContext } from 'react';
 
 const AuthContext = createContext();
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
@@ -11,19 +11,24 @@ export const AuthProvider = ({ children }) => {
     const storedAuth = localStorage.getItem('isAuthenticated');
     return storedAuth === 'true';  
   });
+  const [tickets, setTickets] = useState([]); 
 
-  const login = () => {
+  const login = (token, ticketsData) => {
     setIsAuthenticated(true);
-    localStorage.setItem('isAuthenticated', 'true'); 
+    setTickets(ticketsData  || []);
+    localStorage.setItem('isAuthenticated', 'true');
+    localStorage.setItem('userToken', token);
   };
 
   const logout = () => {
     setIsAuthenticated(false);
-    localStorage.removeItem('isAuthenticated'); 
+    setTickets([]);
+    localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('userToken');
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout, tickets }}>
       {children}
     </AuthContext.Provider>
   );
