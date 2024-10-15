@@ -18,11 +18,11 @@ const Footer = () => {
               <FaInstagram size={34} className="m-2" style={{color: 'white'}}/>
             </Link>
           </div>
-          <div className="col-md-12 text-center mt-2 mb-3">
-            <img src={Logo} alt="Logo" width={100} />
+          <div className="col-md-12 text-center mt-2 mb-4">
+            <img src={Logo} alt="Logo" width={110} />
           </div>
           <div className="col-md-12 px-4">
-            <p className="text secondari text-center">
+            <p className="text secondari text-center border-top border-white pt-4">
               REVLON© 2024. Todos los Derechos Reservados. Al registrar tu
               compra en esta pagina, aceptas que has leido y entendido los
               terminos y condiciones. La participacion esta sujeta a la
@@ -31,7 +31,7 @@ const Footer = () => {
               conocer los lineamientos legales que rigen nuestra dinamica.
             </p>
           </div>
-          <div className="col-md-12 px-4 mb-5">
+          <div className="col-md-12 px-2 mb-5">
             <p className="text text-center text-white subtitle px-4 mb-5 ">
               {" "}
               Este sorteo es exclusivo para mayores de 18 años. Los datos
