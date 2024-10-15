@@ -6,28 +6,28 @@ const TicketDetailsCard = ({
   weeklyAnswer,
 }) => {
   return (
-    <div className="row">
-      <div className="col-md-12">
-        <p>
-          <b>Número de Ticket o de Pedido</b>
+    <div className="row bg-campari-card mx-2 mt-3 rounded-3 px-4">
+      <div className="col-md-12 border-bottom border-white pt-4 pb-2 px-0">
+        <p className="subtitle text-white primary-font mb-0">
+        Número de Ticket o de Pedido
         </p>
-        <p>{num}</p>
+        <p className="text-white primary-font text mb-0">{num}</p>
       </div>
-      <div className="col-md-12">
-        <p>
-          <b>Fecha de Registro</b>
+      <div className="col-md-12 border-bottom border-white py-2 px-0">
+        <p className="subtitle text-white primary-font mb-0">
+        Fecha de Registro
         </p>
-        <p>{registerDate}</p>
+        <p className="text-white primary-font mb-0">{registerDate}</p>
       </div>
-      <div className="col-md-12">
-        <p>
-          <b>Respuesta al concurso Principal</b>
+      <div className="col-md-12 border-bottom border-white py-2 px-0">
+        <p className="subtitle text-white primary-font mb-0">
+        Respuesta al concurso Principal
         </p>
-        <p>{principalAnswer}</p>
+        <p className="text-white primary-font mb-0">{principalAnswer}</p>
       </div>
-      <div className="col-md-12">
-        <p><b>Respuesta al concurso Semanal No.1</b></p>
-        <p>{weeklyAnswer}</p>
+      <div className="col-md-12 pt-2 pb-4 px-0 ">
+        <p className="subtitle text-white primary-font mb-0">Respuesta al concurso Semanal No.1</p>
+        <p className="text-white primary-font mb-0">{weeklyAnswer}</p>
       </div>
     </div>
   );
