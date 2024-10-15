@@ -1,36 +1,42 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
+import Navbar from "../layouts/Navbar";
+import Footer from "../layouts/Footer";
+import Button from "../assets/components/Button";
 
 const VerifyAccount = () => {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    const email = searchParams.get("email");
     const token = searchParams.get("t");
+    const email = searchParams.get("email");
 
     const verifyAccount = async () => {
       try {
-        const response = await fetch("http://localhost:8080/auth/verify-account", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, t: token }),
-        });
-
-        if (!response.ok) {
-          throw new Error("Error en la verificación de la cuenta");
-        }
+        const response = await fetch(
+          `http://localhost:8080/auth/verify-account?t=${token}&email=${email}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         const data = await response.json();
-        console.log(data);
 
-        setSuccess(true); 
+        if (!response.ok) {
+          const errorMessage = data.message || "Error en la verificación de la cuenta";
+          throw new Error(errorMessage);
+        }
+
+        setSuccess(true);
       } catch (err) {
-        setError(err.message); 
+        setError(err.message); // Mostrar el mensaje de error del backend
       } finally {
         setLoading(false);
       }
@@ -39,19 +45,49 @@ const VerifyAccount = () => {
     verifyAccount();
   }, [searchParams]);
 
-  if (loading) {
-    return <p>Cargando...</p>;
-  }
+  const handleNavigateToLogin = () => {
+    navigate("/user/login");
+  };
 
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
+  return (
+    <>
+      <Navbar />
+      <div className="container text-center mt-5 pt-5">
+        {loading && (
+          <>
+            <div>
+              <div className="spinner-border" role="status"></div>
+            </div>
+            <span className="sr-only">Cargando...</span>
+            <p className="mt-3">Verificando cuenta, por favor espera...</p>
+          </>
+        )}
 
-  if (success) {
-    return <p>Cuenta verificada con éxito.</p>;
-  }
+        {error && (
+          <div className="alert alert-danger" role="alert">
+            <h4 className="alert-heading">¡Error!</h4>
+            <p>{error}</p>
+            <Button
+              text="Volver al inicio"
+              onClick={() => navigate("/")}
+            ></Button>
+          </div>
+        )}
 
-  return null;
+        {success && (
+          <div className="alert alert-success" role="alert">
+            <h4 className="alert-heading">¡Éxito!</h4>
+            <p>Tu cuenta ha sido verificada con éxito.</p>
+            <Button
+              text="Iniciar sesión"
+              onClick={handleNavigateToLogin}
+            ></Button>
+          </div>
+        )}
+      </div>
+      <Footer />
+    </>
+  );
 };
 
 export default VerifyAccount;

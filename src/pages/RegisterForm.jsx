@@ -28,6 +28,7 @@ const RegisterForm = () => {
   const [message, setMessage] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false); 
+  const [buttonText, setButtonText] = useState("REGISTRARSE");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -56,6 +57,7 @@ const RegisterForm = () => {
     }
 
     try {
+      setButtonText("Registrando..."); 
       const formDataToSend = { ...formData };
       delete formDataToSend.confirmPassword;
       const result = await signup(formDataToSend);
@@ -71,6 +73,8 @@ const RegisterForm = () => {
     } catch (error) {
       setMessage(error.message);
       console.log("Error en el registro. Inténtalo de nuevo 2.");
+    } finally {
+      setButtonText("REGISTRARSE"); 
     }
   };
 
@@ -304,7 +308,7 @@ const RegisterForm = () => {
                   )}
 
                   <div className="d-grid mb-5 pb-5">
-                    <Button text="REGISTRARSE" type="submit" disabled={isDisabled}></Button>
+                    <Button text={buttonText} type="submit" disabled={isDisabled}></Button>
                   </div>
                 </form>
               </div>
