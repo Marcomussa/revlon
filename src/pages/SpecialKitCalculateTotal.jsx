@@ -38,7 +38,7 @@ const SpecialKitCalculateTotal = () => {
           ...previousGuesses,
           {
             contest: "kit",
-            guess: inputValue,
+            guess: Number(inputValue),
           },
         ],
       });

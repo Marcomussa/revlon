@@ -30,7 +30,7 @@ const TripCalculateTotal = () => {
         guesses: [
           {
             contest: 'trip',
-            guess: inputValue,
+            guess: Number(inputValue),
           },
         ],
       }); 

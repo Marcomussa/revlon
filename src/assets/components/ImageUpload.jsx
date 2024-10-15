@@ -1,39 +1,77 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { FaTrashAlt } from "react-icons/fa"; // Icono de eliminar
+import { FaTrashAlt } from "react-icons/fa";
 import { Modal, Button } from "react-bootstrap";
-import "../../styles/Button.css"; // Importamos el archivo de estilos CSS
+import "../../styles/Button.css";
 import Validated from "./Validated";
+import axios from "axios"; // Para hacer solicitudes HTTP
 
-// eslint-disable-next-line react/prop-types
+const CLOUDINARY_API_KEY = import.meta.env.VITE_CLOUDINARY_API_KEY;
+const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+const CLOUDINARY_UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/auto/upload`;
+const CLOUDINARY_FOLDER = "Revlon/Tickets"; 
+
 const ImageUpload = ({ onImageChange }) => {
   const [image, setImage] = useState(null);
-  const [imageName, setImageName] = useState(""); // Para manejar el nombre de la imagen
-  const [message, setMessage] = useState(""); // Estado para manejar el mensaje de éxito o error
-  const [error, setError] = useState(""); // Estado para manejar los errores
-  const [showModal, setShowModal] = useState(false); // Estado para mostrar/ocultar modal
+  const [imageName, setImageName] = useState(""); 
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [showModal, setShowModal] = useState(false); 
+  const [loading, setLoading] = useState(false); 
 
   const handleClose = () => setShowModal(false);
-
   const handleShow = () => setShowModal(true);
 
-  const handleImageChange = (e) => {
+  const getSignature = async () => {
+    try {
+      const response = await axios.get("/tickets/image_signature");
+      return response.data;
+    } catch (err) {
+      setError("Error al obtener la firma de imagen.");
+      throw err;
+    }
+  };
+
+  const handleImageChange = async (e) => {
     const file = e.target.files[0];
-    if (file && (file.type === "image/jpeg" || file.type === "image/png")) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setImage(e.target.result);
-        setImageName(file.name);
-        setMessage("Imagen subida exitosamente");
-        setError("");
-        onImageChange(true);
-      };
-      reader.readAsDataURL(file);
-    } else {
-      setImage(null);
+    if (!file) return;
+
+    if (file.type !== "image/jpeg" && file.type !== "image/png") {
       setError("Solo se permiten imágenes en formato JPG o PNG.");
       setMessage("");
       onImageChange(false);
+      return;
+    }
+
+    setLoading(true); 
+    setError("");
+    setMessage("");
+
+    try {
+      const { timestamp, signature } = await getSignature();
+
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("api_key", CLOUDINARY_API_KEY);
+      formData.append("timestamp", timestamp);
+      formData.append("signature", signature);
+      formData.append("folder", CLOUDINARY_FOLDER);
+
+      const uploadResponse = await axios.post(CLOUDINARY_UPLOAD_URL, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      const { public_id } = uploadResponse.data;
+
+      setImage(URL.createObjectURL(file));
+      setImageName(file.name);
+      setMessage("Imagen subida exitosamente");
+      onImageChange(true, public_id); 
+    } catch (error) {
+      console.log(error)
+      setError("Error al subir la imagen a Cloudinary.");
+      onImageChange(false);
+    } finally {
+      setLoading(false); // Terminar loading
     }
   };
 
@@ -54,6 +92,7 @@ const ImageUpload = ({ onImageChange }) => {
         accept="image/png, image/jpeg"
         style={{ display: "none" }}
         onChange={handleImageChange}
+        disabled={loading} // Deshabilitar mientras se sube
       />
 
       <div
@@ -71,7 +110,9 @@ const ImageUpload = ({ onImageChange }) => {
           marginTop: "10px",
         }}
       >
-        {image ? (
+        {loading ? (
+          <p>Cargando...</p> 
+        ) : image ? (
           <>
             {/* Imagen cargada */}
             <img
@@ -83,7 +124,7 @@ const ImageUpload = ({ onImageChange }) => {
                 borderRadius: "10px",
               }}
             />
-            {/* Título de la imagen y botón de eliminar */}
+            {/* Botón de eliminar */}
             <div
               style={{
                 position: "absolute",
@@ -99,7 +140,6 @@ const ImageUpload = ({ onImageChange }) => {
                 alignItems: "center",
               }}
             >
-              {/* <span style={{ marginRight: "10px" }}>{imageName}</span> */}
               <FaTrashAlt
                 style={{ cursor: "pointer", fontSize: "24px" }}
                 onClick={handleShow}
@@ -107,7 +147,6 @@ const ImageUpload = ({ onImageChange }) => {
             </div>
           </>
         ) : (
-          // Placeholder en caso de no haber imagen
           <img
             src="https://via.placeholder.com/125"
             alt="Placeholder"
@@ -124,12 +163,15 @@ const ImageUpload = ({ onImageChange }) => {
         SUBIR FOTO
       </label>
 
-      {message ? (
-        <div className=" mt-2">
+      {message && (
+        <div className="mt-2">
           <Validated message={message} state={true} />
         </div>
-      ) : (
-        ""
+      )}
+      {error && (
+        <div className="mt-2 text-danger">
+          <Validated message={error} state={false} />
+        </div>
       )}
 
       <Modal show={showModal} onHide={handleClose} centered>
