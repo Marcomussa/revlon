@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Select from "../assets/components/Select";
 import InputWithModalOrderNum from "../assets/components/InputWithModalOrderNum";
 import InputWithModalProductCode from "../assets/components/InputWithModalProductCode";

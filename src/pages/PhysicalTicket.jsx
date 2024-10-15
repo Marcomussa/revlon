@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
+import { useTicketData } from "../context/TicketDataContext";
 import ImageUpload from "../assets/components/ImageUpload";
 import InputWithModalTicketNum from "../assets/components/InputWithModalTicketNum";
 import InputWithModalBarCode from "../assets/components/InputWithModalBarCode";
@@ -6,8 +8,8 @@ import Validated from "../assets/components/Validated";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import Ticket from "../assets/img/ticket-fisico.png";
-import TicketEj from "../assets/img/ticket_ejemplo.png"
-import Code from "../assets/img/code_ejemplo.png"
+import TicketEj from "../assets/img/ticket_ejemplo.png";
+import Code from "../assets/img/code_ejemplo.png";
 import Button from "../assets/components/Button";
 import Select from "../assets/components/Select";
 import "animate.css";
@@ -26,6 +28,8 @@ const PhysicalTicket = () => {
     { value: "SORIANA", label: "Soriana" },
   ];
 
+  const { ticketData, updateTicketData } = useTicketData(); //! Contexto
+  const [store, setStore] = useState("");
   const [ticketNum, setTicketNum] = useState("");
   const [barCode, setBarCode] = useState("");
   const [isTicketValid, setIsTicketValid] = useState(false);
@@ -33,16 +37,28 @@ const PhysicalTicket = () => {
   const [isFormValid, setIsFormValid] = useState(false);
   const [isImageValid, setIsImageValid] = useState(false);
 
+  const handleClick = () => {
+    console.log(ticketData);
+  };
+
   const handleTicketNumChange = (e) => {
     const value = e.target.value || "";
     setTicketNum(value);
+    updateTicketData({ ticketNum: value }); // Actualizar el contexto
     validateTicketNum(value);
     validateForm(value, barCode, isImageValid);
+  };
+
+  const handleStoreChange = (e) => {
+    const value = e.target.value || "";
+    setStore(value);
+    updateTicketData({ store: value }); // Actualizar el contexto
   };
 
   const handleBarCodeChange = (e) => {
     const value = e.target.value || "";
     setBarCode(value);
+    updateTicketData({ barCode: value }); // Actualizar el contexto
     validateBarCode(value);
     validateForm(ticketNum, value, isImageValid);
   };
@@ -103,7 +119,11 @@ const PhysicalTicket = () => {
               ¿A qué tienda acudiste?
             </p>
           </div>
-          <Select options={storeOptions} name="physicalTicketStore"/>
+          <Select
+            options={storeOptions}
+            name="physicalTicketStore"
+            onChange={handleStoreChange}
+          />
         </div>
         <div className="row">
           <div className="col-md-12">
@@ -173,6 +193,7 @@ const PhysicalTicket = () => {
           <div className="col-md-12 mb-4">
             <Button
               text="CONTINUAR"
+              onClick={handleClick} // Función para ver los datos al hacer clic
               route="/user/ticket/trip"
               disabled={!isFormValid}
             />

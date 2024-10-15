@@ -11,11 +11,11 @@ export const AuthProvider = ({ children }) => {
     const storedAuth = localStorage.getItem('isAuthenticated');
     return storedAuth === 'true';  
   });
-  const [tickets, setTickets] = useState([]); 
+  const [tickets, setTickets] = useState([]); // Estado para almacenar los tickets
 
   const login = (token, ticketsData) => {
     setIsAuthenticated(true);
-    setTickets(ticketsData  || []);
+    setTickets(ticketsData); // Almacenar los tickets cuando el usuario inicia sesión
     localStorage.setItem('isAuthenticated', 'true');
     localStorage.setItem('userToken', token);
   };
