@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext } from "react";
 
 const AuthContext = createContext();
 
@@ -8,23 +8,23 @@ export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
-    const storedAuth = localStorage.getItem('isAuthenticated');
-    return storedAuth === 'true';  
+    const storedAuth = localStorage.getItem("isAuthenticated");
+    return storedAuth === "true";
   });
   const [tickets, setTickets] = useState([]); // Estado para almacenar los tickets
 
   const login = (token, ticketsData) => {
     setIsAuthenticated(true);
     setTickets(ticketsData); // Almacenar los tickets cuando el usuario inicia sesión
-    localStorage.setItem('isAuthenticated', 'true');
-    localStorage.setItem('userToken', token);
+    localStorage.setItem("isAuthenticated", "true");
+    // localStorage.setItem("userToken", token);
   };
 
   const logout = () => {
     setIsAuthenticated(false);
     setTickets([]);
-    localStorage.removeItem('isAuthenticated');
-    localStorage.removeItem('userToken');
+    localStorage.removeItem("isAuthenticated");
+    localStorage.removeItem("userToken");
   };
 
   return (

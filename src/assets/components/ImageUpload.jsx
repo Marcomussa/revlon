@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { useAuth } from '../../context/AuthContext';
 import { FaTrashAlt } from "react-icons/fa";
 import { Modal, Button } from "react-bootstrap";
 import "../../styles/Button.css";
 import Validated from "./Validated";
-import axios from "axios"; // Para hacer solicitudes HTTP
+import axios from "axios"; 
 
 const CLOUDINARY_API_KEY = import.meta.env.VITE_CLOUDINARY_API_KEY;
 const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
@@ -11,6 +12,8 @@ const CLOUDINARY_UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOU
 const CLOUDINARY_FOLDER = "Revlon/Tickets"; 
 
 const ImageUpload = ({ onImageChange }) => {
+  const { isAuthenticated } = useAuth();
+
   const [image, setImage] = useState(null);
   const [imageName, setImageName] = useState(""); 
   const [message, setMessage] = useState("");
@@ -23,7 +26,12 @@ const ImageUpload = ({ onImageChange }) => {
 
   const getSignature = async () => {
     try {
-      const response = await axios.get("/tickets/image_signature");
+      const userToken = localStorage.getItem('userToken')
+      const response = await axios.get("http://localhost:8080/tickets/image_signature", {
+        headers: {
+          Authorization: `Bearer ${userToken}`
+        }
+      });
       return response.data;
     } catch (err) {
       setError("Error al obtener la firma de imagen.");
@@ -34,6 +42,11 @@ const ImageUpload = ({ onImageChange }) => {
   const handleImageChange = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
+
+    if (!isAuthenticated) {
+      setError("Debes estar autenticado para subir una imagen.");
+      return;
+    }
 
     if (file.type !== "image/jpeg" && file.type !== "image/png") {
       setError("Solo se permiten imágenes en formato JPG o PNG.");
@@ -57,11 +70,14 @@ const ImageUpload = ({ onImageChange }) => {
       formData.append("folder", CLOUDINARY_FOLDER);
 
       const uploadResponse = await axios.post(CLOUDINARY_UPLOAD_URL, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
+        headers: { 
+          "Content-Type": "multipart/form-data"
+        },
       });
 
       const { public_id } = uploadResponse.data;
 
+      console.log(public_id )
       setImage(URL.createObjectURL(file));
       setImageName(file.name);
       setMessage("Imagen subida exitosamente");
