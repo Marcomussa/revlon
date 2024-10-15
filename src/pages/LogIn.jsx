@@ -1,12 +1,14 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-//import axios from "axios";
+import { useAuth } from "../context/AuthContext"; // Importar useAuth para utilizar el contexto
+import useLogin from "../hooks/useLogin";
 import "animate.css";
 import Button from "../assets/components/Button";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
-import IconProfile from "../assets/img/icons/ico_profile.png"
+import Validated from "../assets/components/Validated";
+import IconProfile from "../assets/img/icons/ico_profile.png";
 
 const LogInForm = () => {
   const [formData, setFormData] = useState({
@@ -14,9 +16,10 @@ const LogInForm = () => {
     password: "",
   });
 
+  const { login: authLogin } = useAuth(); 
+  const { login, loading, error } = useLogin();
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const { login } = useAuth();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,17 +30,12 @@ const LogInForm = () => {
     e.preventDefault();
 
     try {
-      //   const response = await axios.post("http://api", {
-      //     email: formData.email,
-      //     password: formData.password,
-      //   });
+      const token = await login(formData.email, formData.password);
 
-      //   if (response.status === 200) {
-      //     login();
-      //     navigate("/profile");
-      //   }
-      login();
-      navigate("/user/dashboard");
+      if (token) {
+        authLogin();
+        navigate("/user/dashboard");
+      }
     } catch (error) {
       console.log(error);
       setErrorMessage("Correo o contraseña incorrectos");
@@ -46,13 +44,13 @@ const LogInForm = () => {
 
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div className="container bg-red pt-5">
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-8 col-sm-12">
             <div className="">
               <div className="card-body bg-red pt-5 mt-5 text-center">
-                <img src={IconProfile} alt="Icon Profile" width={70}/>
+                <img src={IconProfile} alt="Icon Profile" width={70} />
                 <h3
                   className="text-center title text-white primary-font"
                   style={{
@@ -67,7 +65,7 @@ const LogInForm = () => {
                   <div className="my-3">
                     <input
                       type="email"
-                      className="form-control text-italic p-2 shadow p-2 bg-body rounded " 
+                      className="form-control text-italic p-2 shadow p-2 bg-body rounded "
                       id="email"
                       name="email"
                       placeholder="Ingresa tu correo electrónico"
@@ -91,12 +89,20 @@ const LogInForm = () => {
                     />
                   </div>
 
-                  {errorMessage && (
-                    <p className="text-danger">{errorMessage}</p>
-                  )}
+                  {error ? (
+                    <div className="mb-3">
+                      <Validated message={error} state={false}></Validated>
+                    </div>
+                  ) : ""}
+
+                  {/* {errorMessage && <p className="text-danger">{errorMessage}</p>} */}
 
                   <div className="d-grid">
-                    <Button text="INICIAR SESION" type="submit"></Button>
+                    <Button
+                      text={loading ? "Cargando..." : "INICIAR SESIÓN"} 
+                      type="submit"
+                      disabled={loading} 
+                    />
                   </div>
                 </form>
 
@@ -104,14 +110,14 @@ const LogInForm = () => {
                   ¿Es la primera vez que registras un ticket?
                 </p>
                 <div className="d-grid pb-5">
-                  <Button text="REGISTRARSE" route="/user/register"></Button>
+                  <Button text="REGISTRARSE" route="/user/register" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

@@ -14,12 +14,12 @@ export const AuthProvider = ({ children }) => {
 
   const login = () => {
     setIsAuthenticated(true);
-    localStorage.setItem('isAuthenticated', 'true'); // Guardar en localStorage
+    localStorage.setItem('isAuthenticated', 'true'); 
   };
 
   const logout = () => {
     setIsAuthenticated(false);
-    localStorage.removeItem('isAuthenticated'); // Eliminar del localStorage
+    localStorage.removeItem('isAuthenticated'); 
   };
 
   return (
