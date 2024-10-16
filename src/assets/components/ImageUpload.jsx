@@ -1,4 +1,7 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import { useState } from "react";
+import { useTicketData } from "../../context/TicketDataContext";
 import { useAuth } from '../../context/AuthContext';
 import { FaTrashAlt } from "react-icons/fa";
 import { Modal, Button } from "react-bootstrap";
@@ -13,6 +16,7 @@ const CLOUDINARY_FOLDER = "Revlon/Tickets";
 
 const ImageUpload = ({ onImageChange }) => {
   const { isAuthenticated } = useAuth();
+  const { updateTicketData } = useTicketData(); //! Contexto
 
   const [image, setImage] = useState(null);
   const [imageName, setImageName] = useState(""); 
@@ -77,7 +81,10 @@ const ImageUpload = ({ onImageChange }) => {
 
       const { public_id } = uploadResponse.data;
 
-      console.log(public_id )
+      updateTicketData({
+        image: public_id
+      })
+
       setImage(URL.createObjectURL(file));
       setImageName(file.name);
       setMessage("Imagen subida exitosamente");

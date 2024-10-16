@@ -44,7 +44,7 @@ const PhysicalTicket = () => {
   const handleTicketNumChange = (e) => {
     const value = e.target.value || "";
     setTicketNum(value);
-    updateTicketData({ ticketNum: value }); // Actualizar el contexto
+    updateTicketData({ number: value }); // Actualizar el contexto
     validateTicketNum(value);
     validateForm(value, barCode, isImageValid);
   };
@@ -77,7 +77,7 @@ const PhysicalTicket = () => {
   };
 
   const validateBarCode = (barCode) => {
-    if (barCode.length === 9) {
+    if (barCode.length === 14) {
       setIsBarCodeValid(true);
     } else {
       setIsBarCodeValid(false);
@@ -85,7 +85,7 @@ const PhysicalTicket = () => {
   };
 
   const validateForm = (ticket, barCode, image) => {
-    if (ticket.length === 21 && barCode.length === 9 && image) {
+    if (ticket.length === 21 && barCode.length === 14 && image) {
       setIsFormValid(true);
     } else {
       setIsFormValid(false);

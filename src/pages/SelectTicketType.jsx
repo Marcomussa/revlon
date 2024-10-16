@@ -11,7 +11,7 @@ const SelectTicketType = () => {
   useClearOnBackNavigation(); 
 
   const handleButtonClick = (buttonType) => {
-    updateTicketData({ purchaseType: buttonType }); 
+    updateTicketData({ type: buttonType }); 
   };
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const SelectTicketType = () => {
           <div className="col-md-12">
             <Button
               text="TIENDA FISICA"
-              onClick={() => handleButtonClick("COMPRA FISICA")}
+              onClick={() => handleButtonClick("PHYSICAL")}
               route="/user/ticket/physical"
             ></Button>
           </div>
@@ -45,7 +45,7 @@ const SelectTicketType = () => {
           <div className="col-md-12 mb-5">
             <Button
               text="COMPRA ONLINE"
-              onClick={() => handleButtonClick("COMPRA ONLINE")}
+              onClick={() => handleButtonClick("ONLINE")}
               route="/user/ticket/online"
             ></Button>
           </div>

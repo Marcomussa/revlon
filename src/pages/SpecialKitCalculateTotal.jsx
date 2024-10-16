@@ -1,22 +1,33 @@
 import { useState, useEffect } from "react";
 import { useTicketData } from "../context/TicketDataContext";
+import useRegisterTicket from '../hooks/useRegisterTicket';
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import Button from "../assets/components/Button";
 import Input from "../assets/components/Input";
 import ModalInfo from "../assets/components/ModalInfo";
 
+const KIT_ID = import.meta.env.VITE_KIT_ID
+
 const SpecialKitCalculateTotal = () => {
   const { ticketData, updateTicketData, clearTicketData } = useTicketData(); //! Contexto
+  const { registerTicket } = useRegisterTicket();
 
   const [inputValue, setInputValue] = useState("");
   const [isInputValid, setIsInputValid] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const handleShow = () => {
-    clearTicketData(); 
-    setShowModal(true);
+  const handleSubmitTicket = async (data) => {
+    try {
+      const response = await registerTicket(data);  
+      console.log(response)
+    } catch (err) {
+      console.error('Error al registrar el ticket:', err);
+    }
   };
+
+  const handleShow = () => setShowModal(true);
+
   const handleClose = () => setShowModal(false);
 
   const handleInputChange = (e) => {
@@ -29,25 +40,30 @@ const SpecialKitCalculateTotal = () => {
     }
   };
 
-  const handleButtonClick = () => {
+  const handleButtonClick = async () => {
     const previousGuesses = ticketData.guesses || [];
-
+    const updatedTicketData = {
+      ...ticketData,
+      guesses: [
+        ...previousGuesses,
+        {
+          contest: KIT_ID,
+          guess: Number(inputValue),
+        },
+      ],
+    };
+  
     if (isInputValid) {
-      updateTicketData({
-        guesses: [
-          ...previousGuesses,
-          {
-            contest: "kit",
-            guess: Number(inputValue),
-          },
-        ],
-      });
-
-      //! API CALL
-
+      updateTicketData(updatedTicketData);
+  
+      await handleSubmitTicket(updatedTicketData);
+  
+      clearTicketData();
+  
       handleShow();
     }
   };
+  
 
   // Usar useEffect para ver el estado actualizado de ticketData
   useEffect(() => {

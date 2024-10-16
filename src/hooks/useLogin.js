@@ -38,12 +38,13 @@ const useLogin = () => {
       });
 
       const ticketData = await ticketResponse.json();
+      localStorage.setItem("tickets", JSON.stringify(ticketData));
 
       if (!ticketResponse.ok) {
         throw new Error(ticketData.message || "Error al obtener los tickets");
       }
 
-      authLogin(userToken, ticketData);
+      authLogin();
       setLoading(false);
 
       return userToken;

@@ -6,6 +6,8 @@ import Button from "../assets/components/Button";
 import Input from "../assets/components/Input";
 import ModalInfo from "../assets/components/ModalInfo";
 
+const TRIP_ID = import.meta.env.VITE_TRIP_ID
+
 const TripCalculateTotal = () => {
   const { ticketData, updateTicketData } = useTicketData(); //! Contexto
 
@@ -29,7 +31,7 @@ const TripCalculateTotal = () => {
       updateTicketData({
         guesses: [
           {
-            contest: 'trip',
+            contest: TRIP_ID,
             guess: Number(inputValue),
           },
         ],

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import Button from "../assets/components/Button";
 import TicketDetailsCard from "../assets/components/TicketDetailsCard";
@@ -5,16 +6,16 @@ import Footer from "../layouts/Footer";
 import Navbar from "../layouts/Navbar";
 import IconProfile from "../assets/img/icons/ico_profile.png";
 import IconQuestion from "../assets/img/icons/ico_questionmark.png";
-import { useAuth } from "../context/AuthContext";
+import useGetTickets from "../hooks/useGetTickets";
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
-  const { tickets } = useAuth();
+  const { tickets, loading, error } = useGetTickets();
 
   useEffect(() => {
     const storedUser = localStorage.getItem("userFirstName");
-    console.log(storedUser)
-    setUserData(storedUser)
+    const tickets = localStorage.getItem("tickets");
+    setUserData(storedUser);
   }, []);
 
   return (
@@ -41,22 +42,21 @@ const Dashboard = () => {
 
         {/* Mostrar los tickets obtenidos */}
         {Array.isArray(tickets) && tickets.length > 0 ? (
-          <ul>
+          <>
+            <p className="subtitle text-white primary-font pt-4">
+              Tu historial de participaciones
+            </p>
             {tickets.map((ticket, index) => (
-              <>
-                <p className="subtitle text-white primary-font pt-4">
-                  Tu historial de participaciones
-                </p>
+              <div key={index}>
                 <TicketDetailsCard
-                  key={index}
-                  num={1}
+                  num={ticket.number}
                   registerDate={1}
-                  principalAnswer={1}
-                  weeklyAnswer={1}
+                  principalAnswer={ticket.guesses[0].guess}
+                  weeklyAnswer={ticket.guesses[1].guess}
                 />
-              </>
+              </div>
             ))}
-          </ul>
+          </>
         ) : (
           <div className="row">
             <div className="col-md-12 text-center text-white text-italic primary-font py-2">
@@ -71,7 +71,7 @@ const Dashboard = () => {
         )}
 
         <div className="row">
-          <div className="col-md-12 text-center">
+          <div className="col-md-12 text-center mt-2">
             <Button
               text="REGISTRA TU TICKET"
               route="/user/ticket/select-type"
