@@ -272,6 +272,10 @@ const RegisterForm = () => {
                         Selecciona una opción
                       </option>
                       <option value="INSTAGRAM">Instagram</option>
+                      <option value="FACEBOOK">Facebook</option>
+                      <option value="ONLINE_BANNER">Online</option>
+                      <option value="GOOGLE">Google</option>
+                      <option value="PHYSICAL_STORE">Tienda Física</option>
                     </select>
                   </div>
 

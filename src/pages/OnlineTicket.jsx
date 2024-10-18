@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
+import { useTicketData } from "../context/TicketDataContext";
 import Select from "../assets/components/Select";
 import InputWithModalOrderNum from "../assets/components/InputWithModalOrderNum";
 import InputWithModalProductCode from "../assets/components/InputWithModalProductCode";
@@ -12,12 +13,15 @@ import Validated from "../assets/components/Validated";
 
 const OnlineTicket = () => {
   const storeOptions = [
-    { value: "walmart", label: "Walmart" },
-    { value: "target", label: "Target" },
-    { value: "costco", label: "Costco" },
-    { value: "amazon", label: "Amazon" },
+    { value: "COPPEL", label: "Coppel" },
+    { value: "DELSOL", label: "Delsol" },
+    { value: "WALMART", label: "Walmart" },
+    { value: "HEB", label: "Heb" },
+    { value: "WOOLWORTH", label: "Woolmorth" }
   ];
 
+  const { ticketData, updateTicketData } = useTicketData(); //! Contexto
+  const [store, setStore] = useState("");
   const [orderNum, setOrderNum] = useState("");
   const [productCode, setProductCode] = useState("");
   const [date, setDate] = useState("");
@@ -27,9 +31,16 @@ const OnlineTicket = () => {
   const [isImageValid, setIsImageValid] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
 
+  const handleStoreChange = (e) => {
+    const value = e.target.value || "";
+    setStore(value);
+    updateTicketData({ store: value }); // Actualizar el contexto
+  };
+
   const handleOrderNumChange = (e) => {
     const value = e.target.value || "";
     setOrderNum(value);
+    updateTicketData({ number: value }); // Actualizar el contexto
     validateOrderNum(value);
     validateForm(value, productCode, date, isImageValid);
   };
@@ -37,6 +48,7 @@ const OnlineTicket = () => {
   const handleProductCodeChange = (e) => {
     const value = e.target.value || "";
     setProductCode(value);
+    updateTicketData({ barCode: value }); // Actualizar el contexto
     validateCode(value);
     validateForm(orderNum, value, date, isImageValid);
   };
@@ -44,6 +56,7 @@ const OnlineTicket = () => {
   const handleDateChange = (e) => {
     const value = e.target.value;
     setDate(value);
+    updateTicketData({ date: value }); // Actualizar el contexto
     validateDate(value);
     validateForm(orderNum, productCode, value, isImageValid);
   };
@@ -107,7 +120,11 @@ const OnlineTicket = () => {
             <p className="text-white text-italic primary-font mb-2">
               ¿En cuál tienda participante ordenaste?
             </p>
-            <Select options={storeOptions} name="physicalTicketStore" />
+            <Select
+              options={storeOptions}
+              name="physicalTicketStore"
+              onChange={handleStoreChange}
+            />
           </div>
         </div>
         <div className="row">

@@ -9,6 +9,7 @@ import "../../styles/Button.css";
 import Validated from "./Validated";
 import axios from "axios"; 
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const CLOUDINARY_API_KEY = import.meta.env.VITE_CLOUDINARY_API_KEY;
 const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
 const CLOUDINARY_UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/auto/upload`;
@@ -31,7 +32,7 @@ const ImageUpload = ({ onImageChange }) => {
   const getSignature = async () => {
     try {
       const userToken = localStorage.getItem('userToken')
-      const response = await axios.get("http://localhost:8080/tickets/image_signature", {
+      const response = await axios.get(`${BACKEND_URL}/tickets/image_signature`, {
         headers: {
           Authorization: `Bearer ${userToken}`
         }

@@ -16,17 +16,21 @@ import "animate.css";
 
 const PhysicalTicket = () => {
   const storeOptions = [
-    { value: "WALMART", label: "Walmart" },
-    { value: "DELSOL", label: "Delsol" },
-    { value: "COPPEL", label: "Coppel" },
-    { value: "HEB", label: "Heb" },
     { value: "CHEDRAUI", label: "Chedraui" },
+    { value: "COPPEL", label: "Coppel" },
+    { value: "DELSOL", label: "Delsol" },
     { value: "DAX", label: "Dax" },
+    { value: "HEB", label: "Heb" },
     { value: "LIVERPOOL", label: "Liverpool" },
     { value: "SANBORNS", label: "Sanborns" },
     { value: "SEARS", label: "Sears" },
     { value: "SORIANA", label: "Soriana" },
+    { value: "SUBURBIA", label: "Suburbia" },
+    { value: "WALMART", label: "Walmart" },
+    { value: "WOOLWORTH", label: "Woolworth" },
+    { value: "FRESKO", label: "Fresko" }
   ];
+  
 
   const { ticketData, updateTicketData } = useTicketData(); //! Contexto
   const [store, setStore] = useState("");
