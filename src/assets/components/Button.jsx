@@ -5,10 +5,10 @@ import '../../styles/Button.css';
 const Button = ({ text, type = 'button', route = '', onClick, disabled = false }) => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (!disabled) { 
       if (onClick) {
-        onClick(); 
+        await onClick(); 
       }
       if (route) {
         navigate(route); 

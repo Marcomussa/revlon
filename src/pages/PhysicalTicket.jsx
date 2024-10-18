@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useTicketData } from "../context/TicketDataContext";
 import ImageUpload from "../assets/components/ImageUpload";
 import InputWithModalTicketNum from "../assets/components/InputWithModalTicketNum";
@@ -28,11 +28,11 @@ const PhysicalTicket = () => {
     { value: "SUBURBIA", label: "Suburbia" },
     { value: "WALMART", label: "Walmart" },
     { value: "WOOLWORTH", label: "Woolworth" },
-    { value: "FRESKO", label: "Fresko" }
+    { value: "FRESKO", label: "Fresko" },
   ];
-  
 
   const { ticketData, updateTicketData } = useTicketData(); //! Contexto
+  const [isUploading, setIsUploading] = useState(false);
   const [store, setStore] = useState("");
   const [ticketNum, setTicketNum] = useState("");
   const [barCode, setBarCode] = useState("");
@@ -41,8 +41,15 @@ const PhysicalTicket = () => {
   const [isFormValid, setIsFormValid] = useState(false);
   const [isImageValid, setIsImageValid] = useState(false);
 
-  const handleClick = () => {
-    console.log(ticketData);
+  const imageUploadRef = useRef(null);
+
+  const handleClick = async () => {
+    if (imageUploadRef.current) {
+      setIsUploading(true);
+      await imageUploadRef.current.uploadImage();
+      setIsUploading(false);
+      console.log(ticketData);
+    }
   };
 
   const handleTicketNumChange = (e) => {
@@ -191,15 +198,18 @@ const PhysicalTicket = () => {
           </div>
         </div>
         <div className="row">
-          <ImageUpload onImageChange={handleImageValidation} />
+          <ImageUpload
+            ref={imageUploadRef}
+            onImageChange={handleImageValidation}
+          />
         </div>
         <div className="row">
           <div className="col-md-12 mb-4">
             <Button
-              text="CONTINUAR"
-              onClick={handleClick} // Función para ver los datos al hacer clic
+              text={isUploading ? "Cargando..." : "CONTINUAR"} 
+              onClick={handleClick}
               route="/user/ticket/trip"
-              disabled={!isFormValid}
+              disabled={!isFormValid || isUploading} 
             />
           </div>
         </div>

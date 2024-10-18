@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+/* eslint-disable react/display-name */
+import { useState, forwardRef, useImperativeHandle, useEffect, useRef } from "react";
 import { useTicketData } from "../../context/TicketDataContext";
 import { useAuth } from '../../context/AuthContext';
 import { FaTrashAlt } from "react-icons/fa";
@@ -15,23 +16,26 @@ const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
 const CLOUDINARY_UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/auto/upload`;
 const CLOUDINARY_FOLDER = "Revlon/Tickets"; 
 
-const ImageUpload = ({ onImageChange }) => {
+const ImageUpload = forwardRef(({ onImageChange }, ref) => {
   const { isAuthenticated } = useAuth();
-  const { updateTicketData } = useTicketData(); //! Contexto
+  const { updateTicketData } = useTicketData();
 
   const [image, setImage] = useState(null);
+  const [imageURL, setImageURL] = useState(null); 
   const [imageName, setImageName] = useState(""); 
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false); 
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
+
+  const fileInputRef = useRef(null); 
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
   const getSignature = async () => {
     try {
-      const userToken = localStorage.getItem('userToken')
+      const userToken = localStorage.getItem('userToken');
       const response = await axios.get(`${BACKEND_URL}/tickets/image_signature`, {
         headers: {
           Authorization: `Bearer ${userToken}`
@@ -44,7 +48,7 @@ const ImageUpload = ({ onImageChange }) => {
     }
   };
 
-  const handleImageChange = async (e) => {
+  const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
@@ -60,15 +64,38 @@ const ImageUpload = ({ onImageChange }) => {
       return;
     }
 
-    setLoading(true); 
+    setImage(file); 
+    setImageName(file.name);
     setError("");
-    setMessage("");
+    setMessage("Imagen subida exitosamente.");
+    onImageChange(true);
+  };
+
+  // Actualizar la URL temporal de la imagen
+  useEffect(() => {
+    if (image) {
+      const newImageURL = URL.createObjectURL(image);
+      setImageURL(newImageURL);
+      
+      // Limpiar el objeto URL para liberar memoria
+      return () => {
+        URL.revokeObjectURL(newImageURL);
+      };
+    }
+  }, [image]);
+
+   const uploadImage = async () => {
+    if (!image) {
+      setError("No hay imagen para subir.");
+      return;
+    }
 
     try {
+      setLoading(true); 
       const { timestamp, signature } = await getSignature();
 
       const formData = new FormData();
-      formData.append("file", file);
+      formData.append("file", image); 
       formData.append("api_key", CLOUDINARY_API_KEY);
       formData.append("timestamp", timestamp);
       formData.append("signature", signature);
@@ -82,22 +109,24 @@ const ImageUpload = ({ onImageChange }) => {
 
       const { public_id } = uploadResponse.data;
 
+      // Actualizar los datos del ticket con el ID de la imagen
       updateTicketData({
         image: public_id
-      })
+      });
 
-      setImage(URL.createObjectURL(file));
-      setImageName(file.name);
       setMessage("Imagen subida exitosamente");
       onImageChange(true, public_id); 
     } catch (error) {
-      console.log(error)
       setError("Error al subir la imagen a Cloudinary.");
       onImageChange(false);
     } finally {
-      setLoading(false); // Terminar loading
+      setLoading(false); 
     }
   };
+
+  useImperativeHandle(ref, () => ({
+    uploadImage
+  }));
 
   const handleRemoveImage = () => {
     setImage(null);
@@ -106,6 +135,11 @@ const ImageUpload = ({ onImageChange }) => {
     setError("");
     onImageChange(false);
     handleClose();
+
+    // Restablecer el valor del input file a null
+    if (fileInputRef.current) {
+      fileInputRef.current.value = null;
+    }
   };
 
   return (
@@ -116,7 +150,8 @@ const ImageUpload = ({ onImageChange }) => {
         accept="image/png, image/jpeg"
         style={{ display: "none" }}
         onChange={handleImageChange}
-        disabled={loading} // Deshabilitar mientras se sube
+        ref={fileInputRef} // Asignar el ref al input file
+        disabled={loading} 
       />
 
       <div
@@ -138,9 +173,8 @@ const ImageUpload = ({ onImageChange }) => {
           <p>Cargando...</p> 
         ) : image ? (
           <>
-            {/* Imagen cargada */}
             <img
-              src={image}
+              src={imageURL} // Mostrar la URL temporal
               alt="Preview"
               style={{
                 maxWidth: "100%",
@@ -148,7 +182,6 @@ const ImageUpload = ({ onImageChange }) => {
                 borderRadius: "10px",
               }}
             />
-            {/* Botón de eliminar */}
             <div
               style={{
                 position: "absolute",
@@ -216,6 +249,6 @@ const ImageUpload = ({ onImageChange }) => {
       </Modal>
     </div>
   );
-};
+});
 
 export default ImageUpload;

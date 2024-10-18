@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import { useTicketData } from "../context/TicketDataContext";
 import Select from "../assets/components/Select";
 import InputWithModalOrderNum from "../assets/components/InputWithModalOrderNum";
@@ -17,10 +17,11 @@ const OnlineTicket = () => {
     { value: "DELSOL", label: "Delsol" },
     { value: "WALMART", label: "Walmart" },
     { value: "HEB", label: "Heb" },
-    { value: "WOOLWORTH", label: "Woolmorth" }
+    { value: "WOOLWORTH", label: "Woolmorth" },
   ];
 
   const { ticketData, updateTicketData } = useTicketData(); //! Contexto
+  const [isUploading, setIsUploading] = useState(false);
   const [store, setStore] = useState("");
   const [orderNum, setOrderNum] = useState("");
   const [productCode, setProductCode] = useState("");
@@ -30,6 +31,17 @@ const OnlineTicket = () => {
   const [isDateValid, setIsDateValid] = useState(false);
   const [isImageValid, setIsImageValid] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+
+  const imageUploadRef = useRef(null);
+
+  const handleClick = async () => {
+    if (imageUploadRef.current) {
+      setIsUploading(true);
+      await imageUploadRef.current.uploadImage();
+      setIsUploading(false);
+      console.log(ticketData);
+    }
+  };
 
   const handleStoreChange = (e) => {
     const value = e.target.value || "";
@@ -66,7 +78,7 @@ const OnlineTicket = () => {
   };
 
   const validateCode = (code) => {
-    setIsProductCodeValid(code.length === 10);
+    setIsProductCodeValid(code.length === 14);
   };
 
   const validateDate = (date) => {
@@ -87,7 +99,7 @@ const OnlineTicket = () => {
     const isValidDate = selectedDate <= currentDate;
     const isValid =
       orderNum.length === 21 &&
-      productCode.length === 10 &&
+      productCode.length === 14 &&
       isValidDate &&
       image;
     setIsFormValid(isValid);
@@ -211,15 +223,19 @@ const OnlineTicket = () => {
         </div>
 
         <div className="row">
-          <ImageUpload onImageChange={handleImageValidation} />
+          <ImageUpload
+            ref={imageUploadRef}
+            onImageChange={handleImageValidation}
+          />
         </div>
 
         <div className="row">
           <div className="col-md-12 mb-5">
             <Button
-              text="CONTINUAR"
+              text={isUploading ? "Cargando..." : "CONTINUAR"}
+              onClick={handleClick}
               route="/user/ticket/trip"
-              disabled={!isFormValid}
+              disabled={!isFormValid || isUploading}
             />
           </div>
         </div>
