@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 const useRegisterTicket = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -14,7 +16,7 @@ const useRegisterTicket = () => {
     try {
       const userToken = localStorage.getItem("userToken");
       const response = await axios.post(
-        "http://localhost:8080/tickets",
+        `${BACKEND_URL}/tickets`,
         ticketData,
         {
           headers: {

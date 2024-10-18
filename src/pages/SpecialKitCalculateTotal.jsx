@@ -7,7 +7,7 @@ import Button from "../assets/components/Button";
 import Input from "../assets/components/Input";
 import ModalInfo from "../assets/components/ModalInfo";
 
-const KIT_ID = import.meta.env.VITE_KIT_ID
+const KIT_ID = import.meta.env.VITE_KIT_ID;
 
 const SpecialKitCalculateTotal = () => {
   const { ticketData, updateTicketData, clearTicketData } = useTicketData(); //! Contexto
@@ -16,13 +16,20 @@ const SpecialKitCalculateTotal = () => {
   const [inputValue, setInputValue] = useState("");
   const [isInputValid, setIsInputValid] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); 
+  const [buttonText, setButtonText] = useState("CONTINUAR");  
 
   const handleSubmitTicket = async (data) => {
     try {
+      setIsLoading(true); 
+      setButtonText("Cargando..."); 
       const response = await registerTicket(data);  
-      console.log(response)
+      console.log(response);
+      setButtonText("Ir a dashboard");  
     } catch (err) {
       console.error('Error al registrar el ticket:', err);
+    } finally {
+      setIsLoading(false);  
     }
   };
 
@@ -63,7 +70,6 @@ const SpecialKitCalculateTotal = () => {
       handleShow();
     }
   };
-  
 
   // Usar useEffect para ver el estado actualizado de ticketData
   useEffect(() => {
@@ -125,9 +131,9 @@ const SpecialKitCalculateTotal = () => {
         <div className="row">
           <div className="col-md-12 text-center mt-3">
             <Button
-              text="CONTINUAR"
+              text={buttonText} 
               onClick={handleButtonClick}
-              disabled={!isInputValid}
+              disabled={!isInputValid || isLoading}  
             ></Button>
           </div>
         </div>
@@ -137,7 +143,7 @@ const SpecialKitCalculateTotal = () => {
           handleClose={handleClose}
           modalTitle="Título del Modal"
           modalText="Tu participación en el concurso semanal se ha subido a tu perfil. Mantente al tanto(a) a nuestras redes,
-        Podrias ser el siguiente ganador!"
+        Podrías ser el siguiente ganador!"
           route="/user/dashboard"
         />
       </div>

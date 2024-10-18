@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const BASE_URL = "http://localhost:8080";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const useSignup = () => {
   const [loading, setLoading] = useState(false);
@@ -11,7 +11,7 @@ const useSignup = () => {
     setError(null);
 
     try {
-      const response = await fetch(`${BASE_URL}/auth/signup`, {
+      const response = await fetch(`${BACKEND_URL}/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

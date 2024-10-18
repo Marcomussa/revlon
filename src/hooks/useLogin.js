@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 const useLogin = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -11,7 +13,7 @@ const useLogin = () => {
     setError(null);
 
     try {
-      const loginResponse = await fetch("http://localhost:8080/auth/login", {
+      const loginResponse = await fetch(`${BACKEND_URL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,7 +32,7 @@ const useLogin = () => {
       localStorage.setItem("userToken", userToken);
       localStorage.setItem("userFirstName", JSON.stringify(userFirstName)); // Convertir a JSON
 
-      const ticketResponse = await fetch("http://localhost:8080/tickets", {
+      const ticketResponse = await fetch(`${BACKEND_URL}/tickets`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${userToken}`,

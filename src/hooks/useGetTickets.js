@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+const BACKEND_URL= import.meta.env.VITE_BACKEND_URL;
+
 const useGetTickets = () => {
   const [tickets, setTickets] = useState(null);  
   const [loading, setLoading] = useState(true);  
@@ -11,7 +13,7 @@ const useGetTickets = () => {
 
     const getTickets = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/tickets", {
+        const response = await axios.get(`${BACKEND_URL}/tickets`, {
           headers: {
             Authorization: `Bearer ${userToken}`,
           },
