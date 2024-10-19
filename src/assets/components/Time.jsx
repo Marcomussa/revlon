@@ -7,7 +7,7 @@ const Time = () => {
         <>
             <div className="container bg-black-glitter-time">
                 <div className="row align-items-center">
-                    <div className="col-4 col-md-2 ">
+                    <div className="col-4 col-md-2">
                         <img src={Validity}  width="100%" alt="Vigencia" />
                     </div>
                     <div className="col-8 col-md-10 ">

@@ -125,7 +125,7 @@ const PhysicalTicket = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-md-12 input-tck">
             <p className="text-white text-italic primary-font mb-2">
               ¿A qué tienda acudiste?
             </p>
@@ -197,14 +197,14 @@ const PhysicalTicket = () => {
             </p>
           </div>
         </div>
-        <div className="row">
+        <div className="row button">
           <ImageUpload
             ref={imageUploadRef}
             onImageChange={handleImageValidation}
           />
         </div>
         <div className="row">
-          <div className="col-md-12 mb-4">
+          <div className="col-md-12 mb-4 button">
             <Button
               text={isUploading ? "Cargando..." : "CONTINUAR"} 
               onClick={handleClick}

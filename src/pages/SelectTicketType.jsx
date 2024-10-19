@@ -23,17 +23,17 @@ const SelectTicketType = () => {
       <Navbar></Navbar>
       <div className="container bg-red pt-5">
         <div className="row mt-0 pt-lg-0">
-          <div className="col-md-12 text-center">
-            <img src={Compra} alt="" width={350} />
+          <div className="col-md-12 text-center pt-xl-5 mt-xl-5">
+            <img src={Compra} alt="Compra" width={350} />
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center title text-white ">
+          <div className="col-md-12 text-center title text-white pb-xl-5">
             ¿EN DÓNDE REALIZASTE TU COMPRA?
           </div>
         </div>
         <div className="row mt-3">
-          <div className="col-md-12">
+          <div className="col-md-12 button">
             <Button
               text="TIENDA FISICA"
               onClick={() => handleButtonClick("PHYSICAL")}
@@ -42,7 +42,7 @@ const SelectTicketType = () => {
           </div>
         </div>
         <div className="row mt-3">
-          <div className="col-md-12 mb-5">
+          <div className="col-md-12 mb-5 button">
             <Button
               text="COMPRA ONLINE"
               onClick={() => handleButtonClick("ONLINE")}

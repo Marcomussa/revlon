@@ -53,17 +53,24 @@
 .img-stamp{
     width: 60%;
 }
-
 .pdkop{
     padding: 5vw;
 }
 @media (min-width: 992px){
-    .margint{
-        margin-top: 4rem;
-    }
     .button{
         padding-left: 30% !important;
         padding-right: 30% !important;
+    }
+    .text-guide{
+        font-weight: 700;
+        font-size: 27pt;
+    }
+    .input-tck{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .title-size{
+        font-size: 48pt;
     }
 }
 
@@ -93,7 +100,9 @@
     .text {
         font-size: 13pt;
     }
-
+    .text-guide{
+        font-size: 13pt;
+    }
     .text-italic {
         font-size: 13pt;
         font-style: italic;

@@ -31,7 +31,7 @@ const TripInfo = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center">
+          <div className="col-md-12 text-center button">
             <Button text="CONTINUAR" route="/user/ticket/trip/calculate-total"></Button>
           </div>
         </div>
