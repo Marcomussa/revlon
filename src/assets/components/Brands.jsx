@@ -64,7 +64,7 @@ const Brands = () => {
         </div>
         <div className="row">
           <div className="col-md-12 d-flex justify-content-center gap-3 mt-4">
-            <img src={Heb} alt="Heb" height={30} />
+            <img src={Heb} alt="Heb" className="brands-size" />
           </div>
         </div>
         <div className="row mt-5">
@@ -83,12 +83,12 @@ const Brands = () => {
         <div className="row mb-5">
           <div className="col-md-12 d-flex justify-content-center gap-3 mt-4">
             <img src={Woolworth} alt="" className="brands-size" />
-            <img src={Heb} alt="" height={30} />
+            <img src={Heb} alt="" className="brands-size" />
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 d-flex justify-content-center gap-3 mt-4">
-            <img src={DelSol} alt="" height={70} />
+            <img src={DelSol} alt="" className="brands-size" />
           </div>
         </div>
       </div>

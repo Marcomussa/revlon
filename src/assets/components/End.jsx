@@ -5,10 +5,10 @@ const End = () => {
         <>
             <div className="container bg-red-galaxy">
                 <div className="row">
-                    <div className="col-12">
-                        <h1 className="p-4 text-center text-white primary-font title">¡NO ESPERES MÁS! COMPRA TUS PRODUCTOS REVLON HOY, PARTICIPA Y ¡GANA!
+                    <div className="col-12 pdkop">
+                        <h1 className=" text-center text-white primary-font title p-4 pdkop">¡NO ESPERES MÁS! COMPRA TUS PRODUCTOS REVLON HOY, PARTICIPA Y ¡GANA!
                         </h1>
-                        <div className='mb-5'>
+                        <div className='mb-5 button'>
                          <Button text="REGISTRA TU TICKET" route='/user/login'></Button>   
                         </div>
                     </div>
