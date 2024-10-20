@@ -48,7 +48,10 @@
 }
 
 .img-size-md {
-    width: 50%;
+    width: 18%;
+}
+.img-ticket{
+    width: 18%;
 }
 .img-stamp{
     width: 60%;
@@ -65,12 +68,15 @@
         font-weight: 700;
         font-size: 27pt;
     }
-    .input-tck{
-        margin-left: 10%;
-        margin-right: 10%;
+    .input-w{
+        padding-left: 15% !important;
+        padding-right: 15% !important;
     }
     .title-size{
         font-size: 48pt;
+    }
+    .sub-brands{
+        font-size: 35pt;
     }
 }
 
@@ -82,7 +88,7 @@
     .brands-size {
         width: 50%
     }
-
+    
     .title {
         font-weight: 800;
         font-size: 21pt;
@@ -115,5 +121,8 @@
     }
     .img-stamp{
         width: 80vw ;
+    }
+    .img-ticket{
+        width: 40%;
     }
 }

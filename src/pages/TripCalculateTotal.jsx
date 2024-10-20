@@ -87,7 +87,7 @@ const TripCalculateTotal = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center d-flex justify-content-center shadow">
+          <div className="col-md-12 text-center d-flex justify-content-center input-w mb-xl-4">
             <Input
               type="number"
               name="tripCalculateTotal"
@@ -98,7 +98,7 @@ const TripCalculateTotal = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center mt-3">
+          <div className="col-md-12 text-center mt-3 button">
             <Button
               text="CONTINUAR"
               onClick={handleButtonClick} // Actualiza el contexto al hacer clic

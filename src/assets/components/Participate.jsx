@@ -9,7 +9,7 @@ const Participate = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <h1 className='text-center primary-font title title-red title-size pb-xl-5'>¿Cómo participar?</h1>
-                        <p className='text-center text primary-font px-2 px-xl-4'><b>¡Es facilísimo! Compara productos REVLON participantes por $599 MXN o más:</b> Adquiere cualquiera de los productos participantes, puedes consultarlos aquí, ya sea en tiendas físicas o en línea en los comercios participantes.</p>
+                        <p className='text-center text primary-font px-2 px-xl-4 text-guide'><b>¡Es facilísimo! Compara productos REVLON participantes por $599 MXN o más:</b> Adquiere cualquiera de los productos participantes, puedes consultarlos aquí, ya sea en tiendas físicas o en línea en los comercios participantes.</p>
                     </div>
                 </div>
 

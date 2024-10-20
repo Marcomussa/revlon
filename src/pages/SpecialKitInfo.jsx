@@ -9,14 +9,14 @@ const SpecialKitInfo = () => {
     <Navbar></Navbar>
       <div className="container bg-disco">
         <div className="row">
-          <div className="col-md-12 text-center mt-5 pt-5">
-            <img src={Premio2} alt="Premio2" width={350} />
+          <div className="col-md-12 text-center mt-5 pt-5 ">
+            <img src={Premio2} alt="Premio2" className="img-size-md py-xl-5" />
           </div>
         </div>
 
         <div className="row">
           <div className="col-md-12 text-center">
-            <h2 className="title-red title primary-font px-5 py-3">PARTICIPA POR UN KIT ESPECIAL PARTY ON</h2>
+            <h2 className="title-red title primary-font px-5 py-3 title-size">PARTICIPA POR UN KIT ESPECIAL PARTY ON</h2>
           </div>
         </div>
         <div className="row">
@@ -30,7 +30,7 @@ const SpecialKitInfo = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center">
+          <div className="col-md-12 text-center button my-xl-5">
             <Button text="CONTINUAR" route="/user/ticket/kit/calculate-total"></Button>
           </div>
         </div>

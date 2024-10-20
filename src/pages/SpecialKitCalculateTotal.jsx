@@ -118,7 +118,7 @@ const SpecialKitCalculateTotal = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center d-flex shadow">
+          <div className="col-md-12 text-center d-flex input-w mt-xl-3">
             <Input
               type="number"
               name="specialKitCalculateTotal"
@@ -129,7 +129,7 @@ const SpecialKitCalculateTotal = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center mt-3">
+          <div className="col-md-12 text-center mt-3 button my-xl-5">
             <Button
               text={buttonText} 
               onClick={handleButtonClick}

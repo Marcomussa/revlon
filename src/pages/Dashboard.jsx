@@ -71,7 +71,7 @@ const Dashboard = () => {
         )}
 
         <div className="row">
-          <div className="col-md-12 text-center mt-2">
+          <div className="col-md-12 text-center mt-2 button">
             <Button
               text="REGISTRA TU TICKET"
               route="/user/ticket/select-type"

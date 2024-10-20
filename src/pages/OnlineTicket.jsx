@@ -116,7 +116,7 @@ const OnlineTicket = () => {
         </div>
         <div className="row">
           <div className="col-md-12 text-center my-2 mt-3">
-            <img src={Caja} alt="Caja" width={250} />
+            <img src={Caja} alt="Caja" className="img-size-md" />
           </div>
         </div>
         <div className="row">
@@ -127,8 +127,8 @@ const OnlineTicket = () => {
           </div>
         </div>
 
-        <div className="row">
-          <div className="col-md-12">
+        <div className="row my-xl-3">
+          <div className="col-md-12 input-w">
             <p className="text-white text-italic primary-font mb-2">
               ¿En cuál tienda participante ordenaste?
             </p>
@@ -139,8 +139,8 @@ const OnlineTicket = () => {
             />
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-12">
+        <div className="row my-xl-3">
+          <div className="col-md-12 input-w">
             <p className="text-white text-italic primary-font mt-4 mb-2">
               Ingresa tu número de pedido.
             </p>
@@ -163,8 +163,8 @@ const OnlineTicket = () => {
             )}
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-12">
+        <div className="row my-xl-3">
+          <div className="col-md-12 input-w">
             <p className="text-white text-italic primary-font mt-4 mb-2">
               Ingresa tu codigo de producto.
             </p>
@@ -188,8 +188,8 @@ const OnlineTicket = () => {
           </div>
         </div>
 
-        <div className="row">
-          <div className="col-md-12">
+        <div className="row my-xl-3">
+          <div className="col-md-12 input-w">
             <label
               htmlFor="date"
               className="form-label text-white mt-4 mb-2 text-italic primary-font"
@@ -222,7 +222,7 @@ const OnlineTicket = () => {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row button">
           <ImageUpload
             ref={imageUploadRef}
             onImageChange={handleImageValidation}
@@ -230,7 +230,7 @@ const OnlineTicket = () => {
         </div>
 
         <div className="row">
-          <div className="col-md-12 mb-5">
+          <div className="col-md-12 mb-5 button">
             <Button
               text={isUploading ? "Cargando..." : "CONTINUAR"}
               onClick={handleClick}

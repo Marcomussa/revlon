@@ -114,7 +114,7 @@ const PhysicalTicket = () => {
         </div>
         <div className="row">
           <div className="col-md-12 text-center my-2 mt-3">
-            <img src={Ticket} alt="Ticket" width={150} />
+            <img src={Ticket} alt="Ticket" className="img-ticket" />
           </div>
         </div>
         <div className="row">
@@ -124,25 +124,28 @@ const PhysicalTicket = () => {
             </h3>
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-12 input-tck">
+        <div className="row my-xl-3">
+          <div className="col-md-12 input-w">
             <p className="text-white text-italic primary-font mb-2">
               ¿A qué tienda acudiste?
             </p>
           </div>
-          <Select
-            options={storeOptions}
-            name="physicalTicketStore"
-            onChange={handleStoreChange}
-          />
+          <div className="col-md-12 input-w">
+            <Select
+              options={storeOptions}
+              name="physicalTicketStore"
+              onChange={handleStoreChange}
+            />
+          </div>
+
         </div>
-        <div className="row">
-          <div className="col-md-12">
+        <div className="row my-xl-3">
+          <div className="col-md-12 input-w">
             <p className="text-white text-italic primary-font mt-4 mb-2">
               Ingresá tu número de ticket
             </p>
           </div>
-          <div className="col-md-12">
+          <div className="col-md-12 input-w">
             <InputWithModalTicketNum
               modalImageSrc={TicketEj}
               modalText="Ingresa el número junto al código de barras de la parte inferior de tu ticket"
@@ -160,13 +163,13 @@ const PhysicalTicket = () => {
             )}
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-12">
+        <div className="row my-xl-3 ">
+          <div className="col-md-12 input-w">
             <p className="text-white text-italic primary-font mt-4 mb-2">
               Ingresá el número del código de barras
             </p>
           </div>
-          <div className="col-md-12">
+          <div className="col-md-12 input-w">
             <InputWithModalBarCode
               modalImageSrc={Code}
               modalText="Ingresa sin espacios el número que se encuentra debajo del código de barras ubicado en la caja de tu producto."
@@ -206,10 +209,10 @@ const PhysicalTicket = () => {
         <div className="row">
           <div className="col-md-12 mb-4 button">
             <Button
-              text={isUploading ? "Cargando..." : "CONTINUAR"} 
+              text={isUploading ? "Cargando..." : "CONTINUAR"}
               onClick={handleClick}
               route="/user/ticket/trip"
-              disabled={!isFormValid || isUploading} 
+              disabled={!isFormValid || isUploading}
             />
           </div>
         </div>

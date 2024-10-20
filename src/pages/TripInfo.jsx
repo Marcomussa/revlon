@@ -11,7 +11,7 @@ const TripInfo = () => {
       <div className="container bg-beach">
         <div className="row pt-2">
           <div className="col-md-12 text-center mt-5 pt-5">
-            <img src={Premio1} alt="" width={250} />
+            <img src={Premio1} alt="Premio" className="img-size-md py-xl-5"/>
           </div>
         </div>
 
@@ -21,7 +21,7 @@ const TripInfo = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center">
+          <div className="col-md-12 text-center mt-xl-4">
             <p className="text-white primary-font text">Te mostraremos una imagen que estará repleta de productos <b>REVLON</b>, mírala con cuidado y calcula cuántos productos hay en ella.</p>
           </div>
         </div>
@@ -31,7 +31,7 @@ const TripInfo = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center button">
+          <div className="col-md-12 text-center button my-xl-5">
             <Button text="CONTINUAR" route="/user/ticket/trip/calculate-total"></Button>
           </div>
         </div>
