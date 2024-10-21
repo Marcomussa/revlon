@@ -11,7 +11,7 @@ const TicketDetailsCard = ({
         <p className="subtitle text-white primary-font mb-0">
         Número de Ticket o de Pedido
         </p>
-        <p className="text-white primary-font text mb-0">{num}</p>
+        <p className="text-white primary-font mb-0">{num}</p>
       </div>
       <div className="col-md-12 border-bottom border-white py-2 px-0">
         <p className="subtitle text-white primary-font mb-0">
