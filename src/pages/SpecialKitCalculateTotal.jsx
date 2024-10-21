@@ -17,17 +17,23 @@ const SpecialKitCalculateTotal = () => {
   const [isInputValid, setIsInputValid] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false); 
-  const [buttonText, setButtonText] = useState("CONTINUAR");  
+  const [buttonText, setButtonText] = useState("FINALIZAR");
+  const [modalError, setModalError] = useState(false); 
 
   const handleSubmitTicket = async (data) => {
     try {
       setIsLoading(true); 
       setButtonText("Cargando..."); 
+      setModalError(false); 
       const response = await registerTicket(data);  
       console.log(response);
-      setButtonText("Ir a dashboard");  
+      setButtonText("Ir a dashboard");
+      return true; 
     } catch (err) {
+      setButtonText("Error"); 
       console.error('Error al registrar el ticket:', err);
+      setModalError(true); 
+      return false;
     } finally {
       setIsLoading(false);  
     }
@@ -63,15 +69,17 @@ const SpecialKitCalculateTotal = () => {
     if (isInputValid) {
       updateTicketData(updatedTicketData);
   
-      await handleSubmitTicket(updatedTicketData);
+      const isSuccess = await handleSubmitTicket(updatedTicketData); 
   
-      clearTicketData();
-  
-      handleShow();
+      handleShow(); 
+      
+      if (isSuccess) {
+        clearTicketData(); 
+      }
     }
   };
 
-  // Usar useEffect para ver el estado actualizado de ticketData
+  // ver el estado actualizado de ticketData
   useEffect(() => {
     console.log("Datos actualizados en el contexto:", ticketData);
   }, [ticketData]); // Se ejecuta cuando ticketData cambia
@@ -141,10 +149,13 @@ const SpecialKitCalculateTotal = () => {
         <ModalInfo
           show={showModal}
           handleClose={handleClose}
-          modalTitle="Título del Modal"
-          modalText="Tu participación en el concurso semanal se ha subido a tu perfil. Mantente al tanto(a) a nuestras redes,
-        Podrías ser el siguiente ganador!"
-          route="/user/dashboard"
+          modalTitle={modalError ? "Error al registrar" : "Registro exitoso"}
+          modalText={
+            modalError 
+              ? "Hubo un problema al registrar tu participación. Por favor, intenta nuevamente." 
+              : "Tu participación en el concurso semanal se ha subido a tu perfil. ¡Mantente al tanto(a) de nuestras redes, podrías ser el siguiente ganador!" 
+          }
+          route={modalError ? null : "/user/dashboard"} 
         />
       </div>
       <Footer></Footer>

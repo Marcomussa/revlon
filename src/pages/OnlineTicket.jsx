@@ -13,6 +13,7 @@ import Validated from "../assets/components/Validated";
 
 const OnlineTicket = () => {
   const storeOptions = [
+    { value: 'Seleccionar Opcion', label: "Seleccionar Opción"},
     { value: "COPPEL", label: "Coppel" },
     { value: "DELSOL", label: "Delsol" },
     { value: "WALMART", label: "Walmart" },

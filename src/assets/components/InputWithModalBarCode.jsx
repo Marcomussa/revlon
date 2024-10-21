@@ -23,7 +23,7 @@ const InputWithModal = ({ modalImageSrc, modalText, placeholder, name, onChange 
       >
         {/* Input con el número o texto */}
         <input
-          type="text"
+          type="number"
           name={name}
           style={{
             flex: 1,

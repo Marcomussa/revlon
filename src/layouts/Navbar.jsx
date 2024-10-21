@@ -65,6 +65,12 @@ const NavbarComponent = () => {
               <>
                 <Nav.Link
                   className="text-white nav-link-native fw-500 text-end"
+                  href="/user/ticket/select-type"
+                >
+                  Registra tu ticket
+                </Nav.Link>
+                <Nav.Link
+                  className="text-white nav-link-native fw-500 text-end"
                   href="/user/dashboard"
                 >
                   Dashboard

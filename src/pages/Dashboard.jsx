@@ -34,23 +34,18 @@ const Dashboard = () => {
             </h3>
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-12 text-center mt-5 py-3">
-            <img src={IconQuestion} alt="Icon Profile" width={70} />
-          </div>
-        </div>
 
         {/* Mostrar los tickets obtenidos */}
         {Array.isArray(tickets) && tickets.length > 0 ? (
           <>
-            <p className="subtitle text-white primary-font pt-4">
+            <h5 className="text-white primary-font pt-4 text-center">
               Tu historial de participaciones
-            </p>
+            </h5>
             {tickets.map((ticket, index) => (
               <div key={index}>
                 <TicketDetailsCard
                   num={ticket.number}
-                  registerDate={1}
+                  registerDate={ticket.createdAt.slice(0,10)}
                   principalAnswer={ticket.guesses[0].guess}
                   weeklyAnswer={ticket.guesses[1].guess}
                 />
@@ -58,16 +53,23 @@ const Dashboard = () => {
             ))}
           </>
         ) : (
-          <div className="row">
-            <div className="col-md-12 text-center text-white text-italic primary-font py-2">
-              Parece que aún no has ingresado tus tickets
-              <br />
-              ¡Puedes empezar ahora!
+          <>
+            <div className="row">
+              <div className="col-md-12 text-center mt-5 py-3">
+                <img src={IconQuestion} alt="Icon Profile" width={70} />
+              </div>
             </div>
-            <div className="col-md-12 text-center text text-white primary-font py-4">
-              ¡Recuerda que cada compra registrada es una participacion más!
+            <div className="row">
+              <div className="col-md-12 text-center text-white text-italic primary-font py-2">
+                Parece que aún no has ingresado tus tickets
+                <br />
+                ¡Puedes empezar ahora!
+              </div>
+              <div className="col-md-12 text-center text text-white primary-font py-4">
+                ¡Recuerda que cada compra registrada es una participacion más!
+              </div>
             </div>
-          </div>
+          </>
         )}
 
         <div className="row">

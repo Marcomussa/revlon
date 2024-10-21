@@ -16,6 +16,7 @@ import "animate.css";
 
 const PhysicalTicket = () => {
   const storeOptions = [
+    { value: 'Seleccionar Opcion', label: "Seleccionar Opción"},
     { value: "CHEDRAUI", label: "Chedraui" },
     { value: "COPPEL", label: "Coppel" },
     { value: "DELSOL", label: "Delsol" },

@@ -22,7 +22,7 @@ const Footer = () => {
             <img src={Logo} alt="Logo" width={110} />
           </div>
           <div className="col-md-12 px-4">
-            <p className="text secondari text-center border-top border-white pt-4">
+            <p className="footer-text secondari text-center border-top border-white pt-4">
               REVLON© 2024. Todos los Derechos Reservados. Al registrar tu
               compra en esta pagina, aceptas que has leido y entendido los
               terminos y condiciones. La participacion esta sujeta a la
@@ -32,7 +32,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="col-md-12 px-2 mb-5">
-            <p className="text text-center text-white subtitle px-4 mb-5 ">
+            <p className="footer-text text-center text-white subtitle px-4 mb-5 ">
               {" "}
               Este sorteo es exclusivo para mayores de 18 años. Los datos
               personales proporcionados seran tratados de cauerdo con nuestra

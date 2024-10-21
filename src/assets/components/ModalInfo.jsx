@@ -15,7 +15,7 @@ const ModalInfo = ({ show, handleClose, modalTitle, modalText, route }) => {
   return (
     <Modal show={show} onHide={handleClose} centered>
       <Modal.Header closeButton>
-        <h3>{modalTitle}</h3>
+        <h4>{modalTitle}</h4>
       </Modal.Header>
       <Modal.Body
         className="text-center"
