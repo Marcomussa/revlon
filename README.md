@@ -1,27 +1,14 @@
 # To-Do:
-## A maquetar y estilizar (Prioridad 0):
-src/layouts/Navbar.jsx  
-src/layouts/Footer.jsx  
-
-Hechos ambos procedes a insertarlos en cada uno de los componentes dentro de src/pages
-
-src/pages/HomePage.jsx
-src/pages/LegalBases.jsx
-
-Boton para usar en home:
-import Button from "../assets/components/Button";
-<Button text="REGISTRA TU TICKET" route="/user/login"/>
-
-## A estilizar (Prioridad 1)
-src/pages/SelectTicketType.jsx
-src/pages/PhysicalTicket.jsx
-src/pages/TripInfo
-src/pages/TripCalculateTotal
-src/pages/SpecialKitInfo
-src/pages/SpecialKitCalculateTotal
-src/pages/LogIn
-src/pages/RegisterForm
-src/pages/Dashboard NO
+- cp longitud de 5
+- input date revisar validacion
+- validar codigo de barras por lista
+- agregar al registro “acepto los terminos y condiciones”
+- agregar placeholder de subir imagen
+- revisar modificaciones del figma
+- agrgear estado y municipio
+- + refuerzo a las validaciones
+- input password que puedan ver
+- + testeos
 
 # Utils:
 ## Figma
