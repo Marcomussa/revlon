@@ -9,9 +9,14 @@
   background-size: cover;
   background-position: center;
 }
-
+/* 
 .bg-white-waves {
   background-image: url("../assets/img/backgrounds/white-waves.jpeg");
+  background-size: cover;
+  background-position: center;
+} */
+.bg-white-waves{
+  background-image: url("../assets/img/backgrounds/white_waves_.png");
   background-size: cover;
   background-position: center;
 }
@@ -69,9 +74,12 @@
     background-size: cover;
     background-position: center;
   }
-
+/* 
   .bg-white-waves {
     background-image: url("../assets/img/backgrounds/white-waves-mobile.png");
+  } */
+  .bg-white-waves{
+    background-image: url("../assets/img/backgrounds/white_waves_mobile.png");
   }
 
   .bg-red-glitter {
