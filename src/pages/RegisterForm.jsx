@@ -1,18 +1,20 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+/* eslint-disable no-case-declarations */
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { estados, municipios } from "../../data"; // Asegúrate de usar la ruta correcta
 import "animate.css";
 import useSignup from "../hooks/useSignup";
 import SubmitButton from "../assets/components/Button";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import Validated from "../assets/components/Validated";
+import Select from "../assets/components/Select";
 
 const RegisterForm = () => {
   const navigate = useNavigate();
-
   const { signup, loading, error } = useSignup();
 
   const [formData, setFormData] = useState({
@@ -23,64 +25,128 @@ const RegisterForm = () => {
     zipCode: "",
     via: "",
     password: "",
-    confirmPassword: "",
+    state: "",
+    municipality: "",
   });
 
-  const [passwordMatch, setPasswordMatch] = useState(null);
-  const [message, setMessage] = useState("");
-  const [showAlert, setShowAlert] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [validations, setValidations] = useState({
+    firstNameValid: null,
+    lastNameValid: null,
+    emailValid: null,
+    passwordValid: null,
+    birthdateValid: null,
+    zipCodeValid: null,
+    stateValid: null,
+    municipalityValid: null,
+  });
+
+  const [isDisabled, setIsDisabled] = useState(true);
   const [buttonText, setButtonText] = useState("REGISTRARSE");
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [message, setMessage] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
+  const validateField = (name, value) => {
+    switch (name) {
+      case "firstName":
+        return value.length >= 3;
+      case "lastName":
+        return value.length >= 3;
+      case "email":
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(value);
+      case "password":
+        return value.length >= 8;
+      case "birthdate":
+        const birthdate = new Date(value);
+        const today = new Date();
+        const age = today.getFullYear() - birthdate.getFullYear();
+        return age >= 18;
+      case "zipCode":
+        return value.length === 5;
+      case "state":
+        return value !== "";
+      case "municipality":
+        return value !== "";
+      default:
+        return true;
+    }
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => {
-      const updatedFormData = { ...prevState, [name]: value };
 
-      if (updatedFormData.password && updatedFormData.confirmPassword) {
-        setPasswordMatch(
-          updatedFormData.password === updatedFormData.confirmPassword
-        );
-      } else {
-        setPasswordMatch(null);
-      }
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
 
-      setMessage("");
+    setValidations((prevState) => ({
+      ...prevState,
+      [`${name}Valid`]: validateField(name, value),
+    }));
 
-      return updatedFormData;
-    });
+    // Limpiar el mensaje de error si cambia algo en el formulario
+    setMessage("");
   };
+
+  const handleStateChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+      municipality: "",
+    }));
+
+    setValidations((prevState) => ({
+      ...prevState,
+      stateValid: validateField(name, value),
+      municipalityValid: null,
+    }));
+  };
+
+  const handleMunicipalityChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+
+    setValidations((prevState) => ({
+      ...prevState,
+      municipalityValid: validateField(name, value),
+    }));
+  };
+
+  useEffect(() => {
+    // Validar si todas las validaciones han pasado
+    const allValid = Object.values(validations).every((v) => v === true);
+    setIsDisabled(!allValid); // Habilitar el botón solo si todas las validaciones son válidas
+  }, [validations]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!passwordMatch) {
-      return; // Evitar envío si las contraseñas no coinciden
-    }
+    if (!isDisabled) {
+      try {
+        setButtonText("Registrando...");
+        const formDataToSend = { ...formData };
+        delete formDataToSend.confirmPassword;
+        const result = await signup(formDataToSend);
 
-    try {
-      setButtonText("Registrando...");
-      const formDataToSend = { ...formData };
-      delete formDataToSend.confirmPassword;
-      const result = await signup(formDataToSend);
-
-      if (result) {
-        console.log("Registro exitoso. Por favor, verifica tu cuenta.");
-        setShowAlert(true);
-        setIsDisabled(true);
-      } else {
-        setMessage("Error en el registro. Inténtalo de nuevo.");
+        if (result) {
+          console.log("Registro exitoso. Por favor, verifica tu cuenta.");
+          setShowAlert(true);
+        } else {
+          setMessage("Error en el registro. Inténtalo de nuevo.");
+        }
+      } catch (error) {
+        setMessage(error.message);
+        console.log("Error en el registro. Inténtalo de nuevo.");
+      } finally {
+        setButtonText("REGISTRARSE");
       }
-    } catch (error) {
-      setMessage(error.message);
-      console.log("Error en el registro. Inténtalo de nuevo 2.");
-    } finally {
-      setButtonText("REGISTRARSE");
     }
   };
 
@@ -120,6 +186,12 @@ const RegisterForm = () => {
                       onChange={handleChange}
                       required
                     />
+                    {validations.firstNameValid === false && (
+                      <Validated
+                        message="El nombre debe tener al menos 3 caracteres"
+                        state={false}
+                      />
+                    )}
                   </div>
 
                   {/* Apellidos */}
@@ -140,6 +212,12 @@ const RegisterForm = () => {
                       onChange={handleChange}
                       required
                     />
+                    {validations.lastNameValid === false && (
+                      <Validated
+                        message="El apellido debe tener al menos 3 caracteres"
+                        state={false}
+                      />
+                    )}
                   </div>
 
                   {/* Correo Electrónico */}
@@ -160,6 +238,12 @@ const RegisterForm = () => {
                       onChange={handleChange}
                       required
                     />
+                    {validations.emailValid === false && (
+                      <Validated
+                        message="El correo electrónico no es válido"
+                        state={false}
+                      />
+                    )}
                   </div>
 
                   {/* Contraseña */}
@@ -188,19 +272,21 @@ const RegisterForm = () => {
                           onClick={togglePasswordVisibility}
                           className="p-0"
                         >
-                          {passwordVisible ? <FaEyeSlash /> : <FaEye />}{" "}
-                          {/* Ícono del ojo */}
+                          {passwordVisible ? <FaEyeSlash /> : <FaEye />}
                         </Button>
                       </span>
                     </div>
+                    {validations.passwordValid === false && (
+                      <Validated
+                        message="La contraseña debe tener al menos 8 caracteres"
+                        state={false}
+                      />
+                    )}
                   </div>
 
                   {/* Confirmar Contraseña */}
-                  <div className="my-3">
-                    <label
-                      htmlFor="confirmPassword"
-                      className="form-label text text-white primary-font text-italic"
-                    >
+                  {/* <div className="my-3">
+                    <label htmlFor="confirmPassword" className="form-label text text-white primary-font text-italic">
                       Confirmar contraseña*
                     </label>
                     <div className="input-group">
@@ -215,42 +301,23 @@ const RegisterForm = () => {
                         required
                       />
                       <span className="input-group-text">
-                        <Button
-                          variant="link"
-                          onClick={togglePasswordVisibility}
-                          className="p-0"
-                        >
-                          {passwordVisible ? <FaEyeSlash /> : <FaEye />}{" "}
-                          {/* Ícono del ojo */}
+                        <Button variant="link" onClick={togglePasswordVisibility} className="p-0">
+                          {passwordVisible ? <FaEyeSlash /> : <FaEye />}
                         </Button>
                       </span>
                     </div>
-                  </div>
-
-                  {/* Verificación de contraseñas */}
-                  {passwordMatch === null ? null : passwordMatch ? (
-                    <div className="mb-3">
-                      <Validated
-                        message="Las contraseñas coinciden"
-                        state={true}
-                      />
-                    </div>
-                  ) : (
-                    <div className="mb-3">
-                      <Validated
-                        message="Las contraseñas NO coinciden"
-                        state={false}
-                      />
-                    </div>
-                  )}
+                    {validations.passwordMatch === false && (
+                      <Validated message="Las contraseñas no coinciden" state={false} />
+                    )}
+                  </div> */}
 
                   {/* Edad */}
-                  <div className="mb-3">
+                  <div className="my-3">
                     <label
-                      htmlFor="age"
+                      htmlFor="birthdate"
                       className="form-label text-white text-italic primary-font"
                     >
-                      Edad*
+                      Fecha de Nacimiento*
                     </label>
                     <input
                       type="date"
@@ -261,18 +328,56 @@ const RegisterForm = () => {
                       value={formData.birthdate}
                       required
                     />
+                    {validations.birthdateValid === false && (
+                      <div className="mt-1">
+                        <Validated
+                          message="Debes tener al menos 18 años para registrarte"
+                          state={false}
+                        />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mt-4">
+                    <Select
+                      options={estados}
+                      name="state"
+                      onChange={handleStateChange}
+                    />
+                    {validations.stateValid === false && (
+                      <Validated
+                        message="Debes seleccionar un estado"
+                        state={false}
+                      />
+                    )}
+
+                    <div className="mt-2">
+                      {formData.state && (
+                        <Select
+                          options={municipios[formData.state] || []} // Mostrar los municipios según el estado seleccionado
+                          name="locality"
+                          onChange={handleMunicipalityChange}
+                        />
+                      )}
+                      {validations.municipalityValid === false && (
+                        <Validated
+                          message="Debes seleccionar un municipio"
+                          state={false}
+                        />
+                      )}
+                    </div>
                   </div>
 
                   {/* Código postal */}
-                  <div className="my-3">
-                    <label
+                  <div className="mt-2">
+                    {/* <label
                       htmlFor="zipCode"
                       className="form-label text-white primary-font text-italic"
                     >
                       Código postal*
-                    </label>
+                    </label> */}
                     <input
-                      type="text"
+                      type="number"
                       className="p-2 form-control text-italic shadow p-2 bg-body rounded"
                       id="zipCode"
                       name="zipCode"
@@ -281,6 +386,12 @@ const RegisterForm = () => {
                       onChange={handleChange}
                       required
                     />
+                    {validations.zipCodeValid === false && (
+                      <Validated
+                        message="El código postal debe tener 5 caracteres"
+                        state={false}
+                      />
+                    )}
                   </div>
 
                   {/* ¿Cómo te enteraste? */}
@@ -310,12 +421,10 @@ const RegisterForm = () => {
                     </select>
                   </div>
 
-                  {message ? (
+                  {message && (
                     <div className="mb-3">
                       <Validated message={message} state={false} />
                     </div>
-                  ) : (
-                    ""
                   )}
 
                   {showAlert && (
@@ -332,11 +441,11 @@ const RegisterForm = () => {
                         <button
                           className="btn btn-dark"
                           onClick={() => {
-                            setShowAlert(false); // Cierra la alerta
-                            navigate("/user/login"); // Redirige a /login
+                            setShowAlert(false);
+                            navigate("/user/login");
                           }}
                         >
-                          Iniciar Sesion
+                          Iniciar Sesión
                         </button>
                       </div>
                     </div>
@@ -347,7 +456,7 @@ const RegisterForm = () => {
                       text={buttonText}
                       type="submit"
                       disabled={isDisabled}
-                    ></SubmitButton>
+                    />
                   </div>
                 </form>
               </div>

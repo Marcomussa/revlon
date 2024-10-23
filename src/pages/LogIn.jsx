@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext"; // Importar useAuth para utilizar el contexto
+import { useAuth } from "../context/AuthContext";
+import { Button } from "react-bootstrap";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import useLogin from "../hooks/useLogin";
 import "animate.css";
-import Button from "../assets/components/Button";
+import SubmitButton from "../assets/components/Button";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import Validated from "../assets/components/Validated";
@@ -16,14 +18,20 @@ const LogInForm = () => {
     password: "",
   });
 
-  const { login: authLogin } = useAuth(); 
+  const { login: authLogin } = useAuth();
   const { login, loading, error } = useLogin();
   const [errorMessage, setErrorMessage] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
   };
 
   const handleSubmit = async (e) => {
@@ -77,31 +85,44 @@ const LogInForm = () => {
 
                   {/* Contraseña */}
                   <div className="my-3">
-                    <input
-                      type="password"
-                      className="form-control text-italic p-2 shadow p-2 bg-body rounded"
-                      id="password"
-                      name="password"
-                      placeholder="Ingresa tu contraseña"
-                      value={formData.password}
-                      onChange={handleChange}
-                      required
-                    />
+                    <div className="input-group">
+                      <input
+                        type={passwordVisible ? "text" : "password"}
+                        className="p-2 form-control text-italic shadow p-2 bg-body"
+                        id="password"
+                        name="password"
+                        placeholder="Ingresa tu contraseña"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                      />
+                      <span className="input-group-text">
+                        <Button
+                          variant="link"
+                          onClick={togglePasswordVisibility}
+                          className="p-0"
+                        >
+                          {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+                        </Button>
+                      </span>
+                    </div>
                   </div>
 
                   {error ? (
                     <div className="mb-3">
                       <Validated message={error} state={false}></Validated>
                     </div>
-                  ) : ""}
+                  ) : (
+                    ""
+                  )}
 
                   {/* {errorMessage && <p className="text-danger">{errorMessage}</p>} */}
 
                   <div className="d-grid">
-                    <Button
-                      text={loading ? "Cargando..." : "INICIAR SESIÓN"} 
+                    <SubmitButton
+                      text={loading ? "Cargando..." : "INICIAR SESIÓN"}
                       type="submit"
-                      disabled={loading} 
+                      disabled={loading}
                     />
                   </div>
                 </form>
@@ -110,7 +131,7 @@ const LogInForm = () => {
                   ¿Es la primera vez que registras un ticket?
                 </p>
                 <div className="d-grid pb-5">
-                  <Button text="REGISTRARSE" route="/user/register" />
+                  <SubmitButton text="REGISTRARSE" route="/user/register" />
                 </div>
               </div>
             </div>

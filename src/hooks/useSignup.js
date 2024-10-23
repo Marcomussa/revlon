@@ -10,6 +10,8 @@ const useSignup = () => {
     setLoading(true);
     setError(null);
 
+    console.log(formData)
+
     try {
       const response = await fetch(`${BACKEND_URL}/auth/signup`, {
         method: "POST",

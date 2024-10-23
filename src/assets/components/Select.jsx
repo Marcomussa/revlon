@@ -12,7 +12,7 @@ const Select = ({ options, name, onChange }) => {
         style={{
           flex: 1,
           border: "none",
-          fontSize: "18px",
+          fontSize: "16px",
           backgroundColor: "#f1f1f1",
           letterSpacing: "2px",
           padding: "10px",
