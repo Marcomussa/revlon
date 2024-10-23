@@ -8,6 +8,7 @@ import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import ImageUpload from "../assets/components/ImageUpload";
 import Caja from "../assets/img/caja.png";
+import Pedido from "../assets/img/pedido_ejemplo.png"
 import Button from "../assets/components/Button";
 import Validated from "../assets/components/Validated";
 
