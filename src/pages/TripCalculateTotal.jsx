@@ -114,8 +114,8 @@ const TripCalculateTotal = () => {
         <ModalInfo
           show={showModal}
           handleClose={handleClose}
-          modalTitle="Título del Modal"
-          modalText="Este es el texto dentro del modal"
+          modalTitle="EXITO"
+          modalText="Tu participación en el concurso principal se ha subido a tu perfil. Ahora puedes participar en el concurso semanal."
           route="/user/ticket/kit/info"
         />
       </div>

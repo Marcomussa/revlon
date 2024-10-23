@@ -52,21 +52,24 @@ const LegalBases = () => {
             <h5 className="subtitle-h3">VII. Incentivos.</h5>
             <p>Total de Incentivos en <b>LA PROMOCIÓN:</b> </p>
             <table width="100%" className="my-3 border border-dark ">
-              <tr className="text-center bg-black text-white ">
-                <th>CANTIDAD</th>
-                <th>DESCRIPCION</th>
-                <th>MONTO</th>
-              </tr>
-              <tr>
-                <td className="text-center border-end border-bottom border-dark">1</td>
-                <td className="p-2 border-end border-bottom border-dark">Un viaje a Cancún en avión para dos personas con hospedaje en el hotel Hard Rock Cancún, 3 días, 2 noches, todo incluido, bebidas y comidas, transporte aéreo partiendo de la CDMX a Cancún, en Cancún transporte aeropuerto – hotel – aeropuerto.</td>
-                <td className="text-center border-bottom border-dark">$46,448.81</td>
-              </tr>
-              <tr>
-                <td td className="text-center border-end border-dark">100</td>
-                <td className="p-2 border-end border-dark">Cada kit incluye:  1 (una) caja estuche, 1 (uno) lentes rectangulares rojos, 1 (un) shaker de 250 ml con cuchara bailarina y 1 (un) jigger medidor, 1 (un) tarjeta tamaño postal, 1 (un) bola disco para bebida y 1 (un) set de 2 hair cuffs</td>
-                <td td className="text-center">$1,739.68 c/u</td>
-              </tr>
+              <tbody>
+                <tr className="text-center bg-black text-white ">
+                  <th>CANTIDAD</th>
+                  <th>DESCRIPCION</th>
+                  <th>MONTO</th>
+                </tr>
+                <tr>
+                  <td className="text-center border-end border-bottom border-dark">1</td>
+                  <td className="p-2 border-end border-bottom border-dark">Un viaje a Cancún en avión para dos personas con hospedaje en el hotel Hard Rock Cancún, 3 días, 2 noches, todo incluido, bebidas y comidas, transporte aéreo partiendo de la CDMX a Cancún, en Cancún transporte aeropuerto – hotel – aeropuerto.</td>
+                  <td className="text-center border-bottom border-dark">$46,448.81</td>
+                </tr>
+                <tr>
+                  <td td className="text-center border-end border-dark">100</td>
+                  <td className="p-2 border-end border-dark">Cada kit incluye:  1 (una) caja estuche, 1 (uno) lentes rectangulares rojos, 1 (un) shaker de 250 ml con cuchara bailarina y 1 (un) jigger medidor, 1 (un) tarjeta tamaño postal, 1 (un) bola disco para bebida y 1 (un) set de 2 hair cuffs</td>
+                  <td td className="text-center">$1,739.68 c/u</td>
+                </tr>
+              </tbody>
+              
             </table>
             <p>En caso de que el viaje o los modelos de los incentivos ofrecidos en un inicio no se encuentren en existencia a la hora de entregarlos, éstos serán sustituidos por un premio similar en costo y modelo. Se otorgará 1 (uno) incentivo por ganador. En el caso del ganador del viaje, el ganador deberá llegar a la CDMX por sus propios medios para poder tomar el vuelo al destino del premio. Para poder tomar el viaje el ganador tiene un periodo de 3 meses. El viaje no aplica en temporada alta. El viaje no puede ser tomado del 23 de diciembre de 2024 al 06 de enero de 2025. Para poder tomar el viaje se requiere de al menos una semana de anticipación.</p>
 
@@ -122,34 +125,37 @@ const LegalBases = () => {
 
             <h5 className="subtitle-h3">XIX. Productos participantes</h5>
             <table className="border border-dark my-4 " width="100%">
-              <tr className="bg-black text-black-50">.</tr>
-              <tr>
-                <td className="border-bottom border-dark">Cepillo térmico alaciador de 11.4cm con infusión de aceite de coco</td>
-              </tr>
-              <tr>
-                <td className="border-bottom border-dark">Cepillo redondo calefactor de 1” (254 cm) con infusión de aceite de coco</td>
-              </tr>
-              <tr>
-                <td className="border-bottom border-dark">Alaciadora 2 en 1 con triple infusión de aceites naturales</td>
-              </tr>
-              <tr>
-                <td className="border-bottom border-dark">One-step™ secador y voluminizador removible con cabezal intercambiable</td>
-              </tr>
-              <tr>
-                <td className="border-bottom border-dark">Secadora de cabello perfect match</td>
-              </tr>
-              <tr>
-                <td className="border-bottom border-dark">Secador de potencia máxima</td>
-              </tr>
-              <tr>
-                <td className="border-bottom border-dark">One-step™ secador y voluminizador con cabezal intercambiable</td>
-              </tr>
-              <tr>
-                <td className="border-bottom border-dark">Revlon volumizer titanio rojo</td>
-              </tr>
-              <tr>
-                <td className="border-bottom border-dark">Combo estilizador control de frizz secadora y alaciadora</td>
-              </tr>
+              <tbody>
+                <tr className="bg-black text-black-50">.</tr>
+                <tr>
+                  <td className="border-bottom border-dark">Cepillo térmico alaciador de 11.4cm con infusión de aceite de coco</td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-dark">Cepillo redondo calefactor de 1” (254 cm) con infusión de aceite de coco</td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-dark">Alaciadora 2 en 1 con triple infusión de aceites naturales</td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-dark">One-step™ secador y voluminizador removible con cabezal intercambiable</td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-dark">Secadora de cabello perfect match</td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-dark">Secador de potencia máxima</td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-dark">One-step™ secador y voluminizador con cabezal intercambiable</td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-dark">Revlon volumizer titanio rojo</td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-dark">Combo estilizador control de frizz secadora y alaciadora</td>
+                </tr>
+              </tbody>
+
             </table>
 
             <h5 className="subtitle-h3">XX. Aviso Profeco y contacto.</h5>

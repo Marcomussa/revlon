@@ -11,7 +11,7 @@ const Guide = () => {
 
                     <div className="col-12">
                         <h2 className='text-center title title-red title-size mt-5 px-5 py-xl-5 mb-xl-5 '>
-                            ¿QUE TIENES QUE HACER? ¡MUY FACIL!
+                            ¿QUÉ TIENES QUE HACER? ¡MUY FÁCIL!
                         </h2>
                     </div>
                 </div>
@@ -21,7 +21,7 @@ const Guide = () => {
                         <img className='d-block mx-auto img-size' src={Dinamicask} alt="Ask" />
                     </div>
                     <div className="col-sm-12 col-xl-7">
-                        <p className='text-center text-xl-start text-guide primary-font px-2'>Tu misión es calcular correctamente y sin pasarte cuántos productos REVLON hay en una imagen.</p>
+                        <p className='text-center text-xl-start text-guide primary-font px-2'>Tu misión es calcular correctamente y sin pasarte cuántos productos REVLON hay en una imagen. Cada vez que participas, tienes la oportunidad de acercarte más al Gran Premio.</p>
                     </div>
                 </div>
 

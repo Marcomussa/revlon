@@ -7,6 +7,7 @@ import { useAuth } from '../../context/AuthContext';
 import { FaTrashAlt } from "react-icons/fa";
 import { Modal, Button } from "react-bootstrap";
 import "../../styles/Button.css";
+import IcoImg from "../img/icons/ico_img.png"
 import Validated from "./Validated";
 import axios from "axios"; 
 
@@ -205,12 +206,12 @@ const ImageUpload = forwardRef(({ onImageChange }, ref) => {
           </>
         ) : (
           <img
-            src="https://via.placeholder.com/125"
+            src={IcoImg}
             alt="Placeholder"
             style={{
               width: "125px",
               height: "125px",
-              opacity: "0.75",
+              opacity: "0.45",
             }}
           />
         )}

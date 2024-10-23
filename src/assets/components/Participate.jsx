@@ -9,7 +9,7 @@ const Participate = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <h1 className='text-center primary-font title title-red title-size pb-xl-5'>¿Cómo participar?</h1>
-                        <p className='text-center text primary-font px-2 px-xl-4 text-guide'><b>¡Es facilísimo! Compara productos REVLON participantes por $599 MXN o más:</b> Adquiere cualquiera de los productos participantes, puedes consultarlos aquí, ya sea en tiendas físicas o en línea en los comercios participantes.</p>
+                        <p className='text-center text primary-font px-2 px-xl-4 text-guide'><b>¡Es facilísimo! </b> Adquiere $599 MXN de compra de cualquiera de los productos participantes (puedes consultarlos aquí) ya sea en tiendas fisicas o en linea en los comercios participantes.</p>
                     </div>
                 </div>
 
@@ -28,18 +28,18 @@ const Participate = () => {
                             <b>¡1 compra, 1 oportunidad!:</b></p>
                         <p className="text-center primary-font text px-2">
                             <b>
-                                Cada ticket de compra con productos REVLON por $599 MXN o más te da UNA oportunidad. ¡Así es, con una compra ya estás participando!</b>
+                                Cada ticket de compra con valor de $599 MXN o más por productos REVLON te da UNA oportunidad. ¡Así es, con una compra* ya estás participando!</b>
                         </p>
-                        <p className='text-center text primary-font'>(No importa si compras más de un producto, un ticket equivale a una participación).</p>
+                        <p className='text-center text primary-font'>(*No importa si compras más de un producto, cada ticket equivale a una participación).</p>
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col-md-12 pdkop">
                         <h2 className='text-center primary-font title-red subtitle-h3 mb-4 px-4 '>
-                            DOS DINÁMICAS, DOS FORMAS DE GANAR:
+                            DOS FORMAS DE GANAR:
                         </h2>
-                        <p className='text-center text primary-font mb-5'>Cada ticket registrado te da la oportunidad de probar tus habilidades de calculo en dos dinámicas:</p>
+                        <p className='text-center text primary-font mb-5'>Cada ticket registrado te da la oportunidad de probar tus habilidades de cálculo en dos dinámicas:</p>
                     </div>
                 </div>
             </div>

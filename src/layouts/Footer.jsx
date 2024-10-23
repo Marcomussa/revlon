@@ -11,11 +11,11 @@ const Footer = () => {
           <div className="mt-5 text-center col-md-12">
             <Link to="#">
               {/* Ícono de Facebook */}
-              <FaFacebookF size={34} className="m-2" style={{color: 'white'}}/>
+              <FaFacebookF size={34} className="m-2" style={{ color: 'white' }} />
             </Link>
             <Link to="#">
               {/* Ícono de Instagram */}
-              <FaInstagram size={34} className="m-2" style={{color: 'white'}}/>
+              <FaInstagram size={34} className="m-2" style={{ color: 'white' }} />
             </Link>
           </div>
           <div className="col-md-12 text-center mt-2 mb-4">
@@ -27,7 +27,7 @@ const Footer = () => {
               compra en esta pagina, aceptas que has leido y entendido los
               terminos y condiciones. La participacion esta sujeta a la
               verificacion de la validez del ticket y el cumplimiento de los
-              requisitos establecidos. Verifica las Bases Legales para saber
+              requisitos establecidos. Verifica las <b className="text-white">Bases Legales</b> y la <b className="text-white">Politica de Privacidad</b> para
               conocer los lineamientos legales que rigen nuestra dinamica.
             </p>
           </div>

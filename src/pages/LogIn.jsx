@@ -131,7 +131,7 @@ const LogInForm = () => {
                   ¿Es la primera vez que registras un ticket?
                 </p>
                 <div className="d-grid pb-5">
-                  <SubmitButton text="REGISTRARSE" route="/user/register" />
+                  <SubmitButton text="REGISTRATE" route="/user/register" />
                 </div>
               </div>
             </div>
