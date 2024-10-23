@@ -3,6 +3,7 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import Button from "../assets/components/Button";
+const BACKEND_URL= import.meta.env.VITE_BACKEND_URL
 
 const VerifyAccount = () => {
   const [searchParams] = useSearchParams();
@@ -18,7 +19,7 @@ const VerifyAccount = () => {
     const verifyAccount = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/auth/verify-account?t=${token}&email=${email}`,
+          `${BACKEND_URL}/auth/verify-account?t=${token}&email=${email}`,
           {
             method: "POST",
             headers: {

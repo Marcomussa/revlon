@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import useSignup from "../hooks/useSignup"; 
+import { Button } from "react-bootstrap";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "animate.css";
-import Button from "../assets/components/Button";
+import useSignup from "../hooks/useSignup";
+import SubmitButton from "../assets/components/Button";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import Validated from "../assets/components/Validated";
@@ -12,7 +14,7 @@ const RegisterForm = () => {
   const navigate = useNavigate();
 
   const { signup, loading, error } = useSignup();
-  
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -23,12 +25,17 @@ const RegisterForm = () => {
     password: "",
     confirmPassword: "",
   });
-  
+
   const [passwordMatch, setPasswordMatch] = useState(null);
   const [message, setMessage] = useState("");
   const [showAlert, setShowAlert] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(false); 
+  const [isDisabled, setIsDisabled] = useState(false);
   const [buttonText, setButtonText] = useState("REGISTRARSE");
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -57,7 +64,7 @@ const RegisterForm = () => {
     }
 
     try {
-      setButtonText("Registrando..."); 
+      setButtonText("Registrando...");
       const formDataToSend = { ...formData };
       delete formDataToSend.confirmPassword;
       const result = await signup(formDataToSend);
@@ -69,12 +76,11 @@ const RegisterForm = () => {
       } else {
         setMessage("Error en el registro. Inténtalo de nuevo.");
       }
-
     } catch (error) {
       setMessage(error.message);
       console.log("Error en el registro. Inténtalo de nuevo 2.");
     } finally {
-      setButtonText("REGISTRARSE"); 
+      setButtonText("REGISTRARSE");
     }
   };
 
@@ -164,16 +170,29 @@ const RegisterForm = () => {
                     >
                       Contraseña*
                     </label>
-                    <input
-                      type="password"
-                      className="p-2 form-control text-italic shadow p-2 bg-body rounded"
-                      id="password"
-                      name="password"
-                      placeholder="Ingresa tu contraseña"
-                      value={formData.password}
-                      onChange={handleChange}
-                      required
-                    />
+
+                    <div className="input-group">
+                      <input
+                        type={passwordVisible ? "text" : "password"}
+                        className="p-2 form-control text-italic shadow p-2 bg-body"
+                        id="password"
+                        name="password"
+                        placeholder="Ingresa tu contraseña"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                      />
+                      <span className="input-group-text">
+                        <Button
+                          variant="link"
+                          onClick={togglePasswordVisibility}
+                          className="p-0"
+                        >
+                          {passwordVisible ? <FaEyeSlash /> : <FaEye />}{" "}
+                          {/* Ícono del ojo */}
+                        </Button>
+                      </span>
+                    </div>
                   </div>
 
                   {/* Confirmar Contraseña */}
@@ -184,16 +203,28 @@ const RegisterForm = () => {
                     >
                       Confirmar contraseña*
                     </label>
-                    <input
-                      type="password"
-                      className="p-2 form-control text-italic shadow p-2 bg-body rounded"
-                      id="confirmPassword"
-                      name="confirmPassword"
-                      placeholder="Confirma tu contraseña"
-                      value={formData.confirmPassword}
-                      onChange={handleChange}
-                      required
-                    />
+                    <div className="input-group">
+                      <input
+                        type={passwordVisible ? "text" : "password"}
+                        className="p-2 form-control text-italic shadow p-2 bg-body"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirma tu contraseña"
+                        value={formData.confirmPassword}
+                        onChange={handleChange}
+                        required
+                      />
+                      <span className="input-group-text">
+                        <Button
+                          variant="link"
+                          onClick={togglePasswordVisibility}
+                          className="p-0"
+                        >
+                          {passwordVisible ? <FaEyeSlash /> : <FaEye />}{" "}
+                          {/* Ícono del ojo */}
+                        </Button>
+                      </span>
+                    </div>
                   </div>
 
                   {/* Verificación de contraseñas */}
@@ -312,7 +343,11 @@ const RegisterForm = () => {
                   )}
 
                   <div className="d-grid mb-5 pb-5">
-                    <Button text={buttonText} type="submit" disabled={isDisabled}></Button>
+                    <SubmitButton
+                      text={buttonText}
+                      type="submit"
+                      disabled={isDisabled}
+                    ></SubmitButton>
                   </div>
                 </form>
               </div>

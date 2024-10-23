@@ -6,6 +6,7 @@ import Footer from "../layouts/Footer";
 import Button from "../assets/components/Button";
 import Input from "../assets/components/Input";
 import ModalInfo from "../assets/components/ModalInfo";
+import ContestImage from "../assets/components/ContestImage";
 
 const KIT_ID = import.meta.env.VITE_KIT_ID;
 
@@ -103,8 +104,11 @@ const SpecialKitCalculateTotal = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center">
-            <img src="https://placehold.co/250x250" alt="" />
+          <div className="col-md-12" style={{
+            display: "flex",
+            justifyContent: "center"
+          }}>
+            <ContestImage/>
           </div>
         </div>
         <div className="row">

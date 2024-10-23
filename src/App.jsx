@@ -17,6 +17,7 @@ import SpecialKitInfo from "./pages/SpecialKitInfo";
 import SpecialKitCalculateTotal from "./pages/SpecialKitCalculateTotal";
 import LegalBases from "./pages/LegalBases";
 import VerifyAccount from "./pages/VerifyAccount";
+import PrivacyNotice from "./pages/PrivacyNotice";
 import "./styles/Fonts.css";
 import "./styles/Input.css";
 
@@ -28,6 +29,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/legal-bases" element={<LegalBases />} />
+            <Route path="/privacy-notice" element={<PrivacyNotice />} />
             <Route path="/verify-account" element={<VerifyAccount />} />
             <Route path="*" element={<NotFoundPage />} />
             <Route

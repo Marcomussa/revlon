@@ -1,14 +1,20 @@
 # To-Do:
 - cp longitud de 5
+- agregar al registro “acepto los terminos y condiciones”
+- agrgear estado y municipio
+
 - input date revisar validacion
 - validar codigo de barras por lista
-- agregar al registro “acepto los terminos y condiciones”
 - agregar placeholder de subir imagen
 - revisar modificaciones del figma
-- agrgear estado y municipio
 - + refuerzo a las validaciones
-- input password que puedan ver
 - + testeos
+- modificar codigo de barra en ticket online por select
+- revisar mas en detalle VerifyAccount
+
+- input password que puedan ver --> ok
+- agregar bases y condiciones --> ok
+- mostrar imagen 1 minuto --> ok
 
 # Utils:
 ## Figma
