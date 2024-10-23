@@ -453,10 +453,14 @@ const RegisterForm = () => {
 
                   <div className="d-grid mb-5 pb-5">
                     <h6 className="text-white text-center">Al clickear en Registrarse estas aceptando los <a target="_blank" className="text-white" 
+                    href="/legal-bases"
+                    style={{
+                      fontStyle: "italic"
+                    }} >Bases legales</a> y la <a target="_blank" className="text-white" 
                     href="/privacy-notice"
                     style={{
                       fontStyle: "italic"
-                    }} >Terminos y Condiciones</a></h6>
+                    }}>Política de Privacidad</a></h6> 
                     <SubmitButton
                       text={buttonText}
                       type="submit"
