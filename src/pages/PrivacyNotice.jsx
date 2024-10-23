@@ -8,7 +8,7 @@ const PrivacyNotice = () => {
             <div className="container mt-5">
                 <div className="row bg-white">
                     <div className="col-md-12">
-                        <h3 className="title-red subtitle-h3 mt-5">Bases Legales</h3>
+                        <h3 className="title-red subtitle-h3 mt-5">Terminos y Condiciones</h3>
                     </div>
                 </div>
                 <div className="row py-4 text">

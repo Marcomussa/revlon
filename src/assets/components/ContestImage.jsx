@@ -66,7 +66,7 @@ const ContestImage = () => {
               color: "white",
             }}
           >
-            Imagen no disponible
+            El tiempo ha finalizado!
           </div>
         )}
       </div>

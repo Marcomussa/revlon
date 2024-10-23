@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState, useRef } from "react";
 import { useTicketData } from "../context/TicketDataContext";
+import barCodesData from "../../products.json";
 import ImageUpload from "../assets/components/ImageUpload";
 import InputWithModalTicketNum from "../assets/components/InputWithModalTicketNum";
 import InputWithModalBarCode from "../assets/components/InputWithModalBarCode";
@@ -16,7 +17,7 @@ import "animate.css";
 
 const PhysicalTicket = () => {
   const storeOptions = [
-    { value: 'Seleccionar Opcion', label: "Seleccionar Opción"},
+    { value: "Seleccionar Opcion", label: "Seleccionar Opción" },
     { value: "CHEDRAUI", label: "Chedraui" },
     { value: "COPPEL", label: "Coppel" },
     { value: "DELSOL", label: "Delsol" },
@@ -41,6 +42,7 @@ const PhysicalTicket = () => {
   const [isBarCodeValid, setIsBarCodeValid] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
   const [isImageValid, setIsImageValid] = useState(false);
+  const [barCodeValidationMessage, setBarCodeValidationMessage] = useState("");
 
   const imageUploadRef = useRef(null);
 
@@ -89,15 +91,30 @@ const PhysicalTicket = () => {
   };
 
   const validateBarCode = (barCode) => {
+    const validBarCodes = barCodesData.map((item) => item.barCode); // Extraer los códigos de barras del JSON
+
     if (barCode.length === 14) {
-      setIsBarCodeValid(true);
+      if (validBarCodes.includes(barCode)) {
+        setIsBarCodeValid(true);
+        setBarCodeValidationMessage("Código válido"); // Mensaje de éxito
+      } else {
+        setIsBarCodeValid(false);
+        setBarCodeValidationMessage(
+          "El código de barras ingresado no es válido"
+        ); // Mensaje de error
+      }
     } else {
       setIsBarCodeValid(false);
+      setBarCodeValidationMessage(""); 
     }
   };
 
   const validateForm = (ticket, barCode, image) => {
-    if (ticket.length === 21 && barCode.length === 14 && image) {
+    console.log(ticket.length === 21 )
+    console.log(isBarCodeValid)
+    console.log(image)
+    console.log('--- ---- ---')
+    if (ticket.length === 21 && isBarCodeValid && image) {
       setIsFormValid(true);
     } else {
       setIsFormValid(false);
@@ -138,7 +155,6 @@ const PhysicalTicket = () => {
               onChange={handleStoreChange}
             />
           </div>
-
         </div>
         <div className="row my-xl-3">
           <div className="col-md-12 input-w">
@@ -179,12 +195,13 @@ const PhysicalTicket = () => {
               value={barCode}
               onChange={handleBarCodeChange}
             />
-            {isBarCodeValid ? (
-              <div className="mt-2 ">
-                <Validated message="Código válido" state={true} />
+            {barCode.length === 14 && (
+              <div className="mt-2">
+                <Validated
+                  message={barCodeValidationMessage}
+                  state={isBarCodeValid}
+                />
               </div>
-            ) : (
-              ""
             )}
           </div>
         </div>
@@ -197,7 +214,7 @@ const PhysicalTicket = () => {
             </p>
             <br />
             <p className="text-white text-italic primary-font">
-              Asegúrate que tu foto no tenga un peso mayor a 2MB
+              Asegúrate que tu foto no tenga un peso mayor a 5MB
             </p>
           </div>
         </div>

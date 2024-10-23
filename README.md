@@ -1,19 +1,19 @@
 # To-Do:
-- input password que puedan ver en login 
-- agregar al registro “acepto los terminos y condiciones”
+- agregar placeholder de subir imagen
+- revisar modificaciones del figma
+- hacer cambios de textos y agregar
+- + testeos
+- revisar mas en detalle VerifyAccount
+
+- + refuerzo a las validaciones de ticket online y physical ticket --> ok, pendiente volver a revisar
+- input date revisar validacion --> ok
+- modificar codigo de barra en ticket online por select --> ok
+- validar codigo de barras por lista --> ok
+- agregar al registro “acepto los terminos y condiciones” --> ok
+- input password que puedan ver en login --> ok
 - cp longitud de 5 --> ok
 - agrgear estado y municipio --> ok
 - + refuerzo a las validaciones de register form --> ok
-
-- input date revisar validacion
-- validar codigo de barras por lista
-- agregar placeholder de subir imagen
-- revisar modificaciones del figma
-- + refuerzo a las validaciones de ticket online y physical ticket
-- + testeos
-- modificar codigo de barra en ticket online por select
-- revisar mas en detalle VerifyAccount
-
 - input password que puedan ver en register --> ok
 - agregar bases y condiciones --> ok
 - mostrar imagen 1 minuto --> ok
