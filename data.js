@@ -1,25 +1,204 @@
 export const estados = [
   { value: "", label: "Selecciona un estado" },
-  { value: "CDMX", label: "Ciudad de México" },
+  { value: "AGU", label: "Aguascalientes" },
+  { value: "BCN", label: "Baja California" },
+  { value: "BCS", label: "Baja California Sur" },
+  { value: "CAM", label: "Campeche" },
+  { value: "CHP", label: "Chiapas" },
+  { value: "CHH", label: "Chihuahua" },
+  { value: "CMX", label: "Ciudad de México" },
+  { value: "COA", label: "Coahuila" },
+  { value: "COL", label: "Colima" },
+  { value: "DUR", label: "Durango" },
+  { value: "GUA", label: "Guanajuato" },
+  { value: "GRO", label: "Guerrero" },
+  { value: "HID", label: "Hidalgo" },
   { value: "JAL", label: "Jalisco" },
+  { value: "MEX", label: "Estado de México" },
+  { value: "MIC", label: "Michoacán" },
+  { value: "MOR", label: "Morelos" },
+  { value: "NAY", label: "Nayarit" },
   { value: "NLE", label: "Nuevo León" },
-  // Puedes agregar más estados aquí...
+  { value: "OAX", label: "Oaxaca" },
+  { value: "PUE", label: "Puebla" },
+  { value: "QUE", label: "Querétaro" },
+  { value: "ROO", label: "Quintana Roo" },
+  { value: "SLP", label: "San Luis Potosí" },
+  { value: "SIN", label: "Sinaloa" },
+  { value: "SON", label: "Sonora" },
+  { value: "TAB", label: "Tabasco" },
+  { value: "TAM", label: "Tamaulipas" },
+  { value: "TLA", label: "Tlaxcala" },
+  { value: "VER", label: "Veracruz" },
+  { value: "YUC", label: "Yucatán" },
+  { value: "ZAC", label: "Zacatecas" },
 ];
 
 export const municipios = {
-  CDMX: [
-    { value: "", label: "Selecciona un municipio" },
+  AGU: [
+    { value: "Aguascalientes", label: "Aguascalientes" },
+    { value: "Asientos", label: "Asientos" },
+    { value: "Calvillo", label: "Calvillo" },
+  ],
+  BCN: [
+    { value: "Mexicali", label: "Mexicali" },
+    { value: "Tijuana", label: "Tijuana" },
+    { value: "Ensenada", label: "Ensenada" },
+  ],
+  BCS: [
+    { value: "La Paz", label: "La Paz" },
+    { value: "Los Cabos", label: "Los Cabos" },
+    { value: "Comondú", label: "Comondú" },
+  ],
+  CAM: [
+    { value: "Campeche", label: "Campeche" },
+    { value: "Carmen", label: "Carmen" },
+    { value: "Champotón", label: "Champotón" },
+  ],
+  CHP: [
+    { value: "Tuxtla Gutiérrez", label: "Tuxtla Gutiérrez" },
+    {
+      value: "San Cristóbal de las Casas",
+      label: "San Cristóbal de las Casas",
+    },
+    { value: "Tapachula", label: "Tapachula" },
+  ],
+  CHH: [
+    { value: "Chihuahua", label: "Chihuahua" },
+    { value: "Ciudad Juárez", label: "Ciudad Juárez" },
+    { value: "Delicias", label: "Delicias" },
+  ],
+  CMX: [
     { value: "Cuauhtémoc", label: "Cuauhtémoc" },
     { value: "Iztapalapa", label: "Iztapalapa" },
+    { value: "Tlalpan", label: "Tlalpan" },
+  ],
+  COA: [
+    { value: "Saltillo", label: "Saltillo" },
+    { value: "Torreón", label: "Torreón" },
+    { value: "Monclova", label: "Monclova" },
+  ],
+  COL: [
+    { value: "Colima", label: "Colima" },
+    { value: "Manzanillo", label: "Manzanillo" },
+    { value: "Tecomán", label: "Tecomán" },
+  ],
+  DUR: [
+    { value: "Durango", label: "Durango" },
+    { value: "Gómez Palacio", label: "Gómez Palacio" },
+    { value: "Lerdo", label: "Lerdo" },
+  ],
+  GUA: [
+    { value: "León", label: "León" },
+    { value: "Irapuato", label: "Irapuato" },
+    { value: "Celaya", label: "Celaya" },
+  ],
+  GRO: [
+    { value: "Acapulco", label: "Acapulco" },
+    { value: "Chilpancingo", label: "Chilpancingo" },
+    { value: "Iguala", label: "Iguala" },
+  ],
+  HID: [
+    { value: "Pachuca", label: "Pachuca" },
+    { value: "Tulancingo", label: "Tulancingo" },
+    { value: "Tula", label: "Tula" },
   ],
   JAL: [
-    { value: "", label: "Selecciona un municipio" },
     { value: "Guadalajara", label: "Guadalajara" },
     { value: "Zapopan", label: "Zapopan" },
+    { value: "Tlaquepaque", label: "Tlaquepaque" },
+  ],
+  MEX: [
+    { value: "Ecatepec", label: "Ecatepec" },
+    { value: "Naucalpan", label: "Naucalpan" },
+    { value: "Toluca", label: "Toluca" },
+  ],
+  MIC: [
+    { value: "Morelia", label: "Morelia" },
+    { value: "Uruapan", label: "Uruapan" },
+    { value: "Zamora", label: "Zamora" },
+  ],
+  MOR: [
+    { value: "Cuernavaca", label: "Cuernavaca" },
+    { value: "Jiutepec", label: "Jiutepec" },
+    { value: "Temixco", label: "Temixco" },
+  ],
+  NAY: [
+    { value: "Tepic", label: "Tepic" },
+    { value: "Bahía de Banderas", label: "Bahía de Banderas" },
+    { value: "Compostela", label: "Compostela" },
   ],
   NLE: [
-    { value: "", label: "Selecciona un municipio" },
     { value: "Monterrey", label: "Monterrey" },
     { value: "San Pedro Garza García", label: "San Pedro Garza García" },
+    { value: "Guadalupe", label: "Guadalupe" },
+  ],
+  OAX: [
+    { value: "Oaxaca de Juárez", label: "Oaxaca de Juárez" },
+    { value: "Salina Cruz", label: "Salina Cruz" },
+    { value: "Juchitán", label: "Juchitán" },
+  ],
+  PUE: [
+    { value: "Puebla", label: "Puebla" },
+    { value: "Tehuacán", label: "Tehuacán" },
+    { value: "San Martín Texmelucan", label: "San Martín Texmelucan" },
+  ],
+  QUE: [
+    { value: "Querétaro", label: "Querétaro" },
+    { value: "San Juan del Río", label: "San Juan del Río" },
+    { value: "El Marqués", label: "El Marqués" },
+  ],
+  ROO: [
+    { value: "Cancún", label: "Cancún" },
+    { value: "Playa del Carmen", label: "Playa del Carmen" },
+    { value: "Chetumal", label: "Chetumal" },
+  ],
+  SLP: [
+    { value: "San Luis Potosí", label: "San Luis Potosí" },
+    {
+      value: "Soledad de Graciano Sánchez",
+      label: "Soledad de Graciano Sánchez",
+    },
+    { value: "Ciudad Valles", label: "Ciudad Valles" },
+  ],
+  SIN: [
+    { value: "Culiacán", label: "Culiacán" },
+    { value: "Mazatlán", label: "Mazatlán" },
+    { value: "Los Mochis", label: "Los Mochis" },
+  ],
+  SON: [
+    { value: "Hermosillo", label: "Hermosillo" },
+    { value: "Nogales", label: "Nogales" },
+    { value: "Ciudad Obregón", label: "Ciudad Obregón" },
+  ],
+  TAB: [
+    { value: "Villahermosa", label: "Villahermosa" },
+    { value: "Cárdenas", label: "Cárdenas" },
+    { value: "Comalcalco", label: "Comalcalco" },
+  ],
+  TAM: [
+    { value: "Tampico", label: "Tampico" },
+    { value: "Matamoros", label: "Matamoros" },
+    { value: "Nuevo Laredo", label: "Nuevo Laredo" },
+  ],
+  TLA: [
+    { value: "Tlaxcala", label: "Tlaxcala" },
+    { value: "Apizaco", label: "Apizaco" },
+    { value: "Huamantla", label: "Huamantla" },
+  ],
+  VER: [
+    { value: "Veracruz", label: "Veracruz" },
+    { value: "Xalapa", label: "Xalapa" },
+    { value: "Coatzacoalcos", label: "Coatzacoalcos" },
+  ],
+  YUC: [
+    { value: "Mérida", label: "Mérida" },
+    { value: "Progreso", label: "Progreso" },
+    { value: "Valladolid", label: "Valladolid" },
+  ],
+  ZAC: [
+    { value: "Zacatecas", label: "Zacatecas" },
+    { value: "Fresnillo", label: "Fresnillo" },
+    { value: "Jerez", label: "Jerez" },
   ],
 };
