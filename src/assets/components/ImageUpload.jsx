@@ -118,7 +118,7 @@ const ImageUpload = forwardRef(({ onImageChange }, ref) => {
       setMessage("Imagen subida exitosamente");
       onImageChange(true, public_id); 
     } catch (error) {
-      setError("Error al subir la imagen a Cloudinary.");
+      setError("Error al subir la imagen.");
       onImageChange(false);
     } finally {
       setLoading(false); 
@@ -171,7 +171,7 @@ const ImageUpload = forwardRef(({ onImageChange }, ref) => {
         }}
       >
         {loading ? (
-          <p>Cargando...</p> 
+          <p>Subiendo imagen...</p> 
         ) : image ? (
           <>
             <img

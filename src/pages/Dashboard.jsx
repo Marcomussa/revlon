@@ -39,13 +39,21 @@ const Dashboard = () => {
         {Array.isArray(tickets) && tickets.length > 0 ? (
           <>
             <h5 className="text-white primary-font pt-4 text-center">
-              Tu historial de participaciones
+              ¡Recuerda que cada compra registrada es una participacion más!
             </h5>
+            <div className="row">
+              <div className="col-md-12 text-center mt-2 button">
+                <Button
+                  text="REGISTRA TU TICKET"
+                  route="/user/ticket/select-type"
+                ></Button>
+              </div>
+            </div>
             {tickets.map((ticket, index) => (
               <div key={index}>
                 <TicketDetailsCard
                   num={ticket.number}
-                  registerDate={ticket.createdAt.slice(0,10)}
+                  registerDate={ticket.createdAt.slice(0, 10)}
                   principalAnswer={ticket.guesses[0].guess}
                   weeklyAnswer={ticket.guesses[1].guess}
                 />
@@ -69,17 +77,17 @@ const Dashboard = () => {
                 ¡Recuerda que cada compra registrada es una participacion más!
               </div>
             </div>
+            <div className="row">
+              <div className="col-md-12 text-center mt-2 button">
+                <Button
+                  text="REGISTRA TU TICKET"
+                  route="/user/ticket/select-type"
+                ></Button>
+              </div>
+            </div>
           </>
         )}
-
-        <div className="row">
-          <div className="col-md-12 text-center mt-2 button">
-            <Button
-              text="REGISTRA TU TICKET"
-              route="/user/ticket/select-type"
-            ></Button>
-          </div>
-        </div>
+        
       </div>
       <Footer />
     </>

@@ -1,11 +1,11 @@
 # To-Do:
-- agregar placeholder de subir imagen
-- revisar modificaciones del figma
-- hacer cambios de textos y agregar
+- revisar modificaciones del figm
 - + testeos
 - revisar mas en detalle VerifyAccount
 
 - + refuerzo a las validaciones de ticket online y physical ticket --> ok, pendiente volver a revisar
+- agregar placeholder de subir imagen --> ok
+- hacer cambios de textos y agregar --> ok
 - input date revisar validacion --> ok
 - modificar codigo de barra en ticket online por select --> ok
 - validar codigo de barras por lista --> ok

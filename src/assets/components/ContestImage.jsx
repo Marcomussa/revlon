@@ -16,7 +16,22 @@ const ContestImage = () => {
     }
   }, [timeLeft]);
 
+  const calculateColor = () => {
+    if (timeLeft > 30) {
+      const greenToYellowRatio = (timeLeft - 30) / 30;
+      const r = 255 - (255 - 76) * greenToYellowRatio;
+      const g = 235 + (171 - 235) * greenToYellowRatio;
+      return `rgb(${r}, ${g}, 50)`;
+    } else {
+      const yellowToRedRatio = timeLeft / 30;
+      const r = 244 + (255 - 244) * yellowToRedRatio;
+      const g = 67 * yellowToRedRatio;
+      return `rgb(${r}, ${g}, 50)`;
+    }
+  };
+
   const circleProgress = (timeLeft / 60) * 100;
+  const timerColor = calculateColor();
 
   return (
     <>
@@ -42,14 +57,15 @@ const ContestImage = () => {
                 width: "50px",
                 height: "50px",
                 borderRadius: "50%",
-                border: "4px solid #4caf50",
+                border: `4px solid ${timerColor}`,
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                background: `conic-gradient(#4caf50 ${circleProgress}%, #d3d3d3 0%)`,
+                background: `conic-gradient(${timerColor} ${circleProgress}%, #d3d3d3 0%)`,
+                transition: "background-color 1s linear", // Transición suave
               }}
             >
-              <span style={{ color: "#fff", fontSize: "14px" }}>
+              <span style={{ color: "#fff", fontSize: "16px", fontWeight: 700 }}>
                 {timeLeft}s
               </span>
             </div>
@@ -66,7 +82,7 @@ const ContestImage = () => {
               color: "white",
             }}
           >
-            El tiempo ha finalizado!
+            <b>El tiempo ha finalizado</b>
           </div>
         )}
       </div>
