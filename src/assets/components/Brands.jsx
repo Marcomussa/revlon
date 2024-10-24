@@ -32,7 +32,6 @@ const Brands = () => {
             <img src={Walmart} alt="Walmart" className="brands-size" />
             <img src={Coppel} alt="Coppel" className="brands-size" />
             <img src={Woolworth} alt="Woolworth" className="brands-size" />
-            
           </div>
         </div>
         <div className="row mt-4">
@@ -61,8 +60,7 @@ const Brands = () => {
             <img src={Heb} alt="Heb" className="brands-size-e" />
           </div>
         </div>
-
-
+        
         <div className="row mt-5">
           <div className="col-md-12">
             <p className="text-white primary-font text-center subtitle sub-brands my-xl-5 pt-xl-4">
