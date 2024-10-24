@@ -26,7 +26,7 @@ const RegisterForm = () => {
     via: "",
     password: "",
     state: "",
-    municipality: "",
+    //municipality: "",
   });
 
   const [validations, setValidations] = useState({
@@ -37,7 +37,7 @@ const RegisterForm = () => {
     birthdateValid: null,
     zipCodeValid: null,
     stateValid: null,
-    municipalityValid: null,
+    //municipalityValid: null,
   });
 
   const [isDisabled, setIsDisabled] = useState(true);
@@ -71,8 +71,8 @@ const RegisterForm = () => {
         return value.length === 5;
       case "state":
         return value !== "";
-      case "municipality":
-        return value !== "";
+      // case "municipality":
+      //   return value !== "";
       default:
         return true;
     }
@@ -97,13 +97,13 @@ const RegisterForm = () => {
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
-      municipality: "",
+      //municipality: "",
     }));
 
     setValidations((prevState) => ({
       ...prevState,
       stateValid: validateField(name, value),
-      municipalityValid: null,
+      //municipalityValid: null,
     }));
   };
 
@@ -116,7 +116,7 @@ const RegisterForm = () => {
 
     setValidations((prevState) => ({
       ...prevState,
-      municipalityValid: validateField(name, value),
+      //municipalityValid: validateField(name, value),
     }));
   };
 
