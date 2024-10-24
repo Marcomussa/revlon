@@ -9,6 +9,8 @@ import Time from "../assets/components/Time"
 import End from "../assets/components/End"
 import Footer from "../layouts/Footer"
 import '../styles/HomePage.css'
+import '../styles/Image.css'
+import '../styles/Texts.css'
 
 const HomePage = () => {
   return (

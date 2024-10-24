@@ -18,7 +18,7 @@ const Brands = () => {
       <div className="container bg-red-glitter p-5 ">
         <div className="row">
           <div className="col-md-12">
-            <h1 className="text-white mt-4 text-center primary-font title title-size">
+            <h1 className="text-white mt-4 text-center primary-font title">
               TIENDAS PARTICIPANTES
             </h1>
             <p className="text-white primary-font text-center subtitle sub-brands mb-xl-5">
@@ -26,20 +26,18 @@ const Brands = () => {
             </p>
           </div>
         </div>
+
         <div className="row mt-4">
           <div className="col-12 d-flex justify-content-center gap-3 mt-4 gap-xl-5">
             <img src={Walmart} alt="Walmart" className="brands-size" />
             <img src={Coppel} alt="Coppel" className="brands-size" />
+            <img src={Woolworth} alt="Woolworth" className="brands-size" />
+            
           </div>
         </div>
         <div className="row mt-4">
           <div className="col-12 d-flex justify-content-center gap-3 mt-4 gap-xl-5">
-            <img src={Woolworth} alt="Woolworth" className="brands-size" />
             <img src={Chedraui} alt="Chedraui" className="brands-size" />
-          </div>
-        </div>
-        <div className="row mt-4">
-          <div className="col-md-12 d-flex justify-content-center gap-3 mt-4 gap-xl-5">
             <img src={Soriana} alt="Soriana" className="brands-size" />
             <img src={Fresko} alt="Fresko" className="brands-size" />
           </div>
@@ -48,25 +46,23 @@ const Brands = () => {
           <div className="col-md-12 d-flex justify-content-center gap-3 mt-4 gap-xl-5">
             <img src={Suburbia} alt="Suburbia" className="brands-size" />
             <img src={Liverpool} alt="Liverpool" className="brands-size" />
-          </div>
-        </div>
-        <div className="row mt-4">
-          <div className="col-md-12 d-flex justify-content-center gap-3 mt-4 gap-xl-5">
             <img src={Sears} alt="Sears" className="brands-size" />
-            <img src={Sansborns} alt="Sanborns" className="brands-size py-3" />
           </div>
         </div>
         <div className="row mt-4">
           <div className="col-md-12 d-flex justify-content-center gap-3 mt-4 gap-xl-5">
+            <img src={Sansborns} alt="Sanborns" className="brands-size py-3" />
             <img src={DelSol} alt="DelSol" className="brands-size" />
             <img src={Dax} alt="Dax" className="brands-size py-4" />
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-12 d-flex justify-content-center gap-3 mt-4">
-            <img src={Heb} alt="Heb" className="brands-size" />
+        <div className="row mt-4">
+          <div className="col-md-12 d-flex justify-content-center gap-3 mt-4 gap-xl-5">
+            <img src={Heb} alt="Heb" className="brands-size-e" />
           </div>
         </div>
+
+
         <div className="row mt-5">
           <div className="col-md-12">
             <p className="text-white primary-font text-center subtitle sub-brands my-xl-5 pt-xl-4">
@@ -78,17 +74,13 @@ const Brands = () => {
           <div className="col-md-12 d-flex justify-content-center gap-3 mt-4 gap-xl-5">
             <img src={Walmart} alt="" className="brands-size" />
             <img src={Coppel} alt="" className="brands-size" />
+            <img src={Woolworth} alt="" className="brands-size" />
           </div>
         </div>
         <div className="row mb-5">
           <div className="col-md-12 d-flex justify-content-center gap-3 mt-4 gap-xl-5">
-            <img src={Woolworth} alt="" className="brands-size" />
-            <img src={Heb} alt="" className="brands-size" />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-12 d-flex justify-content-center gap-3 mt-4">
-            <img src={DelSol} alt="" className="brands-size" />
+            <img src={Heb} alt="" className="brands-size-e py-xl-5 py-4" />
+            <img src={DelSol} alt="" className="brands-size-e" />
           </div>
         </div>
       </div>

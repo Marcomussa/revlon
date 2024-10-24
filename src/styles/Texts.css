@@ -1,0 +1,136 @@
+/* --General-- */
+.title {
+    font-weight: 800;
+    font-size: 30pt;
+}
+
+.subtitle {
+    font-weight: 800;
+    font-size: 16pt;
+}
+
+.subtitle-h3 {
+    font-weight: 800;
+    font-size: 30pt
+}
+
+.text {
+    font-weight: 100;
+    font-size: 20pt;
+}
+
+.text-italic {
+    font-size: 15pt;
+    font-style: italic;
+}
+
+/* --Time-- */
+.subtitle-time {
+    font-weight: 800;
+    font-size: 25pt;
+}
+
+/* --Footer-- */
+.footer-text {
+    font-size: 16pt;
+}
+
+/* --Colors-- */
+.text-gray {
+    color: #4D4D4D
+}
+
+.secondari {
+    color: #A2A2A2;
+}
+
+.title-red {
+    color: #A90000;
+}
+
+/* ---MediaQuerys--- */
+
+/* --Desktop-- */
+@media (min-width: 1024px) {
+
+    /* <--Participate--> */
+    .title-size{
+        font-weight: 800;
+        font-size: 23pt;
+    }
+    .text-guide{
+        font-weight: 400;
+        font-size: 21pt;
+        b{
+            font-weight: 800;
+        }
+    }
+    
+    .sub-brands {
+        font-size: 35pt;
+    }
+}
+
+/* --Tablets */
+@media (min-width: 926px) and (max-width: 1024px) {
+    .title-size{
+        font-weight: 800;
+        font-size: 23pt;
+    }
+    .text-guide{
+        font-weight: 400;
+        font-size: 21pt;
+        b{
+            font-weight: 800;
+        }
+    }
+}
+
+/* --Mobile-- */
+@media (max-width: 926px) {
+    .title {
+        font-weight: 800;
+        font-size: 21pt;
+    }
+
+    .subtitle {
+        font-weight: 800;
+        font-size: 12pt;
+    }
+
+    .subtitle-h3 {
+        font-weight: 800;
+        font-size: 16pt
+    }
+
+    .text,
+    .footer-text {
+        font-size: 13pt;
+    }
+
+    .text-guide {
+        font-size: 13pt;
+    }
+
+    .text-italic {
+        font-size: 13pt;
+        font-style: italic;
+    }
+
+    .subtitle-time {
+        font-weight: 800;
+        font-size: 13pt;
+    }
+    /* <--Participate--> */
+    .title-size {
+        font-weight: 800;
+        font-size: 18pt;
+    }
+    .text-guide {
+        font-size: 12pt;
+        b{
+            font-weight: 800;
+        }
+    }
+
+}

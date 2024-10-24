@@ -1,0 +1,132 @@
+/* --Participate-- */
+.img-size {
+    width: 50%;
+}
+
+
+.img-size-md {
+    width: 18%;
+}
+
+.img-ticket {
+    width: 18%;
+}
+
+.img-stamp {
+    width: 100%;
+}
+
+.rounded-circle {
+    width: 150px;
+}
+
+.rounded-circle {
+    width: 50%;
+}
+
+.brands-size {
+    width: 15%;
+}
+
+.img-clock {
+    width: 50%;
+}
+
+
+/* ---MediaQuerys--- */
+/* --Desktop-- */
+@media (min-width: 1024px) {
+
+    /* Participate */
+    .img-size-p {
+        width: 100%;
+    }
+
+    /* --Award-- */
+    .img-size-award {
+        width: 65%;
+    }
+    /* <--Guide--> */
+    .img-size-guide{
+        width: 75%;
+    }
+    /* <--Brands--> */
+    .brands-size-e{
+        width: 12%;
+    }
+
+}
+
+/* --Tablets */
+@media (min-width: 926px) and (max-width: 1024px) {
+    /* Participate */
+    .img-size-p {
+        width: 100%;
+    }
+
+    /* --Award-- */
+    .img-size-award {
+        width: 40%;
+    }
+    /* <--Guide--> */
+    .img-size-guide{
+        width: 50%;
+    }
+    /* <--Brands--> */
+    .brands-size-e{
+        width: 12%;
+    }
+}
+
+/* --Mobile-- */
+@media (max-width: 926px) {
+
+    /*<--Participate--> */
+    .img-size-p {
+        width: 70%;
+    }
+    /*<--Award-->*/
+    .img-size-award {
+        width: 65%;
+    }
+
+    /* <--Guide--> */
+    .img-size-guide{
+        width: 70%;
+    }
+    /* <--Brands--> */
+    .brands-size-e{
+        width: 30%;
+    }
+    .stamp-img {
+        margin-top: 30%;
+    }
+
+    .brands-size {
+        width: 50%
+    }
+
+    .img-size {
+        width: 60%;
+    }
+
+    .img-size-md {
+        width: 60%
+    }
+
+    .img-stamp {
+        width: 90%;
+    }
+
+    .img-ticket {
+        width: 40%;
+    }
+
+    .rounded-circle {
+        width: 150px;
+    }
+
+    .img-clock {
+        width: 100%;
+    }
+}
