@@ -88,6 +88,7 @@
 
 /* --Mobile-- */
 @media (max-width: 926px) {
+    /* <--General--> */
     .title {
         font-weight: 800;
         font-size: 21pt;
@@ -108,19 +109,17 @@
         font-size: 13pt;
     }
 
-    .text-guide {
-        font-size: 13pt;
-    }
-
     .text-italic {
         font-size: 13pt;
         font-style: italic;
     }
 
+    /* <--Time-->*/
     .subtitle-time {
         font-weight: 800;
         font-size: 13pt;
     }
+
     /* <--Participate--> */
     .title-size {
         font-weight: 800;

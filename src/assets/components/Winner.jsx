@@ -6,7 +6,7 @@ const Winner = () => {
     <>
     <div className="container bg-black-glitter p-4 px-xl-5">
         <div className='row px-xl-5'>
-          <div className='col-12 col-xl-4 text-center mt-5 text-xl-end py-xl-5 m-xl-0'>
+          <div className='col-12 col-xl-4 text-center text-xl-end mt-5 py-xl-5 m-xl-0'>
             <img className='rounded-circle' src={Reference} width="150px" alt="Ganadora"/>
           </div>
           <div className="col-12 col-xl-8 text-center text-xl-start pe-xl-5">

@@ -8,13 +8,13 @@ const Presentation = () => {
             <div className="container bg-red-pic pt-5">
                 <div className="row pt-5 d-flex align-content-center flex-wrap">
 
-                    <div className='col-12 col-xl-6'>
-                        <div className='text-center stamp-img pt-3 mt-xl-5 pt-xl-5'>
+                    <div className='col-12 col-lg-6 col-xl-6'>
+                        <div className='text-center pt-3 mt-xl-5 pt-xl-5'>
                             <img src={Adv} alt="Advertising" className='img-stamp' />
                         </div>
                     </div>
 
-                    <div className="col-12 col-xl-6 text-center pt-5 mt-xl-5 ">
+                    <div className="col-12 col-lg-6 col-xl-6 text-center pt-5 mt-xl-5 ">
                         <h2 className='text-center text-white primary-font title text-xl-start py-3 mt-xl-5 pt-xl-5'>MECÁNICA</h2>
                         <ol className='text-white primary-font text text-xl-start mb-3'>
                             <li>Compra un <b>mínimo de $599 MXN</b> en productos participantes REVLON en un solo ticket de compra.</li>

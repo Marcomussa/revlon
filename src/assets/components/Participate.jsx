@@ -33,7 +33,7 @@ const Participate = () => {
                             </p>
                         </div>
 
-                        <p className='text-center text primary-font text-gray px-xl-4'>(*No importa si compras más de un producto, cada ticket equivale a una participación).</p>
+                        <p className='text-center text-guide primary-font text-gray px-xl-4'>(*No importa si compras más de un producto, cada ticket equivale a una participación).</p>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@ const Participate = () => {
                         <h2 className='text-center primary-font title-red title-size mb-3 px-3'>
                             DOS FORMAS DE GANAR:
                         </h2>
-                        <p className='text-center text primary-font text-gray  primary-font mb-5 px-3 pb-xl-5'>Cada ticket registrado te da la oportunidad de probar tus habilidades de cálculo en dos dinámicas:</p>
+                        <p className='text-center text-guide primary-font text-gray mb-5 px-3 pb-xl-5'>Cada ticket registrado te da la oportunidad de probar tus habilidades de cálculo en dos dinámicas:</p>
                     </div>
                 </div>
             </div>
