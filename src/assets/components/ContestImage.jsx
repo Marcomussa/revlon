@@ -35,56 +35,60 @@ const ContestImage = () => {
 
   return (
     <>
-      <div
-        className="image-container"
-        style={{ position: "relative", width: "300px", height: "300px" }}
-      >
-        {isVisible ? (
-          <>
-            <img
-              src="https://placehold.co/300x300"
-              alt="Temporary visible image"
-              style={{ width: "100%", height: "100%" }}
-            />
-
-            {/* Timer circular en la esquina superior derecha */}
+      <div>
+        <div
+          className="image-container"
+          style={{ position: "relative", width: "300px", height: "300px" }}
+        >
+          {isVisible ? (
+            <>
+              <img
+                src="https://placehold.co/300x300"
+                alt="Temporary visible image"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </>
+          ) : (
             <div
-              className="timer"
               style={{
-                position: "absolute",
-                top: "10px",
-                right: "10px",
-                width: "50px",
-                height: "50px",
-                borderRadius: "50%",
-                border: `4px solid ${timerColor}`,
+                width: "100%",
+                height: "100%",
+                backgroundColor: "black",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                background: `conic-gradient(${timerColor} ${circleProgress}%, #d3d3d3 0%)`,
-                transition: "background-color 1s linear", // Transición suave
+                color: "white",
               }}
             >
-              <span style={{ color: "#fff", fontSize: "16px", fontWeight: 700 }}>
-                {timeLeft}s
-              </span>
+              <b>El tiempo ha finalizado</b>
             </div>
-          </>
-        ) : (
+          )}
+        </div>
+        {/* Timer circular en la esquina superior derecha */}
+        <div className="row" style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '10px'
+        }}>
           <div
+            className="timer"
             style={{
-              width: "100%",
-              height: "100%",
-              backgroundColor: "black",
+              width: "50px",
+              height: "50px",
+              borderRadius: "50%",
+              border: `4px solid ${timerColor}`,
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              color: "white",
+              background: `conic-gradient(${timerColor} ${circleProgress}%, #d3d3d3 0%)`,
+              transition: "background-color 1s linear", // Transición suave
             }}
           >
-            <b>El tiempo ha finalizado</b>
+            <span style={{ color: "#fff", fontSize: "16px", fontWeight: 700 }}>
+              {timeLeft}s
+            </span>
           </div>
-        )}
+        </div>
       </div>
     </>
   );

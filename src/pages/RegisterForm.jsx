@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { estados, municipios } from "../../data"; // Asegúrate de usar la ruta correcta
+import { estados } from "../../data"; // Asegúrate de usar la ruta correcta
 import "animate.css";
 import useSignup from "../hooks/useSignup";
 import SubmitButton from "../assets/components/Button";
@@ -45,6 +45,7 @@ const RegisterForm = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [message, setMessage] = useState("");
   const [showAlert, setShowAlert] = useState(false);
+  const [isPrivacyAccepted, setIsPrivacyAccepted] = useState(false);
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -119,11 +120,16 @@ const RegisterForm = () => {
     }));
   };
 
+  // Dentro de handleChange o como una función aparte
+  const handlePrivacyChange = (e) => {
+    setIsPrivacyAccepted(e.target.checked);
+  };
+
+  // Agregar esta validación en el useEffect que habilita/deshabilita el botón
   useEffect(() => {
-    // Validar si todas las validaciones han pasado
     const allValid = Object.values(validations).every((v) => v === true);
-    setIsDisabled(!allValid); // Habilitar el botón solo si todas las validaciones son válidas
-  }, [validations]);
+    setIsDisabled(!(allValid && isPrivacyAccepted)); // También requiere que el checkbox esté seleccionado
+  }, [validations, isPrivacyAccepted]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -351,10 +357,10 @@ const RegisterForm = () => {
                       />
                     )}
 
-                    <div className="mt-2">
+                    {/* <div className="mt-2">
                       {formData.state && (
                         <Select
-                          options={municipios[formData.state] || []} // Mostrar los municipios según el estado seleccionado
+                          options={municipios[formData.state] || []} 
                           name="locality"
                           onChange={handleMunicipalityChange}
                         />
@@ -365,7 +371,7 @@ const RegisterForm = () => {
                           state={false}
                         />
                       )}
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* Código postal */}
@@ -451,16 +457,41 @@ const RegisterForm = () => {
                     </div>
                   )}
 
+                  <div className="form-check mt-4 mb-4">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="privacyCheck"
+                      checked={isPrivacyAccepted}
+                      onChange={handlePrivacyChange}
+                      required
+                    />
+                    <label
+                      className="form-check-label text-white"
+                      htmlFor="privacyCheck"
+                    >
+                      Al hacer click en {"Registrarse"} estas aceptando las {" "}
+                      <a
+                        href="/legal-bases"
+                        target="_blank"
+                        className="text-white"
+                        style={{ fontStyle: "italic" }}
+                      >
+                        Bases Legales
+                      </a>{" "}
+                      y la{" "}
+                      <a
+                        href="/privacy-notice"
+                        target="_blank"
+                        className="text-white"
+                        style={{ fontStyle: "italic" }}
+                      >
+                        Política de Privacidad
+                      </a>
+                      .
+                    </label>
+                  </div>
                   <div className="d-grid mb-5 pb-5">
-                    <h6 className="text-white text-center">Al clickear en Registrarse estas aceptando los <a target="_blank" className="text-white" 
-                    href="/legal-bases"
-                    style={{
-                      fontStyle: "italic"
-                    }} >Bases legales</a> y la <a target="_blank" className="text-white" 
-                    href="/privacy-notice"
-                    style={{
-                      fontStyle: "italic"
-                    }}>Política de Privacidad</a></h6> 
                     <SubmitButton
                       text={buttonText}
                       type="submit"

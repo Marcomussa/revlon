@@ -2,7 +2,7 @@
   "_id": {
     "$oid": "6706513f54717da4fae5779e"
   },
-  "name": "Cepillo Térmico Alaciador de 11.4cm con infusión de aceite de coco",
+  "name": "Cepillo Térmico Alaciador  con infusión de aceite de coco",
   "sku": "RVST2218LA1",
   "barCode": "00761318122180"
 },
@@ -10,7 +10,7 @@
   "_id": {
     "$oid": "6706513f54717da4fae5779f"
   },
-  "name": "Cepillo redondo calefactor de 1” (254 cm) con infusión de aceite de coco",
+  "name": "Cepillo Redondo con infusión de aceite de coco",
   "sku": "RVIR1198LA1",
   "barCode": "00761318422181"
 },
@@ -18,7 +18,7 @@
   "_id": {
     "$oid": "6706513f54717da4fae577a0"
   },
-  "name": "Alaciadora 2 en 1 con Triple Infusión de Aceites Naturales",
+  "name": "Alaciadora 2 en 1 con triple infusión de aceites naturales",
   "sku": "RVST2219LA1",
   "barCode": "00761318222194"
 },
@@ -26,7 +26,7 @@
   "_id": {
     "$oid": "6706513f54717da4fae577a5"
   },
-  "name": "REVLON VOLUMIZER TITANIO ROJO",
+  "name": "One- Step™ Secador y Voluminizador de Titanio",
   "sku": "UNKNOWN",
   "barCode": "00761318072225"
 },
@@ -34,7 +34,7 @@
   "_id": {
     "$oid": "6706513f54717da4fae577a3"
   },
-  "name": "SECADOR DE POTENCIA MÁXIMA",
+  "name": "Secadora de Potencia Máxima",
   "sku": "RVDR5336LA1",
   "barCode": "00761318453369"
 },
@@ -42,7 +42,7 @@
   "_id": {
     "$oid": "6706513f54717da4fae577a4"
   },
-  "name": "ONE-STEP™ SECADOR Y VOLUMINIZADOR CON CABEZAL INTERCAMBIABLE",
+  "name": "One-Step ™  Secador y Voluminizador con cabezal intercambiable ",
   "sku": "RVDR5298PKLA1",
   "barCode": "00761318182986"
 },
@@ -50,7 +50,7 @@
   "_id": {
     "$oid": "6706513f54717da4fae577a6"
   },
-  "name": "COMBO ESTILIZADOR CONTROL DE FRIZZ Secadora y alaciadora",
+  "name": "Combo Estilizador Control de Frizz",
   "sku": "RVDR5230GLPKLA1",
   "barCode": "00761318523017"
 },
@@ -58,7 +58,7 @@
   "_id": {
     "$oid": "6706513f54717da4fae577a1"
   },
-  "name": "ONE-STEP™ SECADOR Y VOLUMINIZADOR REMOVIBLE CON CABEZAL INTERCAMBIABLE",
+  "name": "One-Step™ Secador y Voluminizador Removible con cabezal intercambiable",
   "sku": "RVDR5298CPKLA1",
   "barCode": "00761318172987"
 },
@@ -66,7 +66,7 @@
   "_id": {
     "$oid": "6706513f54717da4fae577a2"
   },
-  "name": "SECADORA DE CABELLO PERFECT MATCH",
+  "name": "Secadora Perfect Match",
   "sku": "RVDR5347LA1",
   "barCode": "00761318053477"
 }]
