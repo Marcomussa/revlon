@@ -6,10 +6,10 @@ const Winner = () => {
     <>
     <div className="container bg-black-glitter p-4 px-xl-5">
         <div className='row px-xl-5'>
-          <div className='col-12 col-xl-4 text-center text-xl-end mt-5 py-xl-5 m-xl-0'>
+          <div className='col-12 col-md-4 col-xl-4 text-center text-xl-end mt-5 py-xl-5 m-xl-0'>
             <img className='rounded-circle' src={Reference} width="150px" alt="Ganadora"/>
           </div>
-          <div className="col-12 col-xl-8 text-center text-xl-start pe-xl-5">
+          <div className="col-12 col-md-8 col-xl-8 text-center text-xl-start pe-xl-5">
             <h2 className='text-white primary-font title mt-4 mt-xl-5 '>¡FELICIDADES A LOS GANADORES DE ESTA SEMANA!</h2>
             <div className='bg-white rounded-3 text-xl-start'>
               <p className='fs-5 mt-4 px-3 py-2'>MARÍA FERNÁNDA FERNANDEZ DE CÓRDOVA</p>

@@ -49,7 +49,7 @@ const TripCalculateTotal = () => {
   return (
     <>
       <Navbar />
-      <div className="container bg-campari">
+      <div className="container bg-campari pb-xl-5">
         <div className="row">
           <div className="col-md-12 text-center pt-5">
             <h2 className="text-white mt-5 title primary-font">
@@ -91,7 +91,7 @@ const TripCalculateTotal = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center d-flex justify-content-center input-w mb-xl-4">
+          <div className="col-md-12 text-center d-flex justify-content-center input-w-trip mb-xl-4">
             <Input
               type="number"
               name="tripCalculateTotal"

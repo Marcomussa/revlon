@@ -33,7 +33,9 @@
         padding-left: 15% !important;
         padding-right: 15% !important;
     }
-
+    .input-w-trip{
+        padding-inline:30% !important ;
+    }
     .desktop-pd {
         padding-left: 8rem;
         padding-right: 8rem;

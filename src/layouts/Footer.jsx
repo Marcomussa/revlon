@@ -38,7 +38,7 @@ const Footer = () => {
           <div className="col-md-12 px-2 mb-5">
             <p className="footer-text text-center text-white subtitle px-4 mb-5  padding-footer">
               {" "}
-              Este sorteo es exclusivo para mayores de 18 años. Los datos
+              Este concurso es exclusivo para mayores de 18 años. Los datos
               personales proporcionados serán tratados de acuerdo con nuestra
               Política de Privacidad.
             </p>

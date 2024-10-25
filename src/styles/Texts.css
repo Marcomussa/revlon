@@ -71,7 +71,7 @@
     }
 }
 
-/* --Tablets */
+/* --Tablets-- */
 @media (min-width: 926px) and (max-width: 1024px) {
     .title-size{
         font-weight: 800;

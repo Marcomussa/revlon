@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import PromoPrincipal from "../img/volumizer_Imagen-principal_promo_daleOn.jpg"
+import PromoSemanaUno from "../img/semana1_promo_daleOn.jpg"
 
 const ContestImage = () => {
   const [timeLeft, setTimeLeft] = useState(60);
@@ -37,15 +39,16 @@ const ContestImage = () => {
     <>
       <div>
         <div
-          className="image-container"
-          style={{ position: "relative", width: "300px", height: "300px" }}
+          className=" d-flex justify-content-center py-xl-5"
+          style={{ position: "relative", width: "100%", height: "" }}
         >
           {isVisible ? (
             <>
               <img
-                src="https://placehold.co/300x300"
+                src={PromoPrincipal}
                 alt="Temporary visible image"
                 style={{ width: "100%", height: "100%" }}
+                className="image-container"
               />
             </>
           ) : (

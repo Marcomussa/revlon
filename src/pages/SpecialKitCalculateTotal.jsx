@@ -130,7 +130,7 @@ const SpecialKitCalculateTotal = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center d-flex input-w mt-xl-3">
+          <div className="col-md-12 text-center d-flex input-w-trip mt-xl-3">
             <Input
               type="number"
               name="specialKitCalculateTotal"

@@ -1,13 +1,13 @@
 import Carousel from "react-bootstrap/Carousel";
-import Alaciadora from "../img/slider/Alaciadora.png";
-import CepilloR from "../img/slider/Cepillo-redondo.png";
-import CepilloT from "../img/slider/Cepillo-termico.png";
-import ComboE from "../img/slider/Combo Estilizador Control de Frizz Secadora y Alaciadora.png";
-import SecadorR from "../img/slider/Secador y Voluminizador R.png";
-import SecadorT from "../img/slider/Secador y Voluminizador T.png";
-import Secador from "../img/slider/Secador y Voluminizador.png";
-import SecadoraMx from "../img/slider/Secadora mx.png";
-import Secadora from "../img/slider/Secadora.png";
+import Alaciador from "../img/slider/Alaciador-2-en-1.png"
+import SecadoryVoluminazadorR from "../img/slider/Secador-y-Voluminizador-Removible.png"
+import CepilloRedondo from "../img/slider/Cepillo-redondo.png"
+import CepilloTermino from "../img/slider/Cepillo-termico-Alaciador.png"
+import CombEstilizador from "../img/slider/Combo-Estilizador.png"
+import SecadoryVoluminizadorC from "../img/slider/Secador-y-Voluminizador-con-cabezal.png"
+import SecadoryVoluminizador from "../img/slider/Secador-y-Voluminizador.png"
+import Secadora from "../img/slider/Secadora-de-maxima-potencia.png"
+import SecadoraMatch from "../img/slider/Secadora-Perfect-Match.png"
 
 function UncontrolledExample() {
   return (
@@ -24,12 +24,9 @@ function UncontrolledExample() {
           <img
             className="d-block"
             width={350}
-            src={Alaciadora}
+            src={SecadoryVoluminazadorR}
             alt="First slide"
           />
-          <Carousel.Caption>
-            <p className='text-black'>Alaciadora 2 en 1 con Triple Infusión de Aceites Naturales.</p>
-          </Carousel.Caption>
         </div>
       </Carousel.Item>
       <Carousel.Item>
@@ -37,12 +34,9 @@ function UncontrolledExample() {
           <img
             className="d-block"
             width={350}
-            src={CepilloR}
+            src={CepilloRedondo}
             alt="First slide"
           />
-          <Carousel.Caption className="text-black mt-5">
-            <p className='text-black'>Cepillo redondo calefactor de 1” (254 cm) con infusión de aceite de coco.</p>
-          </Carousel.Caption>
         </div>
       </Carousel.Item>
       <Carousel.Item>
@@ -50,14 +44,9 @@ function UncontrolledExample() {
           <img
             className="d-block"
             width={350}
-            src={CepilloT}
+            src={CepilloTermino}
             alt="First slide"
           />
-          <Carousel.Caption>
-            <p className='text-black'>
-              Cepillo Térmico Alaciador de 11.4cm con infusión de aceite de coco.
-            </p>
-          </Carousel.Caption>
         </div>
       </Carousel.Item>
       <Carousel.Item>
@@ -65,14 +54,9 @@ function UncontrolledExample() {
           <img
             className="d-block"
             width={350}
-            src={ComboE}
+            src={CombEstilizador}
             alt="First slide"
           />
-          <Carousel.Caption>
-            <p className='text-black'>
-              Combo Estilizador Control de Frizz Secadora y Alaciadora.
-            </p>
-          </Carousel.Caption>
         </div>
       </Carousel.Item>
       <Carousel.Item>
@@ -80,14 +64,9 @@ function UncontrolledExample() {
           <img
             className="d-block"
             width={350}
-            src={SecadorR}
+            src={Alaciador}
             alt="First slide"
           />
-          <Carousel.Caption>
-            <p className='text-black'>
-              One-Step™ Secador y Voluminizador Removible con Cabezal Intercambiable.
-            </p>
-          </Carousel.Caption>
         </div>
       </Carousel.Item>
       <Carousel.Item>
@@ -95,14 +74,9 @@ function UncontrolledExample() {
           <img
             className="d-block"
             width={350}
-            src={SecadorT}
+            src={SecadoryVoluminizadorC}
             alt="First slide"
           />
-          <Carousel.Caption>
-            <p className='text-black'>
-              Salon ONE-STEP Secador y Voluminizador Titanio.
-            </p>
-          </Carousel.Caption>
         </div>
       </Carousel.Item>
       <Carousel.Item>
@@ -110,14 +84,9 @@ function UncontrolledExample() {
           <img
             className="d-block"
             width={350}
-            src={Secador}
+            src={SecadoraMatch}
             alt="First slide"
           />
-          <Carousel.Caption>
-            <p className='text-black'>
-              One-Step™ Secador y Voluminizador con Cabezal Intercambiable.
-            </p>
-          </Carousel.Caption>
         </div>
       </Carousel.Item>
       <Carousel.Item>
@@ -125,14 +94,9 @@ function UncontrolledExample() {
           <img
             className="d-block"
             width={350}
-            src={SecadoraMx}
+            src={SecadoryVoluminizador}
             alt="First slide"
           />
-          <Carousel.Caption>
-            <p className='text-black'>
-              Secadora Potencia Maxima.
-            </p>
-          </Carousel.Caption>
         </div>
       </Carousel.Item>
       <Carousel.Item>
@@ -143,11 +107,6 @@ function UncontrolledExample() {
             src={Secadora}
             alt="First slide"
           />
-          <Carousel.Caption>
-            <p className='text-black'>
-              Secadora De Cabello Perfect Match.
-            </p>
-          </Carousel.Caption>
         </div>
       </Carousel.Item>
     </Carousel>

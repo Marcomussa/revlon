@@ -8,7 +8,6 @@ const LegalBases = () => {
       <div className="container">
         <div className="row bg-white">
           <div className="col-md-12">
-            <h3 className="title-red subtitle-h3 mt-5 pt-5 pb-3">Bases Legales</h3>
             <h5 className="subtitle-h3 py-2 px-xl-4"><b>TERMINOS Y CONDICIONES</b></h5>
           </div>
         </div>
@@ -49,7 +48,7 @@ const LegalBases = () => {
               <li>Los participantes de la semana 5 (cinco), que comprende del 29 de noviembre de 2024 al 05 de diciembre de 2024, los ganadores se publicarán el 11 de diciembre de 2024</li>
               <li>Los participantes de la semana 6 (seis), que comprende del 06 al 15 diciembre de 2024, los ganadores se publicarán el 18 de diciembre de 2024</li>
 
-              <p style={{marginTop: '20px'}}><b>Estas fechas son para los acreedores de los kits Revlon:</b></p>
+              <p style={{marginTop: '20px'}}><b>El ganador del viaje se publica:</b></p>
               <li>18 de diciembre de 2024</li>
             </ol>
 
