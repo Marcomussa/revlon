@@ -38,4 +38,7 @@
         padding-left: 8rem;
         padding-right: 8rem;
     }
+    .padding-footer{
+        padding-inline: 10%;
+    }
 }

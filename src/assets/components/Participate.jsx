@@ -47,8 +47,8 @@ const Participate = () => {
             </div>
 
             <p className="text-center text-guide primary-font text-gray px-xl-4">
-              (*No importa si compras más de un producto, cada ticket equivale a
-              una participación).
+              *No importa si compras más de un producto, cada ticket equivale a
+              una participación.
             </p>
           </div>
         </div>

@@ -19,7 +19,7 @@ const Guide = () => {
                 <div className="row align-items-center">
                     <div className="col-sm-12 col-xl-4 px-xl-5">
                         <img className='d-block mx-auto img-size-guide' src={Dinamicask} alt="Ask" />
-                        <p className='text-center text-guide text-gray primary-font px-2'>Tu misión es calcular correctamente y sin pasarte cuántos productos REVLON hay en una imagen. Cada vez que participas, tienes la oportunidad de acercarte más al Gran Premio.</p>
+                        <p className='text-center text-guide text-gray primary-font px-2'>Tu misión es calcular, correctamente y sin pasarte, cuántos productos REVLON hay en una imagen. Cada vez que participas, tienes la oportunidad de acercarte más al Gran Premio.</p>
                     </div>
                     <div className="col-sm-12 col-xl-4 align-items-center">
                         <img className='d-block mx-auto img-size-guide' src={Dinamicase} alt="Case" />

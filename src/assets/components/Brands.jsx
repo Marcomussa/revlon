@@ -50,9 +50,9 @@ const Brands = () => {
         </div>
         <div className="row mt-4">
           <div className="col-md-12 d-flex justify-content-center gap-3 mt-4 gap-xl-5">
-            <img src={Sansborns} alt="Sanborns" className="brands-size py-3" />
+            <img src={Sansborns} alt="Sanborns" className="brands-size py-3 py-xl-4" />
             <img src={DelSol} alt="DelSol" className="brands-size" />
-            <img src={Dax} alt="Dax" className="brands-size py-4" />
+            <img src={Dax} alt="Dax" className="brands-size py-4 py-xl-5 " />
           </div>
         </div>
         <div className="row mt-4">
