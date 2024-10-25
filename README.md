@@ -1,7 +1,8 @@
 # To-Do:
+- revisar mas en detalle VerifyAccount 
+
 - revisar modificaciones del figma --> ok
 - + testeos --> ok por parte de desarrollo
-- revisar mas en detalle VerifyAccount --> ok
 - + refuerzo a las validaciones de ticket online y physical ticket --> ok, pendiente volver a revisar x las dudas
 - agregar placeholder de subir imagen --> ok
 - hacer cambios de textos y agregar --> ok
