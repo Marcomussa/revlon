@@ -6,6 +6,7 @@ import Button from "../assets/components/Button";
 import Input from "../assets/components/Input";
 import ModalInfo from "../assets/components/ModalInfo";
 import ContestImage from "../assets/components/ContestImage";
+import PromoPrincipal from "../assets/img/volumizer_Imagen-principal_promo_daleOn.jpg"
 
 const TRIP_ID = import.meta.env.VITE_TRIP_ID;
 
@@ -69,7 +70,7 @@ const TripCalculateTotal = () => {
             display: "flex",
             justifyContent: "center"
           }}>
-            <ContestImage/>
+            <ContestImage  imageSrc={PromoPrincipal}/>
           </div>
         </div>
         <div className="row">

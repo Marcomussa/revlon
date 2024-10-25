@@ -10,7 +10,6 @@ import Footer from "../layouts/Footer";
 import ImageUpload from "../assets/components/ImageUpload";
 import Caja from "../assets/img/caja.png";
 import Pedido from "../assets/img/pedido_ejemplo.png";
-import IcoImg from "../assets/img/icons/ico_img.png"
 import Button from "../assets/components/Button";
 import Validated from "../assets/components/Validated";
 
@@ -191,7 +190,7 @@ const OnlineTicket = () => {
               Ingresa tu número de pedido.
             </p>
             <InputWithModalOrderNum
-              modalImageSrc={Pedido}
+              modalImageSrc={"https://placehold.co/250x250"}
               modalText={
                 "Ve a la sección de Detalles del pedido de tu tienda participante e identifica este número. La longitud y formato variará según la tienda."
               }
@@ -282,8 +281,7 @@ const OnlineTicket = () => {
               ordenaste y el número de tu pedido.
             </p>
             <p className="text-white text-center my-4 text-italic primary-font">
-              Asegúrate que tu foto no tenga un peso mayor a 5MB
-              MB.
+              Asegúrate que tu foto no tenga un peso mayor a 5 MB.
             </p>
           </div>
         </div>

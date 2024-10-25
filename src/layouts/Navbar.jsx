@@ -50,16 +50,16 @@ const NavbarComponent = () => {
             {!isAuthenticated ? (
               <>
                 <Nav.Link
-                  className="text-white nav-link-native fw-500 text-end"
-                  href="/user/login"
-                >
-                  Registra tu ticket
-                </Nav.Link>
-                <Nav.Link
                   className="text-white nav-link-native fw-500 text-end "
                   href="/legal-bases"
                 >
                   Bases Legales
+                </Nav.Link>
+                <Nav.Link
+                  className="text-white nav-link-native fw-500 text-end"
+                  href="/user/login"
+                >
+                  Registra tu ticket
                 </Nav.Link>
               </>
             ) : (

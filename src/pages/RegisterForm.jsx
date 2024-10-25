@@ -46,6 +46,7 @@ const RegisterForm = () => {
   const [message, setMessage] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [isPrivacyAccepted, setIsPrivacyAccepted] = useState(false);
+  const [registrationSuccess, setRegistrationSuccess] = useState(false); 
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -144,6 +145,7 @@ const RegisterForm = () => {
         if (result) {
           console.log("Registro exitoso. Por favor, verifica tu cuenta.");
           setShowAlert(true);
+          setRegistrationSuccess(true); 
         } else {
           setMessage("Error en el registro. Inténtalo de nuevo.");
         }
@@ -501,7 +503,7 @@ const RegisterForm = () => {
                     <SubmitButton
                       text={buttonText}
                       type="submit"
-                      disabled={isDisabled}
+                      disabled={isDisabled || registrationSuccess}
                     />
                   </div>
                 </form>

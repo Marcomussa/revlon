@@ -63,7 +63,7 @@ const Dashboard = () => {
         ) : (
           <>
             <div className="row">
-              <div className="col-md-12 text-center mt-5 py-3">
+              <div className="col-md-12 text-center mt-3 mb-2">
                 <img src={IconQuestion} alt="Icon Profile" width={70} />
               </div>
             </div>
@@ -87,7 +87,7 @@ const Dashboard = () => {
             </div>
           </>
         )}
-        
+
       </div>
       <Footer />
     </>

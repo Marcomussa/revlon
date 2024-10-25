@@ -1,15 +1,14 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import PromoPrincipal from "../img/volumizer_Imagen-principal_promo_daleOn.jpg"
-import PromoSemanaUno from "../img/semana1_promo_daleOn.jpg"
 
-const ContestImage = () => {
+const ContestImage = ({ imageSrc }) => {
   const [timeLeft, setTimeLeft] = useState(60);
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     if (timeLeft > 0) {
       const timer = setInterval(() => {
-        setTimeLeft((prevTime) => prevTime - 1);
+        setTimeLeft((prevTime) => prevTime - 1); 
       }, 1000);
 
       return () => clearInterval(timer);
@@ -39,13 +38,13 @@ const ContestImage = () => {
     <>
       <div>
         <div
-          className=" d-flex justify-content-center py-xl-5"
+          className=" d-flex justify-content-center"
           style={{ position: "relative", width: "100%", height: "" }}
         >
           {isVisible ? (
             <>
               <img
-                src={PromoPrincipal}
+                src={imageSrc || "https://placehold.co/300x300"}
                 alt="Temporary visible image"
                 style={{ width: "100%", height: "100%" }}
                 className="image-container"
