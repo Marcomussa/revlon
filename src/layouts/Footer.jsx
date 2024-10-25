@@ -27,12 +27,11 @@ const Footer = () => {
               compra en esta pagina, aceptas que has leido y entendido los
               terminos y condiciones. La participacion esta sujeta a la
               verificacion de la validez del ticket y el cumplimiento de los
-              requisitos establecidos. Verifica las
-              <a href="/legal-bases" style={{
+              requisitos establecidos. Verifica las <a href="/legal-bases" style={{
                 textDecoration: 'none'
-              }}><b className="text-white"> Bases Legales</b></a> y la <a href="/privacy-notice" style={{
+              }}><b className="text-white text-decoration-underline">Bases Legales</b></a> y la <a href="/privacy-notice" style={{
                 textDecoration: 'none'
-              }}><b className="text-white">Politica de Privacidad</b></a> para
+              }}><b className="text-white text-decoration-underline">Politica de Privacidad</b></a> para
               conocer los lineamientos legales que rigen nuestra dinamica.
             </p>
           </div>
