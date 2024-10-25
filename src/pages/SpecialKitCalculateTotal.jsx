@@ -32,7 +32,7 @@ const SpecialKitCalculateTotal = () => {
       return true; 
     } catch (err) {
       setButtonText("Error"); 
-      console.error('Error al registrar el ticket:', err);
+      console.error('Error al registrar el ticket:', err.response.data.message);
       setModalError(true); 
       return false;
     } finally {

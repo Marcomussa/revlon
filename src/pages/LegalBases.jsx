@@ -40,6 +40,7 @@ const LegalBases = () => {
 
             <h5 className="subtitle-h3">VI. Publicación de acreedores al incentivo.</h5>
             <p>La publicación de acreedores al incentivo de <b>LA PROMOCIÓN</b> será en la página <a href="">www.daleonatuestilo.com</a> y será a partir de las siguientes fechas:</p>
+            <p><b>Estas fechas son para los acreedores de los kits Revlon:</b></p>
             <ol>
               <li>Los participantes de la semana 1 (uno), que comprende del 01 al 07 de noviembre de 2024, los ganadores se publicarán el 13 de noviembre de 2024</li>
               <li>Los participantes de la semana 2 (dos), que comprende del 08 al 14 de noviembre de 2024, los ganadores se publicarán el 20 de noviembre de 2024</li>
@@ -47,6 +48,9 @@ const LegalBases = () => {
               <li>Los participantes de la semana 4 (cuatro), que comprende del 22 al 28 de noviembre de 2024, los ganadores se publicarán el 04 de diciembre de 2024</li>
               <li>Los participantes de la semana 5 (cinco), que comprende del 29 de noviembre de 2024 al 05 de diciembre de 2024, los ganadores se publicarán el 11 de diciembre de 2024</li>
               <li>Los participantes de la semana 6 (seis), que comprende del 06 al 15 diciembre de 2024, los ganadores se publicarán el 18 de diciembre de 2024</li>
+
+              <p style={{marginTop: '20px'}}><b>Estas fechas son para los acreedores de los kits Revlon:</b></p>
+              <li>18 de diciembre de 2024</li>
             </ol>
 
             <h5 className="subtitle-h3">VII. Incentivos.</h5>

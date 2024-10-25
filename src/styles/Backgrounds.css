@@ -52,7 +52,7 @@
 }
 .bg-campari{
   background-color: #f46f6f;
-  height: 120vh;
+  height: 130vh;
 }
 .bg-campari-card{
   background-color: #f46f6f;
@@ -61,6 +61,9 @@
   background-color: #2E756C;
 }
 @media only screen and (max-width: 930px) {
+  .bg-campari {
+    height: 110vh;
+  }
   .bg-red-pic {
     background-image: url("../assets/img/backgrounds/red-pic-mobile.png");
   }
@@ -90,7 +93,7 @@
   }
   .bg-beach{
     background-image: url("../assets/img/backgrounds/bg-beach-mobile.png");
-    height: 95vh;
+    height: 90vh;
   }
   .bg-disco{
     background-image: url("../assets/img/backgrounds/bg-disco-mobile.png");

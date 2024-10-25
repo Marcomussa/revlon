@@ -1,3 +1,8 @@
-input::placeholder, select::placeholder {
-    font-style: italic;
-  }
+input::placeholder,
+select::placeholder {
+  font-style: italic;
+}
+
+input[type="date"] {
+  padding-right: 18px !important;
+}

@@ -344,7 +344,13 @@ const RegisterForm = () => {
                     )}
                   </div>
 
-                  <div className="mt-4">
+                  <div className="my-3">
+                    <label
+                      htmlFor="state"
+                      className="form-label text-white text-italic primary-font"
+                    >
+                      Seleccione un Estado*
+                    </label>
                     <Select
                       options={estados}
                       name="state"
@@ -375,13 +381,13 @@ const RegisterForm = () => {
                   </div>
 
                   {/* Código postal */}
-                  <div className="mt-2">
-                    {/* <label
+                  <div className="my-3">
+                    <label
                       htmlFor="zipCode"
                       className="form-label text-white primary-font text-italic"
                     >
                       Código postal*
-                    </label> */}
+                    </label> 
                     <input
                       type="number"
                       className="p-2 form-control text-italic shadow p-2 bg-body rounded"
@@ -470,7 +476,7 @@ const RegisterForm = () => {
                       className="form-check-label text-white"
                       htmlFor="privacyCheck"
                     >
-                      Al hacer click en {"Registrarse"} estas aceptando las {" "}
+                      Al hacer click en {"Registrarse"} estas aceptando las{" "}
                       <a
                         href="/legal-bases"
                         target="_blank"
