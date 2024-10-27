@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTicketData } from "../context/TicketDataContext";
 import barCodesData from "../../products.json";
 import ImageUpload from "../assets/components/ImageUpload";
@@ -60,7 +61,6 @@ const PhysicalTicket = () => {
     setTicketNum(value);
     updateTicketData({ number: value }); // Actualizar el contexto
     validateTicketNum(value);
-    validateForm(value, barCode, isImageValid);
   };
 
   const handleStoreChange = (e) => {
@@ -73,13 +73,12 @@ const PhysicalTicket = () => {
     const value = e.target.value || "";
     setBarCode(value);
     updateTicketData({ barCode: value }); // Actualizar el contexto
+    console.log(value)
     validateBarCode(value);
-    validateForm(ticketNum, value, isImageValid);
   };
 
   const handleImageValidation = (isValid) => {
     setIsImageValid(isValid);
-    validateForm(ticketNum, barCode, isValid);
   };
 
   const validateTicketNum = (ticket) => {
@@ -92,7 +91,7 @@ const PhysicalTicket = () => {
 
   const validateBarCode = (barCode) => {
     const validBarCodes = barCodesData.map((item) => item.barCode); // Extraer los códigos de barras del JSON
-
+    
     if (barCode.length === 14) {
       if (validBarCodes.includes(barCode)) {
         setIsBarCodeValid(true);
@@ -108,6 +107,10 @@ const PhysicalTicket = () => {
       setBarCodeValidationMessage(""); 
     }
   };
+
+  useEffect(() => {
+    validateForm(ticketNum, barCode, isImageValid);
+  }, [isBarCodeValid, ticketNum, isImageValid]);
 
   const validateForm = (ticket, barCode, image) => {
     console.log(ticket.length === 21 )
