@@ -25,7 +25,7 @@ const SpecialKitCalculateTotal = () => {
   const handleSubmitTicket = async (data) => {
     try {
       setIsLoading(true); 
-      setButtonText("Cargando..."); 
+      setButtonText("Subiendo participacion..."); 
       setModalError(false); 
       const response = await registerTicket(data);  
       console.log(response);
@@ -109,7 +109,7 @@ const SpecialKitCalculateTotal = () => {
             display: "flex",
             justifyContent: "center"
           }}>
-            <ContestImage imageSrc={PromoSemanaUno}/>
+            <ContestImage imageSrc={PromoSemanaUno} background={'red'}/>
           </div>
         </div>
         <div className="row">
@@ -142,7 +142,7 @@ const SpecialKitCalculateTotal = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center mt-3 button my-xl-5">
+          <div className="col-md-12 text-center mt-3 button">
             <Button
               text={buttonText} 
               onClick={handleButtonClick}

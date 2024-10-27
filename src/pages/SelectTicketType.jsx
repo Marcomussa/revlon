@@ -23,12 +23,12 @@ const SelectTicketType = () => {
       <Navbar></Navbar>
       <div className="container bg-red pt-5">
         <div className="row mt-0 pt-lg-0">
-          <div className="col-md-12 text-center pt-xl-5 mt-xl-5">
+          <div className="col-md-12 text-center">
             <img src={Compra} alt="Compra" width={350} />
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center title text-white pb-xl-5">
+          <div className="col-md-12 text-center title text-white pb-xl-1">
             ¿EN DÓNDE REALIZASTE TU COMPRA?
           </div>
         </div>

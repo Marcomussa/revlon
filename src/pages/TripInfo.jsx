@@ -10,7 +10,7 @@ const TripInfo = () => {
     <Navbar></Navbar>
       <div className="container bg-beach">
         <div className="row pt-2">
-          <div className="col-md-12 text-center mt-5 pt-5">
+          <div className="col-md-12 text-center mt-5">
             <img src={Premio1} alt="Premio" className="img-size-md py-xl-5"/>
           </div>
         </div>
@@ -31,7 +31,7 @@ const TripInfo = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center button my-xl-5">
+          <div className="col-md-12 text-center button mb-xl-5">
             <Button text="CONTINUAR" route="/user/ticket/trip/calculate-total"></Button>
           </div>
         </div>

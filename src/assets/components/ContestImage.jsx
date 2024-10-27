@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 
-const ContestImage = ({ imageSrc }) => {
+const ContestImage = ({ imageSrc, background }) => {
   const [timeLeft, setTimeLeft] = useState(60);
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     if (timeLeft > 0) {
       const timer = setInterval(() => {
-        setTimeLeft((prevTime) => prevTime - 1); 
+        setTimeLeft((prevTime) => prevTime - 1);
       }, 1000);
 
       return () => clearInterval(timer);
@@ -39,27 +39,40 @@ const ContestImage = ({ imageSrc }) => {
       <div>
         <div
           className=" d-flex justify-content-center"
-          style={{ position: "relative", width: "100%", height: "" }}
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "",
+          }}
         >
           {isVisible ? (
             <>
-              <img
-                src={imageSrc || "https://placehold.co/300x300"}
-                alt="Temporary visible image"
-                style={{ width: "100%", height: "100%" }}
+              <div
+                style={{
+                  background: background,
+                  padding: "3px",
+                  borderRadius: "2%"
+                }}
                 className="image-container"
-              />
+              >
+                <img
+                  src={imageSrc || "https://placehold.co/300x300"}
+                  alt="Temporary visible image"
+                  style={{ width: "100%", height: "100%", borderRadius: "2%" }}
+                  
+                />
+              </div>
             </>
           ) : (
             <div
               style={{
                 width: "100%",
                 height: "100%",
-                backgroundColor: "black",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 color: "white",
+                fontSize: "24px",
               }}
             >
               <b>El tiempo ha finalizado</b>
@@ -67,16 +80,19 @@ const ContestImage = ({ imageSrc }) => {
           )}
         </div>
         {/* Timer circular en la esquina superior derecha */}
-        <div className="row" style={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '10px'
-        }}>
+        <div
+          className="row"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "10px",
+          }}
+        >
           <div
             className="timer"
             style={{
-              width: "50px",
-              height: "50px",
+              width: "70px",
+              height: "70px",
               borderRadius: "50%",
               border: `4px solid ${timerColor}`,
               display: "flex",
@@ -86,7 +102,7 @@ const ContestImage = ({ imageSrc }) => {
               transition: "background-color 1s linear", // Transición suave
             }}
           >
-            <span style={{ color: "#fff", fontSize: "16px", fontWeight: 700 }}>
+            <span style={{ color: "#fff", fontSize: "22px", fontWeight: 700 }}>
               {timeLeft}s
             </span>
           </div>

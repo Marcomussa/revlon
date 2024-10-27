@@ -70,7 +70,7 @@ const TripCalculateTotal = () => {
             display: "flex",
             justifyContent: "center"
           }}>
-            <ContestImage  imageSrc={PromoPrincipal}/>
+            <ContestImage  imageSrc={PromoPrincipal} background={'white'}/>
           </div>
         </div>
         <div className="row">
@@ -92,7 +92,7 @@ const TripCalculateTotal = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center d-flex justify-content-center input-w-trip mb-xl-4">
+          <div className="col-md-12 text-center d-flex justify-content-center input-w-trip">
             <Input
               type="number"
               name="tripCalculateTotal"
