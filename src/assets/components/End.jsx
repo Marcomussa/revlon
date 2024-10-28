@@ -9,7 +9,7 @@ const End = () => {
                         <h1 className=" text-center text-white primary-font title p-4">¡NO ESPERES MÁS! COMPRA TUS PRODUCTOS REVLON HOY, PARTICIPA Y ¡GANA!
                         </h1>
                     </div>
-                    <div className="col-12 col-xl-3">
+                    <div className="col-12 col-xl-5">
                         <div className='mb-5 pt-xl-5 ps-xl-0'>
                             <Button text="REGISTRA TU TICKET" route='/user/login'></Button>
                         </div>

@@ -18,7 +18,7 @@ const Presentation = () => {
                         <h2 className='text-center text-white primary-font title text-xl-start py-3 mt-xl-5 pt-xl-5'>MECÁNICA</h2>
                         <ol className='text-white primary-font text text-xl-start mb-3'>
                             <li>Compra un <b>mínimo de $599 MXN</b> en productos participantes REVLON en un solo ticket de compra.</li>
-                            <li>Registra tu ticket, y calcula cuántos productos hay en las imagenes y si aciertas o te acercas sin pasarte.</li>
+                            <li className='mt-3 mb-3'>Registra tu ticket, y calcula cuántos productos hay en las imagenes y si aciertas o te acercas sin pasarte.</li>
                             <li>¡Puedes ganar un viaje a la playa o uno de los kits especiales!</li>
                         </ol>
                         <div className='button-right py-xl-5 mb-xl-5 pb-5 mb-5'>
