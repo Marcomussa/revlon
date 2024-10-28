@@ -6,13 +6,9 @@ const PrivacyNotice = () => {
         <>
             <Navbar></Navbar>
             <div className="container mt-5">
-                <div className="row bg-white">
-                    <div className="col-md-12">
-                        <h3 className="title-red subtitle-h3 mt-5">Terminos y Condiciones</h3>
-                    </div>
-                </div>
+                
                 <div className="row py-4 text">
-                    <div className="col-md-12">
+                    <div className="col-md-12 mt-4">
                         <h5 className='subtitle-h3'>AVISO DE PRIVACIDAD Y PROTECCIÓN DE DATOS PERSONALES.</h5>
                         <p>El Organizador pone a disposición de los consumidores y participantes de <b>LA PROMOCIÓN “DALE ON A TU ESTILO Y GANA UN VIAJE”,</b> su aviso de privacidad: IDENTIDAD DEL RESPONSABLE DEL TRATAMIENTO con motivo del cumplimiento de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (en adelante “LFPDPPP”) y su reglamento, <b>ESTUDIO DELIRIO S.C.,</b> (en adelante <b>“ESTUDIO DELIRIO”</b>), será la responsable de la obtención, resguardo, tratamiento y/o en su caso de la remisión y/o transferencia de sus datos personales (en adelante <b>“DATOS”</b>), con domicilio en: Luz Saviñón 214, Int. 5A, Col. Del Valle, Benito Juárez, Ciudad de México, México, C.P. 03100.</p>
                         <p> <b>OBTENCIÓN Y FINALIDADES DEL TRATAMIENTO DE LA INFORMACIÓN.</b> Los <b>“DATOS”</b> serán obtenidos de usted, a través de los registros de participación y/o por cualquier medio electrónico, óptico, sonoro, físico, visual u otra tecnología regulada por la LFPDPPP. Los “DATOS” que se recabarán serán los siguientes: <br />
