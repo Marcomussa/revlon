@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import Navbar from "../layouts/Navbar"
 import Footer from "../layouts/Footer"
 
 const LegalBases = () => {
+  useEffect(() => {
+    document.title = 'Dale ON a tu estilo | Bases Legales';
+  }, []);
+
   return (
     <>
       <Navbar></Navbar>

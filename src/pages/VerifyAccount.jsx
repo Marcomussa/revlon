@@ -6,6 +6,10 @@ import Button from "../assets/components/Button";
 const BACKEND_URL= import.meta.env.VITE_BACKEND_URL
 
 const VerifyAccount = () => {
+  useEffect(() => {
+    document.title = "Dale ON a tu estilo | Verificar Cuenta";
+  }, []);
+
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);

@@ -14,6 +14,10 @@ import Validated from "../assets/components/Validated";
 import Select from "../assets/components/Select";
 
 const RegisterForm = () => {
+  useEffect(() => {
+    document.title = "Dale ON a tu estilo | Registrarse";
+  }, []);
+
   const navigate = useNavigate();
   const { signup, loading, error } = useSignup();
 

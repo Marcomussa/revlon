@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTicketData } from "../context/TicketDataContext";
 import ProductsData from "../../products.json";
 import Select from "../assets/components/Select";
@@ -14,14 +15,26 @@ import Button from "../assets/components/Button";
 import Validated from "../assets/components/Validated";
 
 const OnlineTicket = () => {
+  useEffect(() => {
+    document.title = 'Dale ON a tu estilo | Ticket Online';
+  }, []);
+
   const storeOptions = [
     { value: "Seleccionar Opcion", label: "Seleccionar Opción" },
     { value: "COPPEL", label: "Coppel" },
     { value: "DELSOL", label: "Delsol" },
     { value: "WALMART", label: "Walmart" },
     { value: "HEB", label: "Heb" },
-    { value: "WOOLWORTH", label: "Woolmorth" },
+    { value: "WOOLWORTH", label: "Woolworth" },
   ];
+
+  const storeTicketLengths = {
+    COPPEL: 9,
+    DELSOL: 9,
+    WALMART: 12,
+    HEB: 6,
+    WOOLWORTH: 12
+  };
 
   const { ticketData, updateTicketData } = useTicketData(); //! Contexto
   const [isUploading, setIsUploading] = useState(false);
@@ -59,8 +72,6 @@ const OnlineTicket = () => {
     } else {
       setIsStoreValid(false);
     }
-
-    validateForm(orderNum, productCode, date, isImageValid);
   };
 
   const handleOrderNumChange = (e) => {
@@ -69,13 +80,13 @@ const OnlineTicket = () => {
     updateTicketData({ number: value });
 
     validateOrderNum(value);
-
-    validateForm(value, productCode, date, isImageValid);
   };
 
   const validateOrderNum = (orderNum) => {
-    setIsOrderNumValid(orderNum.length === 21);
+    const requiredLength = storeTicketLengths[store]; // Longitud específica según la tienda seleccionada
+    setIsOrderNumValid(orderNum.length === requiredLength);
   };
+  
 
   const handleProductCodeChange = (e) => {
     const value = e.target.value || "";
@@ -103,7 +114,6 @@ const OnlineTicket = () => {
     setProductCode(value);
     updateTicketData({ barCode: value });
     validateCode(value);
-    validateForm(orderNum, value, date, isImageValid);
   };
 
   const validateCode = (code) => {
@@ -118,7 +128,6 @@ const OnlineTicket = () => {
 
     validateDate(value);
     console.log(validateDate(value))
-    validateForm(orderNum, productCode, value, isImageValid);
   };
 
   const validateDate = (date) => {
@@ -134,17 +143,27 @@ const OnlineTicket = () => {
     validateForm(orderNum, productCode, date, isImageValid);
   };
 
+  useEffect(() => {
+    validateForm(orderNum, productCode, isImageValid);
+  }, [isStoreValid, isOrderNumValid, isProductCodeValid, isDateValid, isImageValid]);
+
+  useEffect(() => {
+    if (orderNum) {
+      validateOrderNum(orderNum); // Revalida el número de pedido
+    }
+    validateForm(orderNum, productCode, date, isImageValid); // Revalida el formulario completo
+  }, [store, orderNum, isProductCodeValid, isDateValid, isImageValid]);
+
   const validateForm = (orderNum, productCode, date, image) => {
     console.log(isStoreValid)
-    console.log(orderNum.length === 21)
-    console.log(productCode)
+    console.log(isOrderNumValid)
+    console.log(isProductCodeValid)
     console.log(isDateValid)
     console.log(image)
     console.log('--- --- ---')
     const isValid =
-      isStoreValid &&
-      orderNum.length === 21 &&
-      productCode &&
+      isOrderNumValid &&
+      isProductCodeValid &&
       isDateValid &&
       image;
     setIsFormValid(isValid);

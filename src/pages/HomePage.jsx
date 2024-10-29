@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "../layouts/Navbar"
 import Presentation from "../assets/components/Presentation";
 import Winner from "../assets/components/Winner"
@@ -13,6 +14,10 @@ import '../styles/Image.css'
 import '../styles/Texts.css'
 
 const HomePage = () => {
+  useEffect(() => {
+    document.title = 'Dale ON a tu estilo | Home';
+  }, []);
+
   return (
     <>
       <Navbar></Navbar>

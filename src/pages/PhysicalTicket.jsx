@@ -17,6 +17,10 @@ import Select from "../assets/components/Select";
 import "animate.css";
 
 const PhysicalTicket = () => {
+  useEffect(() => {
+    document.title = 'Dale ON a tu estilo | Ticket Fisico';
+  }, []);
+  
   const storeOptions = [
     { value: "Seleccionar Opcion", label: "Seleccionar Opción" },
     { value: "CHEDRAUI", label: "Chedraui" },
@@ -33,6 +37,22 @@ const PhysicalTicket = () => {
     { value: "WOOLWORTH", label: "Woolworth" },
     { value: "FRESKO", label: "Fresko" },
   ];
+
+  const storeTicketLengths = {
+    CHEDRAUI: 19,
+    COPPEL: 9,
+    DELSOL: 9,
+    DAX: 18,
+    HEB: 6,
+    LIVERPOOL: 20,
+    SANBORNS: 18,
+    SEARS: 18,
+    SORIANA: 19,
+    SUBURBIA: 18,
+    WALMART: 21,
+    WOOLWORTH: 25,
+    FRESKO: 22,
+  };
 
   const { ticketData, updateTicketData } = useTicketData(); //! Contexto
   const [isUploading, setIsUploading] = useState(false);
@@ -65,8 +85,14 @@ const PhysicalTicket = () => {
 
   const handleStoreChange = (e) => {
     const value = e.target.value || "";
-    setStore(value);
-    updateTicketData({ store: value }); // Actualizar el contexto
+    if (value === "Seleccionar Opcion") {
+      setStore("");
+      setIsTicketValid(false); // Invalida el ticket si la tienda no es válida
+    } else {
+      setStore(value);
+      updateTicketData({ store: value }); // Actualizar el contexto
+      validateTicketNum(ticketNum); // Revalida el número de ticket al cambiar de tienda
+    }
   };
 
   const handleBarCodeChange = (e) => {
@@ -82,7 +108,8 @@ const PhysicalTicket = () => {
   };
 
   const validateTicketNum = (ticket) => {
-    if (ticket.length === 21) {
+    const requiredLength = storeTicketLengths[store]; 
+    if (ticket.length === requiredLength) {
       setIsTicketValid(true);
     } else {
       setIsTicketValid(false);
@@ -112,12 +139,19 @@ const PhysicalTicket = () => {
     validateForm(ticketNum, barCode, isImageValid);
   }, [isBarCodeValid, ticketNum, isImageValid]);
 
+  useEffect(() => {
+    if (ticketNum) {
+      validateTicketNum(ticketNum); // Revalida el número de ticket
+    }
+    validateForm(ticketNum, barCode, isImageValid); // Revalida el formulario completo
+  }, [store, isTicketValid, barCode, isImageValid]); 
+
   const validateForm = (ticket, barCode, image) => {
-    console.log(ticket.length === 21 )
+    console.log(isTicketValid)
     console.log(isBarCodeValid)
     console.log(image)
     console.log('--- ---- ---')
-    if (ticket.length === 21 && isBarCodeValid && image) {
+    if (isTicketValid && isBarCodeValid && image) {
       setIsFormValid(true);
     } else {
       setIsFormValid(false);

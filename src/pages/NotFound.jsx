@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import Button from "../assets/components/Button";
 
 const NotFoundPage = () => {
+  useEffect(() => {
+    document.title = 'Dale ON a tu estilo | 404';
+  }, []);
+
   return (
     <>
       <Navbar />

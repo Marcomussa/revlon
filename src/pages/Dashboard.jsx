@@ -9,6 +9,10 @@ import IconQuestion from "../assets/img/icons/ico_questionmark.png";
 import useGetTickets from "../hooks/useGetTickets";
 
 const Dashboard = () => {
+  useEffect(() => {
+    document.title = 'Dale ON a tu estilo | Dashboard';
+  }, []);
+
   const [userData, setUserData] = useState(null);
   const { tickets, loading, error } = useGetTickets();
 

@@ -11,6 +11,9 @@ import PromoPrincipal from "../assets/img/volumizer_Imagen-principal_promo_daleO
 const TRIP_ID = import.meta.env.VITE_TRIP_ID;
 
 const TripCalculateTotal = () => {
+  useEffect(() => {
+    document.title = "Dale ON a tu estilo | Calcular";
+  }, []);
   const { ticketData, updateTicketData } = useTicketData(); //! Contexto
 
   const [showModal, setShowModal] = useState(false);

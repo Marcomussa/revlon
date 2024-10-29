@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import Button from "../assets/components/Button";
 import Navbar from "../layouts/Navbar"
 import Footer from "../layouts/Footer"
 import Premio2 from "../assets/img/premio_02.png"
 
 const SpecialKitInfo = () => {
+  useEffect(() => {
+    document.title = "Dale ON a tu estilo | Special Kit Info";
+  }, []);
+
   return (
     <>
     <Navbar></Navbar>

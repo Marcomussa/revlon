@@ -12,6 +12,10 @@ import PromoSemanaUno from "../assets/img/semana1_promo_daleOn.jpg"
 const KIT_ID = import.meta.env.VITE_KIT_ID;
 
 const SpecialKitCalculateTotal = () => {
+  useEffect(() => {
+    document.title = "Dale ON a tu estilo | Calcular";
+  }, []);
+
   const { ticketData, updateTicketData, clearTicketData } = useTicketData(); //! Contexto
   const { registerTicket } = useRegisterTicket();
 

@@ -7,6 +7,10 @@ import Footer from "../layouts/Footer";
 import Compra from "../assets/img/compra.png";
 
 const SelectTicketType = () => {
+  useEffect(() => {
+    document.title = "Dale ON a tu estilo | Tipo de Ticket";
+  }, []);
+
   const { ticketData, updateTicketData } = useTicketData(); 
   useClearOnBackNavigation(); 
 

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { Button } from "react-bootstrap";
@@ -13,6 +13,10 @@ import Validated from "../assets/components/Validated";
 import IconProfile from "../assets/img/icons/ico_profile.png";
 
 const LogInForm = () => {
+  useEffect(() => {
+    document.title = 'Dale ON a tu estilo | Log In';
+  }, []);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
