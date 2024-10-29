@@ -21,10 +21,16 @@ const Presentation = () => {
                             <li className='mt-3 mb-3'>Registra tu ticket, y calcula cuántos productos hay en las imagenes y si aciertas o te acercas sin pasarte.</li>
                             <li>¡Puedes ganar un viaje a la playa o uno de los kits especiales!</li>
                         </ol>
-                        <div className='button-right py-xl-5 mb-xl-5 pb-5 mb-5'>
+                        
+                    </div>
+
+                    <div className='col-12 mb-5 mt-3' style={{
+                        display: 'flex',
+                        justifyContent: 'center'
+                    }}>
+                        <div className='registerTicketBTNContainer'>
                             <Button text="REGISTRA TU TICKET" route='/user/login'></Button>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -5,6 +5,10 @@
     }
 }
 
+.fw-600 {
+    font-weight: 600;
+}
+
 @media only screen and (min-width: 500px) {
     .nav-link-native{
         margin-left: 0px;
@@ -29,6 +33,7 @@
     transition: color 0.3s ease;
     position: relative;
     font-size: 20px !important;
+    font-weight: 600 !important;
 }
 
 .nav-link-native:hover {

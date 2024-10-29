@@ -50,38 +50,50 @@ const NavbarComponent = () => {
             {!isAuthenticated ? (
               <>
                 <Nav.Link
-                  className="text-white nav-link-native fw-500 text-end "
-                  href="/legal-bases"
+                  className="text-white nav-link-native fw-500 text-end mt-2"
+                  href="/user/login"
                 >
-                  Bases Legales
+                  LOG IN
                 </Nav.Link>
                 <Nav.Link
                   className="text-white nav-link-native fw-500 text-end"
                   href="/user/login"
                 >
-                  Registra tu ticket
+                  REGISTRA TU TICKET
+                </Nav.Link>
+                <Nav.Link
+                  className="text-white nav-link-native fw-500 text-end "
+                  href="/legal-bases"
+                >
+                  BASES LEGALES
                 </Nav.Link>
               </>
             ) : (
               <>
                 <Nav.Link
-                  className="text-white nav-link-native fw-500 text-end"
+                  className="text-white nav-link-native fw-600 text-end mt-2"
                   href="/user/ticket/select-type"
                 >
-                  Registra tu ticket
+                  REGISTRA TU TICKET
                 </Nav.Link>
                 <Nav.Link
                   className="text-white nav-link-native fw-500 text-end"
                   href="/user/dashboard"
                 >
-                  Dashboard
+                  DASHBOARD
+                </Nav.Link>
+                <Nav.Link
+                  className="text-white nav-link-native fw-500 text-end "
+                  href="/legal-bases"
+                >
+                  BASES LEGALES
                 </Nav.Link>
                 <Nav.Link
                   className="text-white nav-link-native fw-500 text-end"
                   onClick={logout}
                   style={{ cursor: "pointer" }}
                 >
-                  Logout
+                  LOG OUT
                 </Nav.Link>
               </>
             )}

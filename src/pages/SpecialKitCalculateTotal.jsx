@@ -153,6 +153,7 @@ const SpecialKitCalculateTotal = () => {
               placeholder="100"
               value={inputValue}
               onChange={handleInputChange}
+              style={{boxShadow: '7px 12px 25px -15px rgba(31,31,31,0.75)'}}
             />
           </div>
         </div>
@@ -175,7 +176,7 @@ const SpecialKitCalculateTotal = () => {
               ? "Hubo un problema al registrar tu participación. Por favor, intenta nuevamente."
               : "Tu participación en el concurso semanal se ha subido a tu perfil. ¡Mantente al tanto(a) de nuestras redes, podrías ser el siguiente ganador!"
           }
-          route={modalError ? null : "/user/dashboard"}
+          route={modalError ? "/user/dashboard" : "/user/dashboard"}
         />
       </div>
       <Footer></Footer>

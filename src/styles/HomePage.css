@@ -5,6 +5,10 @@
     border-radius: 50%;
 }
 
+.registerTicketBTNContainer {
+    width: 40%;
+}
+
 .carousel-caption {
     bottom: -2rem !important;
 }
@@ -18,6 +22,11 @@
     margin: 0px !important;
 }
 
+@media only screen and (max-width: 800px){
+    .registerTicketBTNContainer {
+        width: 100%;
+    }
+}
 
 @media (min-width: 1024px) {
     .button {

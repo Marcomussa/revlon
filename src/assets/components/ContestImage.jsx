@@ -88,11 +88,15 @@ const ContestImage = ({ imageSrc, background, resetTimer }) => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                color: "white",
+                background: "rgba(255,0,0,0.7)",
+                padding: '5px 15px',
+                borderRadius: '2%',
                 fontSize: "24px",
+                color: 'white',
+                border: '2px solid red'
               }}
             >
-              <b>El tiempo ha finalizado</b>
+              <b>EL TIEMPO HA FINALIZADO</b>
             </div>
           )}
         </div>
