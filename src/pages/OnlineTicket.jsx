@@ -209,7 +209,7 @@ const OnlineTicket = () => {
               Ingresa tu número de pedido.
             </p>
             <InputWithModalOrderNum
-              modalImageSrc={"https://placehold.co/250x250"}
+              modalImageSrc={Pedido}
               modalText={
                 "Ve a la sección de Detalles del pedido de tu tienda participante e identifica este número. La longitud y formato variará según la tienda."
               }
