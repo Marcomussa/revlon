@@ -6,7 +6,7 @@ import Button from "../assets/components/Button";
 import Input from "../assets/components/Input";
 import ModalInfo from "../assets/components/ModalInfo";
 import ContestImage from "../assets/components/ContestImage";
-import PromoPrincipal from "../assets/img/volumizer_Imagen-principal_promo_daleOn.jpg"
+import PromoPrincipal from "../assets/img/volumizer_Imagen-principal_promo_daleOn.jpg";
 
 const TRIP_ID = import.meta.env.VITE_TRIP_ID;
 
@@ -19,6 +19,7 @@ const TripCalculateTotal = () => {
   const [showModal, setShowModal] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [isInputValid, setIsInputValid] = useState(false);
+  const [resetTimer, setResetTimer] = useState(false);
 
   const handleShow = () => {
     setShowModal(true);
@@ -42,6 +43,8 @@ const TripCalculateTotal = () => {
         ],
       });
       handleShow();
+      setResetTimer(true);
+      setTimeout(() => setResetTimer(false), 0);
     }
   };
 
@@ -69,11 +72,18 @@ const TripCalculateTotal = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12" style={{
-            display: "flex",
-            justifyContent: "center"
-          }}>
-            <ContestImage  imageSrc={PromoPrincipal} background={'white'}/>
+          <div
+            className="col-md-12"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <ContestImage
+              imageSrc={PromoPrincipal}
+              background={"white"}
+              resetTimer={resetTimer}
+            />
           </div>
         </div>
         <div className="row">

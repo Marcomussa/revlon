@@ -1,11 +1,20 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 
-const ContestImage = ({ imageSrc, background }) => {
-  const [timeLeft, setTimeLeft] = useState(60);
+const ContestImage = ({ imageSrc, background, resetTimer }) => {
+  const initialTime = 60;
+  const [timeLeft, setTimeLeft] = useState(() => {
+    // Verificar si existe un tiempo almacenado en localStorage
+    const savedTime = localStorage.getItem("timeLeft");
+    return savedTime ? parseInt(savedTime, 10) : initialTime;
+  });
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    // Actualizar el tiempo en localStorage cada vez que cambia
+    localStorage.setItem("timeLeft", timeLeft);
+
+    // Configurar el temporizador solo si hay tiempo restante
     if (timeLeft > 0) {
       const timer = setInterval(() => {
         setTimeLeft((prevTime) => prevTime - 1);
@@ -16,6 +25,15 @@ const ContestImage = ({ imageSrc, background }) => {
       setIsVisible(false);
     }
   }, [timeLeft]);
+
+  useEffect(() => {
+    // Reiniciar el temporizador cuando `resetTimer` cambia a `true`
+    if (resetTimer) {
+      setTimeLeft(initialTime);
+      setIsVisible(true);
+      localStorage.setItem("timeLeft", initialTime); // Actualizar en localStorage
+    }
+  }, [resetTimer]);
 
   const calculateColor = () => {
     if (timeLeft > 30) {
@@ -31,7 +49,7 @@ const ContestImage = ({ imageSrc, background }) => {
     }
   };
 
-  const circleProgress = (timeLeft / 60) * 100;
+  const circleProgress = (timeLeft / initialTime) * 100;
   const timerColor = calculateColor();
 
   return (
@@ -51,7 +69,7 @@ const ContestImage = ({ imageSrc, background }) => {
                 style={{
                   background: background,
                   padding: "3px",
-                  borderRadius: "2%"
+                  borderRadius: "2%",
                 }}
                 className="image-container"
               >
@@ -59,7 +77,6 @@ const ContestImage = ({ imageSrc, background }) => {
                   src={imageSrc || "https://placehold.co/300x300"}
                   alt="Temporary visible image"
                   style={{ width: "100%", height: "100%", borderRadius: "2%" }}
-                  
                 />
               </div>
             </>

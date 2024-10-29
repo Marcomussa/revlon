@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useTicketData } from "../context/TicketDataContext";
-import useRegisterTicket from '../hooks/useRegisterTicket';
+import useRegisterTicket from "../hooks/useRegisterTicket";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import Button from "../assets/components/Button";
 import Input from "../assets/components/Input";
 import ModalInfo from "../assets/components/ModalInfo";
 import ContestImage from "../assets/components/ContestImage";
-import PromoSemanaUno from "../assets/img/semana1_promo_daleOn.jpg"
+import PromoSemanaUno from "../assets/img/semana1_promo_daleOn.jpg";
 
 const KIT_ID = import.meta.env.VITE_KIT_ID;
 
@@ -22,26 +22,30 @@ const SpecialKitCalculateTotal = () => {
   const [inputValue, setInputValue] = useState("");
   const [isInputValid, setIsInputValid] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
   const [buttonText, setButtonText] = useState("FINALIZAR");
-  const [modalError, setModalError] = useState(false); 
+  const [modalError, setModalError] = useState(false);
+  const [resetTimer, setResetTimer] = useState(false);
 
   const handleSubmitTicket = async (data) => {
     try {
-      setIsLoading(true); 
-      setButtonText("Subiendo participacion..."); 
-      setModalError(false); 
-      const response = await registerTicket(data);  
+      setIsLoading(true);
+      setButtonText("Subiendo participacion...");
+      setModalError(false);
+      const response = await registerTicket(data);
       console.log(response);
       setButtonText("Ir a dashboard");
-      return true; 
+      setResetTimer(true);
+      return true;
     } catch (err) {
-      setButtonText("Error"); 
-      console.error('Error al registrar el ticket:', err.response.data.message);
-      setModalError(true); 
+      setButtonText("Error");
+      console.error("Error al registrar el ticket:", err.response.data.message);
+      setModalError(true);
       return false;
     } finally {
-      setIsLoading(false);  
+      setIsLoading(false);
+      // Después de reiniciar, desactiva resetTimer para que esté listo para el próximo envío
+      setTimeout(() => setResetTimer(false), 0);
     }
   };
 
@@ -71,16 +75,16 @@ const SpecialKitCalculateTotal = () => {
         },
       ],
     };
-  
+
     if (isInputValid) {
       updateTicketData(updatedTicketData);
-  
-      const isSuccess = await handleSubmitTicket(updatedTicketData); 
-  
-      handleShow(); 
-      
+
+      const isSuccess = await handleSubmitTicket(updatedTicketData);
+
+      handleShow();
+
       if (isSuccess) {
-        clearTicketData(); 
+        clearTicketData();
       }
     }
   };
@@ -109,11 +113,18 @@ const SpecialKitCalculateTotal = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12" style={{
-            display: "flex",
-            justifyContent: "center"
-          }}>
-            <ContestImage imageSrc={PromoSemanaUno} background={'red'}/>
+          <div
+            className="col-md-12"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <ContestImage
+              imageSrc={PromoSemanaUno}
+              background={"red"}
+              resetTimer={resetTimer}
+            />
           </div>
         </div>
         <div className="row">
@@ -148,9 +159,9 @@ const SpecialKitCalculateTotal = () => {
         <div className="row">
           <div className="col-md-12 text-center mt-3 button">
             <Button
-              text={buttonText} 
+              text={buttonText}
               onClick={handleButtonClick}
-              disabled={!isInputValid || isLoading}  
+              disabled={!isInputValid || isLoading}
             ></Button>
           </div>
         </div>
@@ -160,11 +171,11 @@ const SpecialKitCalculateTotal = () => {
           handleClose={handleClose}
           modalTitle={modalError ? "Error al registrar" : "Registro exitoso"}
           modalText={
-            modalError 
-              ? "Hubo un problema al registrar tu participación. Por favor, intenta nuevamente." 
-              : "Tu participación en el concurso semanal se ha subido a tu perfil. ¡Mantente al tanto(a) de nuestras redes, podrías ser el siguiente ganador!" 
+            modalError
+              ? "Hubo un problema al registrar tu participación. Por favor, intenta nuevamente."
+              : "Tu participación en el concurso semanal se ha subido a tu perfil. ¡Mantente al tanto(a) de nuestras redes, podrías ser el siguiente ganador!"
           }
-          route={modalError ? null : "/user/dashboard"} 
+          route={modalError ? null : "/user/dashboard"}
         />
       </div>
       <Footer></Footer>
