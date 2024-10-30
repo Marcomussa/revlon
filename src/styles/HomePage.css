@@ -21,6 +21,9 @@
     max-width: 1920px !important;
     margin: 0px !important;
 }
+.justify-text{
+    text-align: justify;
+}
 
 @media only screen and (max-width: 800px){
     .registerTicketBTNContainer {

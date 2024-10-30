@@ -10,7 +10,7 @@ const PrivacyNotice = () => {
   return (
     <>
       <Navbar></Navbar>
-      <div className="container mt-5">
+      <div className="container mt-5 justify-text">
         <div className="row py-4 text">
           <div className="col-md-12 mt-4">
             <h5 className="subtitle-h3">

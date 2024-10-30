@@ -80,7 +80,7 @@ const NavbarComponent = () => {
                   className="text-white nav-link-native fw-500 text-end"
                   href="/user/dashboard"
                 >
-                  DASHBOARD
+                  MIS PARTICIPACIONES
                 </Nav.Link>
                 <Nav.Link
                   className="text-white nav-link-native fw-500 text-end "
@@ -93,7 +93,7 @@ const NavbarComponent = () => {
                   onClick={logout}
                   style={{ cursor: "pointer" }}
                 >
-                  LOG OUT
+                  SALIR
                 </Nav.Link>
               </>
             )}
