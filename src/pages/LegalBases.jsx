@@ -10,7 +10,7 @@ const LegalBases = () => {
   return (
     <>
       <Navbar></Navbar>
-      <div className="container pt-5">
+      <div className="container pt-5 justify-text">
         <div className="row bg-white pt-4 pt-xl-5">
           <div className="col-md-12">
             <h5 className="subtitle-h3 py-2 px-xl-4"><b>TERMINOS Y CONDICIONES</b></h5>
