@@ -36,12 +36,18 @@ const Footer = () => {
             </p>
           </div>
           <div className="col-md-12 px-2 mb-5">
-            <p className="footer-text text-center text-white subtitle px-4 mb-5  padding-footer">
+            <p className="footer-text text-center text-white subtitle pt-4 padding-footer">
               {" "}
               Este concurso es exclusivo para mayores de 18 años. Los datos
               personales proporcionados serán tratados de acuerdo con nuestra
               Política de Privacidad.
             </p>
+          </div>
+          <div className="col-md-12 px-2 mb-5">
+              <p className="text-center secondari">¿Dudas? ¿Problemas para registrar tu ticket? Escribenos a <span style={{
+                textDecoration: 'underline',
+                fontWeight: '700',
+              }}>soporte@daleonatuestilo.com</span></p>
           </div>
         </div>
       </div>
