@@ -20,7 +20,7 @@ const PhysicalTicket = () => {
   useEffect(() => {
     document.title = 'Dale ON a tu estilo | Ticket Fisico';
   }, []);
-  
+
   const storeOptions = [
     { value: "Seleccionar Opcion", label: "Seleccionar Opción" },
     { value: "CHEDRAUI", label: "Chedraui" },
@@ -119,7 +119,7 @@ const PhysicalTicket = () => {
   const validateBarCode = (barCode) => {
     const validBarCodes = barCodesData.map((item) => item.barCode); // Extraer los códigos de barras del JSON
     
-    if (barCode.length === 14) {
+    if (barCode.length === 12) {
       if (validBarCodes.includes(barCode)) {
         setIsBarCodeValid(true);
         setBarCodeValidationMessage("Código válido"); // Mensaje de éxito
@@ -232,7 +232,7 @@ const PhysicalTicket = () => {
               value={barCode}
               onChange={handleBarCodeChange}
             />
-            {barCode.length === 14 && (
+            {barCode.length === 12 && (
               <div className="mt-2">
                 <Validated
                   message={barCodeValidationMessage}

@@ -50,7 +50,7 @@ const NavbarComponent = () => {
             {!isAuthenticated ? (
               <>
                 <Nav.Link
-                  className="text-white nav-link-native fw-500 text-end mt-2"
+                  className="text-white nav-link-native fw-500 text-end"
                   href="/user/login"
                 >
                   LOG IN
@@ -71,7 +71,7 @@ const NavbarComponent = () => {
             ) : (
               <>
                 <Nav.Link
-                  className="text-white nav-link-native fw-600 text-end mt-2"
+                  className="text-white nav-link-native fw-600 text-end"
                   href="/user/ticket/select-type"
                 >
                   REGISTRA TU TICKET

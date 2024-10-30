@@ -4,7 +4,7 @@
   },
   "name": "Cepillo Térmico Alaciador  con infusión de aceite de coco",
   "sku": "RVST2218LA1",
-  "barCode": "00761318122180"
+  "barCode": "761318122180"
 },
 {
   "_id": {
@@ -12,7 +12,7 @@
   },
   "name": "Cepillo Redondo con infusión de aceite de coco",
   "sku": "RVIR1198LA1",
-  "barCode": "00761318422181"
+  "barCode": "761318422181"
 },
 {
   "_id": {
@@ -20,7 +20,7 @@
   },
   "name": "Alaciadora 2 en 1 con triple infusión de aceites naturales",
   "sku": "RVST2219LA1",
-  "barCode": "00761318222194"
+  "barCode": "761318222194"
 },
 {
   "_id": {
@@ -28,7 +28,7 @@
   },
   "name": "One- Step™ Secador y Voluminizador de Titanio",
   "sku": "UNKNOWN",
-  "barCode": "00761318072225"
+  "barCode": "761318072225"
 },
 {
   "_id": {
@@ -36,7 +36,7 @@
   },
   "name": "Secadora de Potencia Máxima",
   "sku": "RVDR5336LA1",
-  "barCode": "00761318453369"
+  "barCode": "761318453369"
 },
 {
   "_id": {
@@ -44,7 +44,7 @@
   },
   "name": "One-Step ™  Secador y Voluminizador con cabezal intercambiable ",
   "sku": "RVDR5298PKLA1",
-  "barCode": "00761318182986"
+  "barCode": "761318182986"
 },
 {
   "_id": {
@@ -52,7 +52,7 @@
   },
   "name": "Combo Estilizador Control de Frizz",
   "sku": "RVDR5230GLPKLA1",
-  "barCode": "00761318523017"
+  "barCode": "761318523017"
 },
 {
   "_id": {
@@ -60,7 +60,7 @@
   },
   "name": "One-Step™ Secador y Voluminizador Removible con cabezal intercambiable",
   "sku": "RVDR5298CPKLA1",
-  "barCode": "00761318172987"
+  "barCode": "761318172987"
 },
 {
   "_id": {
@@ -68,5 +68,5 @@
   },
   "name": "Secadora Perfect Match",
   "sku": "RVDR5347LA1",
-  "barCode": "00761318053477"
+  "barCode": "761318053477"
 }]

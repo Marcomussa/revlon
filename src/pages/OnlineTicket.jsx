@@ -117,7 +117,7 @@ const OnlineTicket = () => {
   };
 
   const validateCode = (code) => {
-    setIsProductCodeValid(code.length === 14);
+    setIsProductCodeValid(code.length === 12);
   };
 
   const handleDateChange = (e) => {
