@@ -9,11 +9,11 @@ const Footer = () => {
       <div className="container bg-black">
         <div className="row">
           <div className="mt-5 text-center col-md-12">
-            <Link to="#">
+            <Link to="https://www.facebook.com/revlonhairtools?locale=es_LA">
               {/* Ícono de Facebook */}
               <FaFacebookF size={34} className="m-2" style={{ color: 'white' }} />
             </Link>
-            <Link to="#">
+            <Link to="https://www.instagram.com/revlonhairtoolslatam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D">
               {/* Ícono de Instagram */}
               <FaInstagram size={34} className="m-2" style={{ color: 'white' }} />
             </Link>
