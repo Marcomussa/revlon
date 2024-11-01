@@ -22,7 +22,7 @@ const HomePage = () => {
     <>
       <Navbar></Navbar>
       <Presentation></Presentation>
-      <Winner></Winner>
+      {/* <Winner></Winner> */}
       <Participate></Participate>
       <Award></Award>
       <Guide></Guide>
