@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 const ContestImage = ({ imageSrc, background, resetTimer }) => {
-  const initialTime = 600;
+  const initialTime = 60;
   const [timeLeft, setTimeLeft] = useState(() => {
     // Verificar si existe un tiempo almacenado en localStorage
     const savedTime = localStorage.getItem("timeLeft");
