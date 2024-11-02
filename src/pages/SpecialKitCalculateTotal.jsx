@@ -154,6 +154,7 @@ const SpecialKitCalculateTotal = () => {
               value={inputValue}
               onChange={handleInputChange}
               style={{boxShadow: '7px 12px 25px -15px rgba(31,31,31,0.75)'}}
+              min='0'
             />
           </div>
         </div>
