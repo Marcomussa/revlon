@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 const ContestImage = ({ imageSrc, background, resetTimer }) => {
-  const initialTime = 60;
+  const initialTime = 600;
   const [timeLeft, setTimeLeft] = useState(() => {
     // Verificar si existe un tiempo almacenado en localStorage
     const savedTime = localStorage.getItem("timeLeft");
@@ -76,7 +76,8 @@ const ContestImage = ({ imageSrc, background, resetTimer }) => {
                 <img
                   src={imageSrc || "https://placehold.co/300x300"}
                   alt="Temporary visible image"
-                  style={{ width: "100%", height: "100%", borderRadius: "2%" }}
+                  style={{ width: "100%", height: "100%", borderRadius: "2%", pointerEvents: 'none' }}
+                  onContextMenu={(e) => e.preventDefault()}
                 />
               </div>
             </>
