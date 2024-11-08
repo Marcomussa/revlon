@@ -122,7 +122,7 @@ const SpecialKitCalculateTotal = () => {
             }}
           >
             <ContestImage
-              imageSrc={PromoSemanaDos}
+              imageSrc={PromoSemanaUno}
               background={"red"}
               resetTimer={resetTimer}
             />
