@@ -37,6 +37,10 @@ https://www.dropbox.com/scl/fo/ltllc3cd74a6v6bmkwq84/AFvRZtJpS_sP93fXYs_kW4Y?rlk
 
 ## Feature-based Structure Architecture
 
-
+08/11 - 14/11: 670653e60f4fffe73735f908
+15/11 - 21/11: 672664d011a7676aaa8d1be4
+22/11 - 28/11: 6726652cc05577be6fca358b
+29/11 - 05/12: 672665457734d8445e05ecb6
+06/12 - 12/12: 672665731a802e99f52785aa
 
 
