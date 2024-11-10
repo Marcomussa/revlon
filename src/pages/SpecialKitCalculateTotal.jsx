@@ -113,6 +113,7 @@ const SpecialKitCalculateTotal = () => {
             </h3>
           </div>
         </div>
+
         <div className="row">
           <div
             className="col-md-12"
@@ -121,6 +122,7 @@ const SpecialKitCalculateTotal = () => {
               justifyContent: "center",
             }}
           >
+
             <ContestImage
               imageSrc={PromoSemanaUno}
               background={"red"}
@@ -154,7 +156,7 @@ const SpecialKitCalculateTotal = () => {
               placeholder="100"
               value={inputValue}
               onChange={handleInputChange}
-              style={{boxShadow: '7px 12px 25px -15px rgba(31,31,31,0.75)'}}
+              style={{ boxShadow: '7px 12px 25px -15px rgba(31,31,31,0.75)' }}
               min='0'
             />
           </div>
