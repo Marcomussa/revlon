@@ -12,7 +12,7 @@ const TicketDetailsCard = ({
   useEffect(() => {
     if (typeof registerDate === "string") {
       const date = new Date(registerDate);
-      const promotionStartDate = new Date("2024-11-01");
+      const promotionStartDate = new Date("2024-11-03");
       
       const diffInTime = date.getTime() - promotionStartDate.getTime();
       const diffInDays = Math.floor(diffInTime / (1000 * 3600 * 24));
