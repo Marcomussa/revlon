@@ -58,7 +58,6 @@ const OnlineTicket = () => {
       setIsUploading(true);
       await imageUploadRef.current.uploadImage();
       setIsUploading(false);
-      console.log(ticketData);
     }
   };
 
@@ -127,7 +126,6 @@ const OnlineTicket = () => {
     setHasInteractedWithDate(true); 
 
     validateDate(value);
-    console.log(validateDate(value))
   };
 
   const validateDate = (date) => {
@@ -155,12 +153,6 @@ const OnlineTicket = () => {
   }, [store, orderNum, isProductCodeValid, isDateValid, isImageValid]);
 
   const validateForm = (orderNum, productCode, date, image) => {
-    console.log(isStoreValid)
-    console.log(isOrderNumValid)
-    console.log(isProductCodeValid)
-    console.log(isDateValid)
-    console.log(image)
-    console.log('--- --- ---')
     const isValid =
       isOrderNumValid &&
       isProductCodeValid &&

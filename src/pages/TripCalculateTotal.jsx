@@ -49,9 +49,9 @@ const TripCalculateTotal = () => {
   };
 
   // Usar useEffect para ver el estado actualizado de ticketData
-  useEffect(() => {
-    console.log("Datos actualizados en el contexto:", ticketData);
-  }, [ticketData]); // Se ejecuta cuando ticketData cambia
+  // useEffect(() => {
+  //   console.log("Datos actualizados en el contexto:", ticketData);
+  // }, [ticketData]); // Se ejecuta cuando ticketData cambia
 
   return (
     <>

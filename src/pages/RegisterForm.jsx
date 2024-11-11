@@ -155,7 +155,7 @@ const RegisterForm = () => {
         }
       } catch (error) {
         setMessage(error.message);
-        console.log("Error en el registro. Inténtalo de nuevo.");
+        console.log("Error en el registro. Inténtalo de nuevo.", error.message);
       } finally {
         setButtonText("REGISTRARSE");
       }

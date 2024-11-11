@@ -72,7 +72,6 @@ const PhysicalTicket = () => {
       setIsUploading(true);
       await imageUploadRef.current.uploadImage();
       setIsUploading(false);
-      console.log(ticketData);
     }
   };
 
@@ -99,7 +98,6 @@ const PhysicalTicket = () => {
     const value = e.target.value || "";
     setBarCode(value);
     updateTicketData({ barCode: value }); // Actualizar el contexto
-    console.log(value)
     validateBarCode(value);
   };
 
@@ -147,10 +145,6 @@ const PhysicalTicket = () => {
   }, [store, isTicketValid, barCode, isImageValid]); 
 
   const validateForm = (ticket, barCode, image) => {
-    console.log(isTicketValid)
-    console.log(isBarCodeValid)
-    console.log(image)
-    console.log('--- ---- ---')
     if (isTicketValid && isBarCodeValid && image) {
       setIsFormValid(true);
     } else {

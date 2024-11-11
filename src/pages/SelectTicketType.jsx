@@ -18,9 +18,9 @@ const SelectTicketType = () => {
     updateTicketData({ type: buttonType }); 
   };
 
-  useEffect(() => {
-    console.log("Datos actuales de ticket:", ticketData);
-  }, [ticketData]);  // Esto se ejecuta cuando ticketData cambia
+  // useEffect(() => {
+  //   console.log("Datos actuales de ticket:", ticketData);
+  // }, [ticketData]);  // Esto se ejecuta cuando ticketData cambia
 
   return (
     <>
