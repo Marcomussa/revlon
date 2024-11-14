@@ -21,11 +21,20 @@
     max-width: 1920px !important;
     margin: 0px !important;
 }
-.justify-text{
+
+.justify-text {
     text-align: justify;
 }
 
-@media only screen and (max-width: 800px){
+.name-container {
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
     .registerTicketBTNContainer {
         width: 100%;
     }
@@ -45,14 +54,32 @@
         padding-left: 15% !important;
         padding-right: 15% !important;
     }
-    .input-w-trip{
-        padding-inline:30% !important ;
+
+    .input-w-trip {
+        padding-inline: 30% !important;
     }
+
     .desktop-pd {
         padding-left: 8rem;
         padding-right: 8rem;
     }
-    .padding-footer{
+
+    .padding-footer {
         padding-inline: 10%;
+    }
+
+    .name-container {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+@media (min-width: 926px) and (max-width: 1024px) {
+    .name-container{
+        display: flex;
+        align-items: center;
     }
 }
