@@ -18,10 +18,14 @@ import SpecialKitCalculateTotal from "./pages/SpecialKitCalculateTotal";
 import LegalBases from "./pages/LegalBases";
 import VerifyAccount from "./pages/VerifyAccount";
 import PrivacyNotice from "./pages/PrivacyNotice";
+import useHotjar from "./hooks/useHotjar";
 import "./styles/Fonts.css";
 import "./styles/Input.css";
 
 const App = () => {
+
+  <useHotjar/>
+
   return (
     <AuthProvider>
       <TicketDataProvider>
