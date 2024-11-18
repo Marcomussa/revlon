@@ -16,7 +16,6 @@ import "./styles/Validated.css"
 import React, { Suspense } from "react";
 import GridLoader from "react-spinners/GridLoader"; // Importa el spinner
 
-// Implementación de lazy loading
 const HomePage = React.lazy(() => import("./pages/HomePage"));
 const NotFoundPage = React.lazy(() => import("./pages/NotFound"));
 const RegisterPage = React.lazy(() => import("./pages/RegisterForm"));
