@@ -5,7 +5,7 @@ const Participate = () => {
   return (
     <>
       <div className="container bg-white-waves mt-5">
-        <div className="row px-xl-5">
+        <div className="row px-xl-5 mt-4">
           <div className="col-12 col-xl-7 p-xl-5">
             <h1 className="text-center primary-font title-red title-size py-xl-4 mt-xl-5">
               ¿CÓMO PARTICIPAR?
