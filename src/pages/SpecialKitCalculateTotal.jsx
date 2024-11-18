@@ -7,7 +7,7 @@ import Button from "../assets/components/Button";
 import Input from "../assets/components/Input";
 import ModalInfo from "../assets/components/ModalInfo";
 import ContestImage from "../assets/components/ContestImage";
-import PromoSemanaDos from "../assets/img/semana2_promo_daleon.jpg"
+import PromoSemanaDos from "../assets/img/semana2_promo_daleon.webp"
 
 
 const KIT_ID = import.meta.env.VITE_KIT_ID;

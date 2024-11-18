@@ -4,7 +4,7 @@ import useClearOnBackNavigation from '../hooks/useClearOnBackNavigation';
 import Button from "../assets/components/Button";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
-import Compra from "../assets/img/compra.png";
+import Compra from "../assets/img/compra.webp";
 
 const SelectTicketType = () => {
   useEffect(() => {

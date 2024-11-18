@@ -10,7 +10,7 @@ import SubmitButton from "../assets/components/Button";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import Validated from "../assets/components/Validated";
-import IconProfile from "../assets/img/icons/ico_profile.png";
+import IconProfile from "../assets/img/icons/ico_profile.webp";
 
 const LogInForm = () => {
   useEffect(() => {

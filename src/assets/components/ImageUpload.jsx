@@ -7,7 +7,7 @@ import { useAuth } from '../../context/AuthContext';
 import { FaTrashAlt } from "react-icons/fa";
 import { Modal, Button } from "react-bootstrap";
 import "../../styles/Button.css";
-import IcoImg from "../img/icons/ico_img.png"
+import IcoImg from "../img/icons/ico_img.webp"
 import Validated from "./Validated";
 import axios from "axios"; 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Validity from "../img/clock.png"
+import Validity from "../img/clock.webp"
 import '../../styles/Backgrounds.css'
 
 const Time = () => {
@@ -8,7 +8,7 @@ const Time = () => {
             <div className="container bg-black-glitter-time">
                 <div className="row align-items-center">
                     <div className="col-4 col-xl-5 text-xl-end text-md-end">
-                        <img src={Validity} className='img-clock' alt="Vigencia" />
+                        <img src={Validity} className='img-clock' alt="Vigencia" lazy="loading"/>
                     </div>
                     <div className="col-8 col-xl-7">
                         <p className='text-white mt-4 mb-0 subtitle subtitle-time'>VIGENCIA DE PROMOCIÓN: </p>

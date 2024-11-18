@@ -48,7 +48,7 @@ const Footer = () => {
                 textDecoration: 'underline',
                 fontWeight: '700',
               }}>soporte@daleonatuestilo.com</span></p>
-          </div>s
+          </div>
         </div>
       </div>
     </>

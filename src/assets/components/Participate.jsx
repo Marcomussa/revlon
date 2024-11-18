@@ -1,4 +1,4 @@
-import Registro from "../img/ticket.png";
+import Registro from "../img/ticket.webp";
 import Carousel from "../components/Carousel";
 
 const Participate = () => {
@@ -29,6 +29,7 @@ const Participate = () => {
               src={Registro}
               alt="Registro"
               className="d-block mx-auto img-size-p"
+              lazy="loading"
             />
           </div>
 

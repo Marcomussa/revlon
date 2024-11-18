@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Button from "../assets/components/Button";
 import Navbar from "../layouts/Navbar"
 import Footer from "../layouts/Footer"
-import Premio1 from "../assets/img/premio_01.png"
+import Premio1 from "../assets/img/premio_01.webp"
 
 const TripInfo = () => {
   useEffect(() => {
