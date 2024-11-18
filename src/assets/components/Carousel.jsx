@@ -1,13 +1,13 @@
 import Carousel from "react-bootstrap/Carousel";
-import Alaciador from "../img/slider/Alaciador-2-en-1.png"
-import SecadoryVoluminazadorR from "../img/slider/Secador-y-Voluminizador-Removible.png"
-import CepilloRedondo from "../img/slider/Cepillo-redondo.png"
-import CepilloTermino from "../img/slider/Cepillo-termico-Alaciador.png"
-import CombEstilizador from "../img/slider/Combo-Estilizador.png"
-import SecadoryVoluminizadorC from "../img/slider/Secador-y-Voluminizador-con-cabezal.png"
-import SecadoryVoluminizador from "../img/slider/Secador-y-Voluminizador.png"
-import Secadora from "../img/slider/Secadora-de-maxima-potencia.png"
-import SecadoraMatch from "../img/slider/Secadora-Perfect-Match.png"
+import Alaciador from "../img/slider/Alaciador-2-en-1.webp"
+import SecadoryVoluminazadorR from "../img/slider/Secador-y-Voluminizador-Removible.webp"
+import CepilloRedondo from "../img/slider/Cepillo-redondo.webp"
+import CepilloTermino from "../img/slider/Cepillo-termico-Alaciador.webp"
+import CombEstilizador from "../img/slider/Combo-Estilizador.webp"
+import SecadoryVoluminizadorC from "../img/slider/Secador-y-Voluminizador-con-cabezal.webp"
+import SecadoryVoluminizador from "../img/slider/Secador-y-Voluminizador.webp"
+import Secadora from "../img/slider/Secadora-de-maxima-potencia.webp"
+import SecadoraMatch from "../img/slider/Secadora-Perfect-Match.webp"
 
 function UncontrolledExample() {
   return (
@@ -26,6 +26,7 @@ function UncontrolledExample() {
             width={350}
             src={SecadoryVoluminazadorR}
             alt="First slide"
+            lazy="loading"
           />
         </div>
       </Carousel.Item>
@@ -36,6 +37,7 @@ function UncontrolledExample() {
             width={350}
             src={CepilloRedondo}
             alt="First slide"
+            lazy="loading"
           />
         </div>
       </Carousel.Item>
@@ -46,6 +48,7 @@ function UncontrolledExample() {
             width={350}
             src={CepilloTermino}
             alt="First slide"
+            lazy="loading"
           />
         </div>
       </Carousel.Item>
@@ -56,6 +59,7 @@ function UncontrolledExample() {
             width={350}
             src={CombEstilizador}
             alt="First slide"
+            lazy="loading"
           />
         </div>
       </Carousel.Item>
@@ -66,6 +70,7 @@ function UncontrolledExample() {
             width={350}
             src={Alaciador}
             alt="First slide"
+            lazy="loading"
           />
         </div>
       </Carousel.Item>
@@ -76,6 +81,7 @@ function UncontrolledExample() {
             width={350}
             src={SecadoryVoluminizadorC}
             alt="First slide"
+            lazy="loading"
           />
         </div>
       </Carousel.Item>
@@ -86,6 +92,7 @@ function UncontrolledExample() {
             width={350}
             src={SecadoraMatch}
             alt="First slide"
+            lazy="loading"
           />
         </div>
       </Carousel.Item>
@@ -96,6 +103,7 @@ function UncontrolledExample() {
             width={350}
             src={SecadoryVoluminizador}
             alt="First slide"
+            lazy="loading"
           />
         </div>
       </Carousel.Item>
@@ -106,6 +114,7 @@ function UncontrolledExample() {
             width={350}
             src={Secadora}
             alt="First slide"
+            lazy="loading"
           />
         </div>
       </Carousel.Item>

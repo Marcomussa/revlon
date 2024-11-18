@@ -4,8 +4,8 @@ import Button from "../assets/components/Button";
 import TicketDetailsCard from "../assets/components/TicketDetailsCard";
 import Footer from "../layouts/Footer";
 import Navbar from "../layouts/Navbar";
-import IconProfile from "../assets/img/icons/ico_profile.png";
-import IconQuestion from "../assets/img/icons/ico_questionmark.png";
+import IconProfile from "../assets/img/icons/ico_profile.webp";
+import IconQuestion from "../assets/img/icons/ico_questionmark.webp";
 import useGetTickets from "../hooks/useGetTickets";
 
 const Dashboard = () => {

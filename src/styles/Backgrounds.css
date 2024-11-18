@@ -1,10 +1,10 @@
 .bg-red-pic {
-  background-image: url("../assets/img/backgrounds/foto_heroimg.png");
+  background-image: url("../assets/img/backgrounds/foto_heroimg.webp");
   background-size: cover;
 }
 
 .bg-black-glitter, .bg-black-glitter-time  {
-  background-image: url("../assets/img/backgrounds/black-glitter.jpeg");
+  background-image: url("../assets/img/backgrounds/black-glitter.webp");
   background-size: cover;
   background-position: center;
 }
@@ -15,35 +15,35 @@
   background-position: center;
 } */
 .bg-white-waves{
-  background-image: url("../assets/img/backgrounds/white_waves_.png");
+  background-image: url("../assets/img/backgrounds/white_waves_.webp");
   background-size: cover;
   background-position: center;
 }
 
 .bg-red-glitter {
-  background-image: url("../assets/img/backgrounds/red-glitter-mobile.png");
+  background-image: url("../assets/img/backgrounds/red-glitter-mobile.webp");
   background-size: cover;
   background-position: center;
 }
 
 .bg-red-sunset {
-  background-image: url("../assets/img/backgrounds/red-sunset.png");
+  background-image: url("../assets/img/backgrounds/red-sunset.webp");
   background-size: cover;
   background-position: center;
 }
 
 .bg-red-galaxy {
-  background-image: url("../assets/img/backgrounds/red-galaxy.jpeg");
+  background-image: url("../assets/img/backgrounds/red-galaxy.webp");
   background-size: cover;
   background-position: center;
 }
 .bg-beach{
-  background-image: url("../assets/img/backgrounds/bg-beach.png");
+  background-image: url("../assets/img/backgrounds/bg-beach.webp");
   background-size: cover;
   background-position: center;
 }
 .bg-disco{
-  background-image: url("../assets/img/backgrounds/bg-disco.png");
+  background-image: url("../assets/img/backgrounds/bg-disco.webp");
   background-size: cover;
   background-position: center;
 }
@@ -64,14 +64,14 @@
     height: 110vh;
   }
   .bg-red-pic {
-    background-image: url("../assets/img/backgrounds/red-pic-mobile.png");
+    background-image: url("../assets/img/backgrounds/red-pic-mobile.webp");
   }
 
   .bg-black-glitter {
-    background-image: url("../assets/img/backgrounds/black-glitter-mobile.png");
+    background-image: url("../assets/img/backgrounds/black-glitter-mobile.webp");
   }
   .bg-black-glitter-time{
-    background-image: url("../assets/img/backgrounds/black-glitter.jpeg");
+    background-image: url("../assets/img/backgrounds/black-glitter.webp");
     background-size: cover;
     background-position: center;
   }
@@ -80,22 +80,22 @@
     background-image: url("../assets/img/backgrounds/white-waves-mobile.png");
   } */
   .bg-white-waves{
-    background-image: url("../assets/img/backgrounds/white_waves_mobile.png");
+    background-image: url("../assets/img/backgrounds/white_waves_mobile.webp");
   }
 
   .bg-red-glitter {
-    background-image: url("../assets/img/backgrounds/red-glitter-mobile.png");
+    background-image: url("../assets/img/backgrounds/red-glitter-mobile.webp");
   }
 
   .bg-red-sunset {
-    background-image: url("../assets/img/backgrounds/red-sunset-mobile.png");
+    background-image: url("../assets/img/backgrounds/red-sunset-mobile.webp");
   }
   .bg-beach{
-    background-image: url("../assets/img/backgrounds/bg-beach-mobile.png");
+    background-image: url("../assets/img/backgrounds/bg-beach-mobile.webp");
     height: 90vh;
   }
   .bg-disco{
-    background-image: url("../assets/img/backgrounds/bg-disco-mobile.png");
+    background-image: url("../assets/img/backgrounds/bg-disco-mobile.webp");
     height: 90vh;
     background-position-y: bottom !important;
   }

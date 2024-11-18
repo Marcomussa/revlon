@@ -1,5 +1,5 @@
 import React from 'react'
-import Adv from "../img/stamp-promo.png"
+import Adv from "../img/stamp-promo.webp"
 import Button from "../components/Button"
 
 const Presentation = () => {
