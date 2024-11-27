@@ -24,7 +24,7 @@ function UncontrolledExample() {
           <img
             className="d-block"
             width={350}
-            src={SecadoryVoluminazadorR}
+            src={SecadoryVoluminizadorC}
             alt="First slide"
             lazy="loading"
           />
@@ -79,7 +79,7 @@ function UncontrolledExample() {
           <img
             className="d-block"
             width={350}
-            src={SecadoryVoluminizadorC}
+            src={SecadoryVoluminazadorR}
             alt="First slide"
             lazy="loading"
           />
