@@ -7,7 +7,7 @@ import Button from "../assets/components/Button";
 import Input from "../assets/components/Input";
 import ModalInfo from "../assets/components/ModalInfo";
 import ContestImage from "../assets/components/ContestImage";
-import PromoSemanaCinco from "../assets/img/semana5_promo_daleon.webp"
+import PromoSemanaSeis from "../assets/img/semana6_promo_daleon.webp"
 
 
 const KIT_ID = import.meta.env.VITE_KIT_ID;
@@ -123,7 +123,7 @@ const SpecialKitCalculateTotal = ()  => {
           >
 
             <ContestImage
-              imageSrc={PromoSemanaCinco}
+              imageSrc={PromoSemanaSeis}
               background={"red"}
               resetTimer={resetTimer}
             />
