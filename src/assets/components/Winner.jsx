@@ -4,13 +4,18 @@ import Slider from "./SliderNames.jsx"
 
 const Winner = () => {
   const winners = [
-    'Sara Amézquita (Aguascalientes)',
-    'Mirzi Helguera (CDMX)',
-    'Araceli Serrano (Estado de México)',
-    'Ana Aguilar (Coahuila)',
-    'María Sánchez (CDMX)',
-    'Amaya Ledesma (Estado de México)',
-    'María Pérez (Tabasco)'
+    'Sandra Fernandez (Estado de México)',
+    'Luis Custodio (Tabasco)',
+    'María Martínez (Estado de México)',
+    'Rosina Grijalva  (Estado de México)',
+    'Idalia	Herrera	(Estado de México)',
+    'Esmeralda Sandoval  (Querétaro)',
+    'Nayelli Andrade (Coahuila)',
+    'María Mercado (CDMX)',
+    'Norma Morales (Estado de México)',
+    'Alisson Estevez	(Estado de México)',
+    'Mayra Guerrero (Jalisco)',
+    'Julio Guerrero (Sinaloa)'
   ]
   return (
     <>
